@@ -6,10 +6,10 @@ const ContactCard = ({ contact }) => {
     <div className="contact-card bg-aboutme p-4 rounded-sm text-font cursor-pointer">
       <a href={contact.link} className="flex justify-between items-center">
         <div className="flex justify-start items-center gap-4">
-          <FontAwesomeIcon icon={contact.icon} className="text-6xl" />
+          <FontAwesomeIcon icon={contact.icon} className="md:text-6xl xs:text-5xl" />
           <div>
             <p className="text-sm text-font-light">{contact.description}</p>
-            <h1 className="text-3xl ">{contact.platform}</h1>
+            <h1 className="md:text-3xl xs:text-2xl ">{contact.platform}</h1>
           </div>
         </div>
         <svg

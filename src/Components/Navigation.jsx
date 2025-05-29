@@ -5,51 +5,59 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavMenuBtn from "./NavMenuBtn";
 
 const Navigation = ({ current }) => {
-
   const menuBtns = [
-    { 
+    {
       btnId: 1,
-      menu: "Hello", 
+      menu: "Hello",
       link: "/",
     },
     {
       btnId: 2,
-      menu: "About", 
+      menu: "About",
       link: "/#about",
     },
     {
       btnId: 3,
-      menu: "Portfilio", 
+      menu: "Portfilio",
       link: "/#portfolio",
     },
     {
       btnId: 4,
-      menu: "Work", 
+      menu: "Work",
       link: "#",
     },
     {
       btnId: 5,
-      menu: "Blog", 
+      menu: "Blog",
       link: "#",
     },
     {
       btnId: 6,
-      menu: "Contact", 
+      menu: "Contact",
       link: "contact-me",
-    }
+    },
   ];
+
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
+  const openMenuBtn = () => {
+    setMenuOpen(!menuOpen);
+  }
+
   return (
     <nav className="flex justify-between items-center p-4">
       <Link to={"/"}>
         <img src={logo} alt="Logo Pic" className="md:w-30 xs:w-20" />
       </Link>
-      <div className="h-full text-xl lg:flex justify-between gap-5 text-font py-1 xs:hidden" >
+      
+
+      <div className={`text-xl lg:flex justify-between gap-5 text-font py-1 ${menuOpen ? "flex flex-col absolute bg-aboutme top-15 right-0 gap-2 justify-start w-40 h-fit p-3" : "hidden"}`}>
         {menuBtns.map((menuBtn) => (
           <NavMenuBtn key={menuBtn.btnId} menuBtn={menuBtn} />
         ))}
       </div>
 
-      <div className="flex justify-between items-center gap-4">
+      <div className={`flex justify-between items-center gap-4`}>
         <Link
           to={"/cv"}
           className="bg-iconic sm:px-4 xs:px-2 text-font md:text-lg sm:text-md xs:text-sm cursor-pointer sm:py-2 xs:py-1"
@@ -63,6 +71,21 @@ const Navigation = ({ current }) => {
           Let's Talk!
         </a>
       </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="size-6 text-font xs:block lg:hidden"
+        onClick={openMenuBtn}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+        />
+      </svg>
     </nav>
   );
 };
