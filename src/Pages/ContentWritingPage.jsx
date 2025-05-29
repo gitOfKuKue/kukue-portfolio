@@ -5,9 +5,6 @@ import Methods from "../JavaScripts/methods";
 import { useParams } from "react-router-dom";
 import portfolios from "../JavaScripts/portfolio";
 
-
-
-
 const ContentWritingPage = () => {
   const { productId } = useParams(); // Taking id
   const currentCw = portfolios.contentWriting.find(
@@ -18,7 +15,7 @@ const ContentWritingPage = () => {
 
   return (
     <>
-      <section className="my-10">
+      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5">
         {/* Side Bar */}
         <SideBar
           productId={productId}
@@ -28,41 +25,51 @@ const ContentWritingPage = () => {
 
         <Container>
           <div
-            className={`grid grid-cols-2 p-10 bg-aboutme rounded-md h-[800px]`}
+            className={`grid xl:grid-cols-2 xs:grid-cols-1 xl:p-10 xs:p-3 bg-aboutme rounded-md xl:h-[800px] xs:h-fit`}
           >
             {currentCw.images.map((image, index) => (
               <img
                 src={image}
                 alt={currentCw.title}
-                className="w-120 mb-5"
+                className="xl:w-120 xs:w-full mb-5"
                 key={index}
               />
             ))}
-            <p className="h-full overflow-scroll row-span-2 text-font text-xl">
-              {currentCw.content.split("\n").map((line, index) => (
-                <span key={index}>
-                  {line}
-                  <br />
-                </span>
-              ))}
-            </p>
+
+            <div className="row-span-2">
+              <h1 className="text-font text-3xl font-bold xl:hidden xs:block">
+                {currentCw.title}
+              </h1>
+              <p className="text-font-light mb-5 xl:hidden xs:block">{currentCw.type}</p>
+
+              <p className="xl:h-[720px] xl:overflow-scroll text-font text-xl xl:border-0 xs:border-font xs:border-1 xs:p-3 xs:mb-10">
+                {currentCw.content.split("\n").map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </p>
+            </div>
 
             {/* Description */}
             <div className=" text-font flex flex-col justify-start items-start">
-              <h1 className="text-3xl font-bold">{currentCw.title}</h1>
-              <p className="text-font-light mb-5">{currentCw.type}</p>
-              <p className="">{currentCw.description}</p>
+              <h1 className="text-3xl font-bold xs:hidden xl:block">
+                {currentCw.title}
+              </h1>
+              <p className="text-font-light mb-5 xs:hidden xl:block">{currentCw.type}</p>
+              <p className="mb-5">{currentCw.description}</p>
               <div className="flex justify-between gap-5 mt-auto">
                 <a
                   href={currentCw.pdf}
                   download
-                  className="py-3 px-4 bg-iconic text-font text-xl rounded-md hover:bg-background hover:text-iconic"
+                  className="md:py-3 md:px-4 xs:py-1 xs:px-2 xs:text-sm bg-iconic text-font md:text-xl rounded-md hover:bg-background hover:text-iconic"
                 >
                   Download PDF
                 </a>
                 <a
                   href={currentCw.postLink}
-                  className="py-3 px-4 border-iconic border-1 text-iconic text-xl rounded-md hover:border-font hover:text-font"
+                  className="md:py-3 md:px-4 xs:py-1 xs:px-2 xs:text-sm border-iconic border-1 text-iconic md:text-xl rounded-md hover:border-font hover:text-font"
                 >
                   See on Facebook
                 </a>

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const SideBar = ({ productId, portfolio, link }) => {
   return (
     // Side Bar
-    <aside className="bg-aboutme absolute rounded-md h-[800px] p-5">
-      <div className="h-full overflow-scroll">
+    <aside className="bg-aboutme 2xl:absolute rounded-md 2xl:h-[800px] xs:h-fit p-5 2xl:w-fit xs:w-[85%] xs:mx-auto">
+      <div className="2xl:h-full xs:h-fit overflow-scroll 2xl:block xs:flex xs:gap-5 xs:items-center">
         {portfolio.map((project) => (
           <Link
             to={`/${link}/${project.id}`}
@@ -17,7 +17,7 @@ const SideBar = ({ productId, portfolio, link }) => {
               key={project.id}
               src={project.images[0]}
               alt={project.title}
-              className={`w-50 ${project.id == productId && "brightness-50"}`}
+              className={`w-30 ${project.id == productId && "brightness-50"}`}
             />
           </Link>
         ))}

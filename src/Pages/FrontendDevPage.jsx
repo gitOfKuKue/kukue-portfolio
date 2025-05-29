@@ -15,7 +15,7 @@ const FrontendDevPage = () => {
 
   return (
     <>
-      <section className="my-10">
+      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5">
         {/* Side Bar */}
         <SideBar
           productId={productId}
@@ -23,8 +23,8 @@ const FrontendDevPage = () => {
           link="frontend-developments"
         />
 
-        <Container className="h-[800px] p-10 bg-aboutme rounded-md ">
-          <div className={`grid grid-cols-2 overflow-scroll h-[700px] gap-5`}>
+        <Container className="lg:h-[800px] xs:h-fit lg:p-10 xs:p-3 bg-aboutme rounded-md ">
+          <div className={`grid lg:grid-cols-2 xs:grid-cols-1 overflow-scroll lg:h-[700px] xs:h-fit gap-5`}>
             <img
               src={currentFd.images[0]}
               alt={currentFd.title}
@@ -39,17 +39,17 @@ const FrontendDevPage = () => {
               <a
                 href={currentFd.githublink}
                 download
-                className="py-3 px-4 bg-iconic text-font text-xl rounded-md hover:bg-background hover:text-iconic"
+                className="lg:py-3 lg:px-4 xs:py-1 xs:px-2 bg-iconic text-font lg:text-xl xs:text-sm rounded-md hover:bg-background hover:text-iconic"
               >
                 Go to GitHub
               </a>
             </div>
             {currentFd.images.slice(1).map((image, index) => (
-              <div>
+              <div className="lg:col-span-1 xs:col-span-2">
                 <img
                   src={image}
                   alt={currentFd.title}
-                  className="w-full mb-5 col-span-1 border border-font"
+                  className="w-full mb-5 border border-font"
                   key={index}
                   id={`pic-${index}`}
                 />
