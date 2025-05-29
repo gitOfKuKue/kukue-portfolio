@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-iconic: #1f7d53;
+  --color-font: #eeeeee;
+  --color-font-light: #dbdbdb95;
+  --color-background: #272727;
+  --color-aboutme: #373a40;
+  --color-dark: #030303;
+
+  --breakpoint-xs: 350px;
+}
+
+* {
+  scroll-behavior: smooth;
+  user-select: none;
+}
+
+/* Hiding Scrollbar */
+body ::-webkit-scrollbar, html ::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Active btn */
+.active{
+  color: var(--color-iconic);
+}
+
+.hello-section {
+  background-image: url("./assets/images/background-shapes.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.aboutme-section {
+  background-image: url("./assets/images/background-shapes1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.custom-shape-divider-top-1747829722 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1747829722 svg {
+  position: relative;
+  display: block;
+  width: calc(173% + 1.3px);
+  height: 174px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1747829722 .shape-fill {
+  fill: var(--color-background);
+}
+
+/* Services */
+.service-card:hover {
+  background-color: var(--color-iconic);
+}
+.service-card:hover .service-card-icon {
+  color: var(--color-font);
+}
+
+/* Print Section for CV */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #print-section,
+  #print-section * {
+    visibility: visible;
+  }
+  #print-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+/* Contact Section */
+.contact-card:hover {
+  background-color: var(--color-iconic);
+}
+
+.contact-card:hover .contact-section-icon {
+  color: var(--color-font);
+}
+
+.currentSlide{
+  display: block;
+}
