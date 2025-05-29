@@ -28,10 +28,10 @@ const router = createBrowserRouter([
           path: "contact-me",
           element: <ContactMe />,
         },
-        // {
-        //   path: "curriculum-vitae",
-        //   element: <CurriculumVitae />,
-        // },
+        {
+          path: "cv",
+          element: <CurriculumVitae />,
+        },
         {
           path: "graphic-designs/:productId",
           element: <GraphicDesignPage />,
