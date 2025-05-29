@@ -72,7 +72,7 @@ const PortfolioSection = () => {
         {/* Graphic Design Card Section */}
         <div className="mb-8">
           <h1 className="text-2xl text-font font-bold mb-3">Graphic Design</h1>
-          <div className="grid md:grid-cols-2 gap-5 sm:grid-cols-1">
+          <div className="grid grid-cols-2 md:gap-5 xs:gap-1">
             {Object.entries(portfolios).map(
               ([key, values]) => key === "graphicDesign" && (
                 values.map((value) => (

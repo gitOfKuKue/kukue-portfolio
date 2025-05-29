@@ -11,7 +11,7 @@ const GraphicDesignCard = ({ portfolio }) => {
         <h1 className="2xl:text-2xl font-bold lg:text-xl sm:text-2xl">{portfolio.title}</h1>
         <h3 className="text-font-light mb-4 2xl:text-xl lg:text-sm sm:text-xl">{portfolio.type}</h3>
         <p className="line-clamp-3 mb-5 sm:text-xl md:text-md">{portfolio.description}</p>
-        <Link to={`/graphic-designs/${id}`} className="bg-iconic md:py-2 md:px-4 xs:py-3 xs:px-6 sm:text-xl md:text-md mt-auto">More details</Link>
+        <Link to={`/graphic-designs/${id}`} className="bg-iconic md:py-2 md:px-4 xs:py-2 xs:px-4 sm:text-xl xs:text-sm md:text-md mt-auto md:mx-0 xs:mx-auto">More details</Link>
       </div>
     </div>
   );

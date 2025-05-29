@@ -44,7 +44,7 @@ const ServicesSection = () => {
           <h1 className="text-iconic text-5xl font-bold text-center mb-8">
             Services
           </h1>
-          <div className="flex md:flex-row xs:flex-col justify-between gap-3">
+          <div className="flex sm:flex-row xs:flex-col justify-between gap-3">
             {services.map((service) => (
               <Services key={service.id} service={service} />
             ))}

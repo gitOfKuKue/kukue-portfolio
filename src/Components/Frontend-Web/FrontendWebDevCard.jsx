@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const FrontendWebDevCard = ({portfolio}) => {
   const id = portfolio.id;
   return (
-    <div className="md:p-5 xs:p-2 bg-aboutme flex flex-col justify-start items-start gap-3 text-font rounded-md">
+    <div className="sm:p-5 xs:p-2 bg-aboutme flex flex-col justify-start items-start gap-3 text-font rounded-md">
       <img src={`${portfolio.images[0]}`} alt="Portfolio Card" className="w-full" />
       <div className="h-full flex flex-col items-start justify-start">
         <h1 className="text-2xl font-bold">{portfolio.title}</h1>
