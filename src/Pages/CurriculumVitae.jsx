@@ -9,7 +9,7 @@ import months from "../JavaScripts/months";
 import Education from "../Components/Education";
 import Certifications from "../Components/Certifications";
 import WorkExperience from "../Components/WorkExperience";
-import SkillBarChart from "../Components/skillBarChart";
+// import SkillBarChart from "../Components/skillBarChart";
 import Detail from "../Components/Detail";
 import { faPrint } from "@fortawesome/free-solid-svg-icons";
 
@@ -115,7 +115,7 @@ const CurriculumVitae = () => {
               <h1 className="text-2xl font-bold mb-2 text-font text-center">
                 Personal Skills
               </h1>
-              <SkillBarChart />
+              {/* <SkillBarChart /> */}
             </div>
           </div>
         </Container>
