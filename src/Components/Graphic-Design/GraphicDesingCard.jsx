@@ -6,7 +6,7 @@ const GraphicDesignCard = ({ portfolio }) => {
   const id = portfolio.id;
   return (
     <div className="p-3 bg-aboutme flex md:flex-row xs:flex-col justify-start items-start gap-3 text-font rounded-md">
-      <img src={`${portfolio.images[0]}`} alt="Portfolio Card" className="md:w-50 xs:w-full xs:h-fit" />
+      <img src={`${portfolio.images[0]}`} alt="Portfolio Card" className="md:w-50 xs:w-full xs:h-fit xs:h-[546px]" />
       <div className="h-full flex flex-col items-start justify-start">
         <h1 className="2xl:text-2xl font-bold lg:text-xl sm:text-2xl">{portfolio.title}</h1>
         <h3 className="text-font-light mb-4 2xl:text-xl lg:text-sm sm:text-xl">{portfolio.type}</h3>
