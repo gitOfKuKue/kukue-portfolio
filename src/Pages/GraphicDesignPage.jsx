@@ -32,7 +32,7 @@ const GraphicDesignPage = () => {
                 <img
                   src={image}
                   alt={currentGD.title}
-                  className="lg:h-150 xs:h-full mb-5"
+                  className="lg:h-150 xs:h-[546px] mb-5 mx-auto"
                   key={index}
                 />
               ))}
