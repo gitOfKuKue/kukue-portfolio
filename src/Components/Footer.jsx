@@ -5,6 +5,8 @@ import { faFacebook, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import logo from "../assets/icons/logo.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import contacts from "../JavaScripts/contact";
+import ContactIcons from "./ContactIcons";
 
 const Footer = () => {
   const date = new Date();
@@ -29,15 +31,19 @@ const Footer = () => {
         </ul>
         <div className="md:col-span-2 xs:col-span-5 md:mb-0 xs:mt-10">
           <p className="">GOT A POSITION IN MIND?</p>
-          <h1 className="2xl:text-8xl lg:text-6xl md:text-5xl sm:text-7xl xs:text-5xl font-bold">
+          <a href={contacts[contacts.length - 1].link} className="2xl:text-8xl lg:text-6xl md:text-5xl sm:text-7xl xs:text-5xl font-bold">
             Let's talk
-          </h1>
+          </a>
         </div>
       </div>
 
       <div className="flex justify-start items-center gap-3 md:my-5 xs:my-10">
         <div className="bg-dark inline-block p-3 rounded-md">
-          <img src={logo} alt="logo" className="2xl:w-50 lg:w-40 sm:w-30 xs:w-20" />
+          <img
+            src={logo}
+            alt="logo"
+            className="2xl:w-50 lg:w-40 sm:w-30 xs:w-20"
+          />
         </div>
         <ul className="md:text-md xs:text-sm">
           <li>Graphic Designer</li>
@@ -48,34 +54,16 @@ const Footer = () => {
 
       <div className="flex justify-between items-baseline py-5">
         <p className="md:text-md xs:text-sm">© {date.getFullYear()} @ Ku Kue</p>
-        <div className="flex justify-between gap-5">
+        <div className="flex justify-between items-center gap-5">
+          {contacts.map((contact) => (
+            <ContactIcons key={contact.id} contact={contact} />
+          ))}
           <HashLink
             to="/contact-me#compose-me"
             className="bg-background md:text-xl xs:text-sm text-iconic md:py-2 md:px-4 xs:py-1 xs:px-2 rounded-md cursor-pointer"
           >
             Compose
           </HashLink>
-          <a href="#">
-            <FontAwesomeIcon
-              icon={faFacebook}
-              className="md:text-5xl xs:text-2xl"
-              name="facebook(Ku Kue)"
-            />
-          </a>
-          <a href="mailto:kukue014@gmail.com">
-            <FontAwesomeIcon
-              icon={faEnvelope}
-              className="md:text-5xl xs:text-2xl"
-              name="email"
-            />
-          </a>
-          <a href="#">
-            <FontAwesomeIcon
-              icon={faWhatsapp}
-              className="md:text-5xl xs:text-2xl"
-              name="Whatsapp"
-            />
-          </a>
         </div>
       </div>
     </footer>

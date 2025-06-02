@@ -3,7 +3,7 @@ import React from "react";
 
 const ContactCard = ({ contact }) => {
   return (
-    <div className="contact-card bg-aboutme p-4 rounded-sm text-font cursor-pointer">
+    <div className="contact-card bg-aboutme p-4 rounded-sm text-font cursor-pointer" id={`contact-cont-${contact.id}`}>
       <a href={contact.link} className="flex justify-between items-center">
         <div className="flex justify-start items-center gap-4">
           <FontAwesomeIcon icon={contact.icon} className="md:text-6xl xs:text-5xl" />
@@ -12,7 +12,8 @@ const ContactCard = ({ contact }) => {
             <h1 className="md:text-3xl xs:text-2xl ">{contact.platform}</h1>
           </div>
         </div>
-        <svg
+        <img src={contact.image} alt={contact.platform} className="h-20 rounded-sm" />
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -25,7 +26,7 @@ const ContactCard = ({ contact }) => {
             strokeLinejoin="round"
             d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
           />
-        </svg>
+        </svg> */}
       </a>
     </div>
   );

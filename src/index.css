@@ -17,12 +17,13 @@
 }
 
 /* Hiding Scrollbar */
-body ::-webkit-scrollbar, html ::-webkit-scrollbar {
+body ::-webkit-scrollbar,
+html ::-webkit-scrollbar {
   display: none;
 }
 
 /* For Active btn */
-.active{
+.active {
   color: var(--color-iconic);
 }
 
@@ -73,11 +74,12 @@ body ::-webkit-scrollbar, html ::-webkit-scrollbar {
     visibility: hidden;
   }
 
-  #print-section{
+  #print-section {
     display: block;
   }
 
-  #print-section, #print-section * {
+  #print-section,
+  #print-section * {
     visibility: visible;
   }
 
@@ -102,6 +104,10 @@ body ::-webkit-scrollbar, html ::-webkit-scrollbar {
   color: var(--color-font);
 }
 
-.currentSlide{
+.currentSlide {
+  display: block;
+}
+
+.contact-card:hover .qr {
   display: block;
 }

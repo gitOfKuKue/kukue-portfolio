@@ -18,10 +18,7 @@ const ContactMe = () => {
                 <span className="text-iconic">you here!</span>
               </h1>
               <p className="text-center md:w-[50%] xs:w-[80%] m-auto text-font-light mb-8">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                nam omnis in cum exercitationem? Eligendi blanditiis enim
-                dolorem nemo eaque, fuga, ullam amet et suscipit itaque iste,
-                aperiam quod reprehenderit.
+                Welcome to my contact page. If you have any questions or would you like to contact me for any reason, feel free to reach out to me using the contact information provided below. I will do my best to respond to your message as soon as possible. Thank you for visiting my website!
               </p>
               <div className="flex justify-center gap-3">
                 <a
@@ -31,7 +28,7 @@ const ContactMe = () => {
                   Facebook (Ku Kue)
                 </a>
                 <a
-                  href={contacts[contacts.length - 1].link}
+                  href={contacts[contacts.length - 2].link}
                   className="bg-transparent border border-iconic md:py-2 md:px-6 xs:py-1 xs:px-4 rounded-sm md:text-xl xs:text-md text-iconic"
                 >
                   GitHub
