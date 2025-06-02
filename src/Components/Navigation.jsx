@@ -67,7 +67,7 @@ const Navigation = ({ current }) => {
           Let's Talk!
         </a>
         <Link to="profile">
-          <FontAwesomeIcon icon={faCircleUser} className="text-5xl text-iconic" />
+          <FontAwesomeIcon icon={faCircleUser} className="lg:text-5xl xs:text-3xl md:text-4xl text-iconic" />
         </Link>
       </div>
       <svg
