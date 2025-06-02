@@ -52,9 +52,9 @@ const Footer = () => {
         </ul>
       </div>
 
-      <div className="flex justify-between items-baseline py-5">
-        <p className="md:text-md xs:text-sm">© {date.getFullYear()} @ Ku Kue</p>
-        <div className="flex justify-between items-center gap-5">
+      <div className="flex justify-between items-baseline md:flex-row xs:flex-col py-5">
+        <p className="md:text-md xs:text-sm md:mb-0 xs:mb-5">© {date.getFullYear()} @ Ku Kue</p>
+        <div className="flex justify-between items-center gap-5 flex-wrap">
           {contacts.map((contact) => (
             <ContactIcons key={contact.id} contact={contact} />
           ))}
