@@ -18,8 +18,8 @@ const Profile = () => {
     <>
         <Container>
           <section className="flex justify-between items-center py-10">
-            <img src={myPic4} alt="" className="w-1/3" />
-            <div className=" bg-aboutme p-10 rounded-lg w-2/3">
+            <img src={myPic4} alt="" className="w-1/3 xs:hidden lg:block" />
+            <div className=" bg-aboutme p-10 rounded-lg w-2/3 xs:w-full lg:w-1/2">
               <div className="border-b-2 border-b-iconic pb-5 flex justify-between items-center">
                 <h1 className="text-4xl text-iconic font-bold">
                   Personal Detail
