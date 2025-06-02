@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navigation from "../Components/Navigation";
 import Container from "../Components/Container";
 import Talking from "../assets/images/men-talking-pana.svg";
 import contacts from "../JavaScripts/contact";
 import ContactSection from "../Components/ContactSection";
-import Error from "../Components/ErrorAlert";
+import PopUpBox from "../Components/PopUpBox";
+import MethodsContext from "../Context/MethodsContext";
 const ContactMe = () => {
-  const errorObj = new Error();
+
+  const {handlePopUpBox, handleMsg, handleType, isOpen, msg, type} = useContext(MethodsContext);
+  const handleContMsg = (msg) => {
+    handleMsg(msg);
+  }
+  const handleContType = (type) => {
+    handleMsg(type);
+  }
   return (
     <>
       <section className="my-10" id="contact-me">
         <Container>
-          <div className="md:h-screen">
+          <div className="">
             <div className="mb-8">
               <h1 className="2xl:text-6xl text-font text-center font-bold md:mb-8 xs:mb-5 xs:text-2xl">
                 I'm so glad to see{" "}
@@ -44,11 +52,7 @@ const ContactMe = () => {
           </div>
         </Container>
       </section>
-      <errorObj.ErrorAlert
-        error={"Please, fill your name and message"}
-        className="text-font"
-      />
-      ;
+      <PopUpBox msg={msg} isOpen={isOpen} button="OK" type={type}/>
     </>
   );
 };

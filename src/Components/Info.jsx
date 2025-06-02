@@ -3,7 +3,6 @@ import Methods from "../JavaScripts/methods";
 import months from "../JavaScripts/months";
 
 const Info = ({ detail }) => {
-  console.log(detail);
   const methods = new Methods();
   return (
     <>

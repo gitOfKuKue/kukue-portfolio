@@ -11,7 +11,7 @@ import ContactIcons from "./ContactIcons";
 const Footer = () => {
   const date = new Date();
   return (
-    <footer className="bg-iconic md:py-20 md:px-10 xs:py-10 xs:px-5 text-background mt-auto">
+    <footer className="bg-iconic md:py-20 md:px-10 xs:py-10 xs:px-5 text-background mt-auto" id="footer">
       <h1 className="text-xl font-bold">Thu Htet Naing @ Ku Kue.</h1>
       <div className="grid grid-cols-5 border-b-1 border-dashed py-20">
         <ul className="md:col-span-1 sm:col-span-2 xs:col-span-2 h-full flex flex-col justify-evenly items-start">

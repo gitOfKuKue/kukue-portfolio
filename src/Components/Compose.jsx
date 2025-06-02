@@ -1,43 +1,72 @@
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useContext, useState } from "react";
 import Methods from "../JavaScripts/methods";
-import ErrorAlert from "./ErrorAlert";
-import Error from "./ErrorAlert";
+import MethodsContext from "../Context/MethodsContext";
 
 const Compose = () => {
-  const errorObj = new Error();
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleName = (name) => {
+    setName(name.target.value);
+  };
+
+  const handleSubject = (subject) => {
+    setSubject(subject.target.value);
+  };
+
+  const handleMessage = (message) => {
+    setMessage(message.target.value);
+  };
+
   let msg = "";
-  const showError = document.getElementById("show-error");
+
+  const { handlePopUpBox, handleMsg, handleType } = useContext(MethodsContext);
 
   function receiveEmail() {
     let params = {
-      name: document.getElementById("fromWho").value,
-      subject: document.getElementById("subject").value,
-      message: document.getElementById("message").value,
+      name: name,
+      subject: subject,
+      message: message,
     };
+    msg = "Email Sent Successfully";
     emailjs
       .send("service_lv1s1vc", "template_zhopvfx", params)
-      .then(alert("Email sent successfully"));
+      .then(
+        handleComposeType("done"),
+        msg = "Email sent successfully",
+        handleComposeMsg(msg),
+        handlePopUpBox()
+      );
   }
 
   function checkingInput() {
-    let name = document.getElementById("fromWho").value;
-    let subject = document.getElementById("subject").value;
-    let message = document.getElementById("message").value;
     if (name == "" || subject == "" || message == "") {
+      handleComposeType("error");
       msg = "Please fill all the fields";
-      errorObj.handleToggle();
+      handleComposeMsg(msg);
+      handlePopUpBox();
+      document.querySelector("#contact-me ").style.filter = "blur(5px)"
+      document.querySelector("#navigation ").style.filter = "blur(5px)"
+      document.querySelector("#footer ").style.filter = "blur(5px)"
+      document.querySelector("body ").style.position = "fixed"
+      document.querySelector("body ").style.width = "100%"
+
+
     } else {
       receiveEmail();
     }
   }
 
-  function createDiv() {
-    const newDiv = document.createElement("div");
-    newDiv.innerHTML = "<h1>EHllo WOrld</h1>";
-    document.getElementById("show-error").appendChild(newDiv);
-  }
+  const handleComposeMsg = (msg) => {
+    handleMsg(msg);
+  };
+
+  const handleComposeType = (type) => {
+    handleType(type);
+  };
 
   return (
     <>
@@ -69,6 +98,8 @@ const Compose = () => {
               id="fromWho"
               placeholder="Your name"
               className="w-full"
+              value={name}
+              onChange={handleName}
             />
           </div>
 
@@ -76,13 +107,15 @@ const Compose = () => {
             <label htmlFor="subject" className="w-20">
               Subject :{" "}
             </label>
-            <input type="text" id="subject" className="w-full" />
+            <input type="text" id="subject" className="w-full" value={subject} onChange={handleSubject}/>
           </div>
 
           <textarea
             name=""
             id="message"
             className="border border-iconic w-full h-[200px] resize-none"
+            value={message}
+            onChange={handleMessage}
           ></textarea>
           <button
             className="bg-iconic text-font py-2 px-4 rounded-sm text-xl cursor-pointer"
@@ -93,7 +126,6 @@ const Compose = () => {
           </button>
         </form>
       </div>
-
     </>
   );
 };

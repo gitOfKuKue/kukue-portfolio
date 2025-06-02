@@ -6,6 +6,7 @@ import AboutMe from "../Components/AboutMe";
 import Hello from "../Components/Hello";
 import Footer from "../Components/Footer";
 import PortfolioSection from "../Components/PortfolioSection";
+import MethodsProvider from "../Context/MethodsProvider";
 
 const MainPage = () => {
   return (
