@@ -15,7 +15,7 @@ const ContentWritingPage = () => {
 
   return (
     <>
-      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5 xs:justify-end">
+      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5 xs:justify-end" id="content-writing-page">
         {/* Side Bar */}
         <SideBar
           productId={productId}

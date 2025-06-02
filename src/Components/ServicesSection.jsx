@@ -12,8 +12,9 @@ const ServicesSection = () => {
       experience: 2021,
       title: "Graphic Design",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, quod.",
+        "After my matriculation exam, I have been interested in graphic design and I studied the ideas, designs and theories.",
       bgColor: "bg-iconic",
+      toSection: "graphic-design",
     },
     {
       id: 2,
@@ -21,8 +22,10 @@ const ServicesSection = () => {
       experience: 2022,
       title: "Content Writing",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, quod.",
+        "My family career is traders. Sometimes, I had to post the advertisements on social media and I have learned a lot from it.",
       bgColor: "bg-service-card",
+      toSection: "content-writing",
+
     },
     {
       id: 3,
@@ -30,8 +33,10 @@ const ServicesSection = () => {
       experience: 2020,
       title: "Frontend Web Development",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, quod.",
+        "Related to the graphic design, I also interested in web development. I have learned HTML, CSS, Bootstrap, JavaScript, ReactJS and TailwindCSS.",
       bgColor: "bg-service-card",
+      toSection: "frontend-web-development",
+
     },
   ];
   return (

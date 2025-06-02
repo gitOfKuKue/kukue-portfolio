@@ -9,6 +9,7 @@ import ContactMe from "../Pages/ContactMe";
 import GraphicDesignPage from "../Pages/GraphicDesignPage";
 import ContentWritingPage from "../Pages/ContentWritingPage";
 import FrontendDevPage from "../Pages/FrontendDevPage";
+import Profile from "../Pages/Profile";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         {
           path: "cv",
           element: <CurriculumVitae />,
+        },
+        {
+          path: "profile",
+          element: <Profile />,
         },
         {
           path: "graphic-designs/:productId",

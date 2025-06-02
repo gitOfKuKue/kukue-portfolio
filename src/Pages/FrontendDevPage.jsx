@@ -15,7 +15,7 @@ const FrontendDevPage = () => {
 
   return (
     <>
-      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5">
+      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5" id="frontend-web-dev-page">
         {/* Side Bar */}
         <SideBar
           productId={productId}

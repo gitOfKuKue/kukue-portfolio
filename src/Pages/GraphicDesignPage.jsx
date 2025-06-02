@@ -16,7 +16,7 @@ const GraphicDesignPage = () => {
 
   return (
     <>
-      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5">
+      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5" id="graphic-design-page">
         {/* Side Bar */}
           <SideBar
             productId={productId}

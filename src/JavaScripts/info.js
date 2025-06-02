@@ -17,13 +17,13 @@ const infos = {
   details: [
     {
       id: "d1",
-      type: "name",
+      type: "Name",
       info: "Thu Htet Naing @ Ku Kue",
       icon: faChessKing,
     },
     {
       id: "d2",
-      type: "birthday",
+      type: "Birthday",
       info: {
         birthDay: 14,
         birthMonth: 11,
@@ -33,31 +33,25 @@ const infos = {
     },
     {
       id: "d3",
-      type: "phone",
+      type: "Phone",
       info: "+84 898 247 910",
       icon: faPhone,
     },
     {
       id: "d4",
-      type: "email",
+      type: "Email",
       info: "kukue014@gmail.com",
       icon: faEnvelope,
     },
     {
       id: "d5",
-      type: "address",
+      type: "Address",
       info: "M18, Duong D7, Phu My Ward, District 7, Ho Chi Minh City",
-      icon: faLocation,
+      icon: faLocationDot,
     },
     {
-      id: "d6",
-      type: "github",
-      info: "https://github.com/gitOfKukue",
-      icon: faAddressBook,
-    },
-    {
-      id  : "d7",
-      type: "position",
+      id  : "d6",
+      type: "Position",
       info: "Student",
       icon: faUser,
     },

@@ -70,7 +70,7 @@ const PortfolioSection = () => {
         </div>
 
         {/* Graphic Design Card Section */}
-        <div className="mb-8">
+        <div className="mb-8" id="graphic-design">
           <h1 className="text-2xl text-font font-bold mb-3">Graphic Design</h1>
           <div className="grid grid-cols-2 md:gap-5 xs:gap-1">
             {Object.entries(portfolios).map(
@@ -84,7 +84,7 @@ const PortfolioSection = () => {
         </div>
 
         {/* Content Writing Card Section */}
-        <div className="mb-8">
+        <div className="mb-8" id="content-writing">
           <h1 className="text-2xl text-font font-bold mb-3">Content Writing</h1>
           <div className="grid md:grid-cols-3 gap-5 sm:grid-cols-1">
             {Object.entries(portfolios).map(
@@ -98,7 +98,7 @@ const PortfolioSection = () => {
         </div>
 
         {/* Frontend Web Development Card Section */}
-        <div className="mb-8">
+        <div className="mb-8" id="frontend-web-development">
           <h1 className="text-2xl text-font font-bold mb-3">Frontend Web Development</h1>
           <div className="grid grid-cols-1 gap-5">
             {Object.entries(portfolios).map(

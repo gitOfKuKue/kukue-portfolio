@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import logo from "../assets/icons/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavMenuBtn from "./NavMenuBtn";
+import { faBriefcase, faCircleInfo, faCircleUser, faContactBook, faFaceSmile, faUser } from "@fortawesome/free-solid-svg-icons";
+import { icon } from "@fortawesome/fontawesome-svg-core";
 
 const Navigation = ({ current }) => {
   const menuBtns = [
@@ -10,31 +12,25 @@ const Navigation = ({ current }) => {
       btnId: 1,
       menu: "Hello",
       link: "/",
+      icon: faFaceSmile,
     },
     {
       btnId: 2,
       menu: "About",
       link: "/#about",
+      icon: faCircleInfo,
     },
     {
       btnId: 3,
       menu: "Portfilio",
       link: "/#portfolio",
+      icon: faBriefcase,
     },
     {
       btnId: 4,
-      menu: "Work",
-      link: "#",
-    },
-    {
-      btnId: 5,
-      menu: "Blog",
-      link: "#",
-    },
-    {
-      btnId: 6,
       menu: "Contact",
       link: "contact-me",
+      icon: faContactBook,
     },
   ];
 
@@ -70,6 +66,9 @@ const Navigation = ({ current }) => {
         >
           Let's Talk!
         </a>
+        <Link to="profile">
+          <FontAwesomeIcon icon={faCircleUser} className="text-5xl text-iconic" />
+        </Link>
       </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"

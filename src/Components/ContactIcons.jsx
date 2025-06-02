@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 
 const ContactIcons = ({contact}) => {
-    console.log(contact.icon);
   return (
     <>
     <a href={contact.link} target="_blank" rel="noreferrer">

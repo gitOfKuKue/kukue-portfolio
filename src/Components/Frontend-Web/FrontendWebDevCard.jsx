@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link';
 
 const FrontendWebDevCard = ({portfolio}) => {
   const id = portfolio.id;
@@ -10,7 +11,7 @@ const FrontendWebDevCard = ({portfolio}) => {
         <h1 className="text-2xl font-bold">{portfolio.title}</h1>
         <h3 className="text-font-light mb-4">{portfolio.type}</h3>
         <p className="line-clamp-3 mb-5">{portfolio.description}</p>
-        <Link to={`/frontend-developments/${id}`} className="bg-iconic py-2 px-4 mt-auto">More details</Link>
+        <HashLink to={`/frontend-developments/${id}#frontend-web-dev-page`} className="bg-iconic py-2 px-4 mt-auto">More details</HashLink>
       </div>
     </div>
   )
