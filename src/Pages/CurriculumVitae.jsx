@@ -1,5 +1,5 @@
 import React from "react";
-import myPic3 from "./src/assets/images/my-pic3.jpg";
+import myPic3 from "../assets/images/my-pic3.jpg";
 import Container from "../Components/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import infos from "../JavaScripts/info";
