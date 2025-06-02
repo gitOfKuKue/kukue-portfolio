@@ -1,5 +1,5 @@
 import React from "react";
-import myPic3 from "../assets/images/my-pic3.jpg";
+import myPic3 from "./src/assets/images/my-pic3.jpg";
 import Container from "../Components/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import infos from "../JavaScripts/info";
@@ -41,7 +41,7 @@ const CurriculumVitae = () => {
                 <div className="">
                   <div className="w-50 h-50 overflow-hidden mb-5">
                     <img
-                      src="./src/assets/images/my-pic3.jpg"
+                      src={myPic3}
                       alt="My Profile"
                       className="my-[-60px]"
                     />
