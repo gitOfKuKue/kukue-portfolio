@@ -73,15 +73,23 @@ body ::-webkit-scrollbar, html ::-webkit-scrollbar {
     visibility: hidden;
   }
 
-  #print-section,
-  #print-section * {
+  #print-section{
+    display: block;
+  }
+
+  #print-section, #print-section * {
     visibility: visible;
   }
+
   #print-section {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
+  }
+
+  .noPrint {
+    display: none !important;
   }
 }
 

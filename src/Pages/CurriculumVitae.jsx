@@ -14,6 +14,8 @@ import { faPrint } from "@fortawesome/free-solid-svg-icons";
 import SkillBarChart from "../Components/SkillBarChart";
 import cvPic from "../assets/images/Account-pana.svg";
 
+import cvDocs from "../assets/docs/Thu Htet Naing's [General] CV.pdf";
+
 const CurriculumVitae = () => {
   // Print function
   const printCV = () => {
@@ -23,8 +25,8 @@ const CurriculumVitae = () => {
     <>
       <section className="my-10">
         <Container>
-          <div className=" xs:hidden md:block">
-            <div className="w-full">
+          <div className="xs:hidden sm:block">
+            <div className="w-full noPrint">
               <button
                 onClick={printCV}
                 className="bg-iconic text-font text-md py-3 px-5 cursor-pointer rounded-sm mb-3"
@@ -113,7 +115,7 @@ const CurriculumVitae = () => {
                   ))}
                 </div>
               </div>
-              <div className="p-10 w-[90%] my-auto">
+              <div className="p-10 w-[85%] my-auto">
                 <h1 className="text-2xl font-bold mb-2 text-font text-center">
                   Personal Skills
                 </h1>
@@ -122,10 +124,10 @@ const CurriculumVitae = () => {
             </div>
           </div>
 
-          <div className="md:hidden xs:block">
+          <div className="sm:hidden xs:block noPrint">
             <img src={cvPic} alt="CV Picture" />
             <a
-              href="#"
+              href={cvDocs}
               className="flex justify-between items-center bg-iconic py-6 px-4 rounded-md m-auto w-[60%] text-font sm:text-xl xs:text-sm gap-5"
             >
               <h3>Download Curriculum Vitae</h3>

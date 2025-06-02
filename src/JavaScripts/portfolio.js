@@ -9,11 +9,13 @@ import contentPic1 from "../assets/portfolios/content-writing/content-pic1.jpg";
 import contentPic2 from "../assets/portfolios/content-writing/content-pic2.jpg";
 import contentPic3 from "../assets/portfolios/content-writing/content-pic3.jpg";
 import contentPic4 from "../assets/portfolios/content-writing/content-pic4.jpeg";
+import contentPic5 from "../assets/portfolios/content-writing/time-hacks.jpg";
 // PDF
 import content1 from "../assets/portfolios/content-writing/how-to-be-good-at-first-impression.pdf";
 import content2 from "../assets/portfolios/content-writing/CMU-scholar.pdf";
 import content3 from "../assets/portfolios/content-writing/summer-movie.pdf";
 import content4 from "../assets/portfolios/content-writing/Japan-international-manga-award.pdf";
+import content5 from "../assets/portfolios/content-writing/Time mangement hacks for busy students.pdf";
 
 // Frontend Development
 import ayeeDropshippingPic from "../assets/portfolios/frontend-web-dev/Ayee-dropshipping.png";
@@ -40,7 +42,7 @@ const portfolios = {
       title: "Tasumiki N4 Japanese Book",
       type: "Graphic Design",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "This book cover design was designed on 13rd May, 2025 for course assignment. This book is the design for Japanese N4.",
     },
     {
       id: 2,
@@ -48,7 +50,7 @@ const portfolios = {
       title: "ကျွန်တော်သိသောဖြည့်စွက်စာများအကြောင်း",
       type: "Graphic Design",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "This art was also created on 13rd May, 2025. This is the design for health knowledge sharing book.",
     },
     {
       id: 3,
@@ -56,7 +58,7 @@ const portfolios = {
       title: "ဆရာရဲ - ရူပဗေဒဆိုင်ရာမှတ်စုတိုများ",
       type: "Graphic Design",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "This book cover designs were created on 14th May, 2025. This idea is for the physic knowledge sharing book. I created two sides of book (Front side and back side).",
     },
     {
       id: 4,
@@ -64,7 +66,7 @@ const portfolios = {
       title: "Air Jordan 1 Mid",
       type: "Graphic Design",
       description:
-        "This graphic design is a social media post design for the Air Jordan 1 Mid. I created course assignment at MIGT-Graphic Design Course on 24th of May 2023",
+        "This Air Jordan Shoes design was created on 24th May, 2025. It is for the social media post on facebook.",
     },
     {
       id: 5,
@@ -72,7 +74,7 @@ const portfolios = {
       title: "iPhone 15 & iPhone 15 Pro",
       type: "Graphic Design",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "This design was aimmed to post the commercial adverdisement. It was designed on 24th May, 2025.",
     },
   ],
   contentWriting: [
@@ -109,8 +111,8 @@ First impression မှာ အရာရာကအရေးကြီးပါတ�
       title: "How to be good at first impression",
       type: "Content Writing",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-        postLink: "https://www.facebook.com/share/p/1AXfmwixLE/?mibextid=wwXIfr",
+        "This content was written for the first impression of a person. All of the ideas are referenced from google and then I created my content as my flow on 16th May, 2025 to post on the Dream Education (Non-porfit Organization).",
+      postLink: "https://www.facebook.com/share/p/1AXfmwixLE/?mibextid=wwXIfr",
     },
     {
       id: 2,
@@ -165,8 +167,8 @@ Resource - https://cmu.to/cmups2025-annoucement
       title: "Scholarship at Chiang Mai University",
       type: "Content Writing",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-        postLink: "https://www.facebook.com/share/p/14qAcvSwpN/?mibextid=wwXIfr",
+        "This content is for the Chiang Mai University scholarship announcement. I wrote this content on 11st May, 2025. It was uploaded on Aspire Now Orgnaization.",
+      postLink: "https://www.facebook.com/share/p/14qAcvSwpN/?mibextid=wwXIfr",
     },
     {
       id: 3,
@@ -197,8 +199,8 @@ Barbies ဆိုတာနဲ့ မသိသူမရှိဇာတ်ကာ�
       title: "Summer Vibe Movies",
       type: "Content Writing",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-        postLink: "https://www.facebook.com/share/p/1F3QFvGMj1/?mibextid=wwXIfr",
+        "This content is for the summer vibe movies that should be watched in the summer. It had already uploaded on Aspire Now Orgnaization Social Media facebook page.",
+      postLink: "https://www.facebook.com/share/p/1F3QFvGMj1/?mibextid=wwXIfr",
     },
     {
       id: 4,
@@ -249,8 +251,43 @@ How to Apply?
       title: "Japan International MANGA Award",
       type: "Content Writing",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-        postLink: "https://www.facebook.com/share/p/12L4UqqBhtA/?mibextid=wwXIfr",
+        "This content was for the Manga creators and I wrote it to announce the award for the best webtoon creators. You can read it on the Aspire Now Facebook page.",
+      postLink: "https://www.facebook.com/share/p/12L4UqqBhtA/?mibextid=wwXIfr",
+    },
+    {
+      id: 5,
+      images: [contentPic5],
+      pdf: content5,
+      content: `🤔 Aspirers လေးတွေက အလုပ်များကြတဲ့ ကျောင်းသားလေးတွေလား❓
+
+💁🏻 ဒါဆိုရင်တော့ ဒီ content လေးက အလုပ်များကြတဲ့ Aspirers လေးတွေအတွက်ပဲဖြစ်ပါတယ်။ Aspirers လေးတွေအလုပ်တွေများလို့ “ဘယ်ကစလို့ ဘာလုပ်ရမလဲမသိဘူး” ခဏခဏဖြစ်ဖူးကြတယ်မလား။ အတန်းတက်ရမှာတွေ၊ စာလေ့လာရမှာတွေ နဲ့အလုပ်များနေကြတာက ကြိုးစားလိုစိတ်ရှိတဲ့ ကျောင်းသားတိုင်းကြုံ့တွေ့ရတဲ့ ပြဿနာတစ်ခုပါ။ အဲ့ဒီလို ပြဿနာတွေဖြစ်ရတာကလည်း အချိန်ကိုစီမံခန့်ခွဲမှုမှာ အားနည်းလို့ဖြစ်တတ်ပါတယ်။ အဲ့ဒီတော့အခါ ပြဿနာတွေအနည်းနဲ့အများ ရှင်းရလေအောင် Aspire now ကနေ tips & tricks လေးတွေပြောပြပေးမယ်။ 😉
+
+1. Create a calendar 🗓️
+ကျောင်းသားအများစုက ကိုယ်ပိုင် Schedule ဆွဲဖို့ကိုပျင်းတတ်ကြပါတယ်။ ဒါပေမယ့် အခုလို အရာရာကိုနည်းပညာနဲ့ပဲ လုပ်ကိုင်နေတဲ့ခေတ်မှာ အချိန်ဇယားဆွဲဖို့ကိုပျင်းနေဦးမယ်ဆိုရင် ကိုယ်ဟာနောက်ကျကျန်ခဲ့ဖို့ပဲရှိပါတော့မယ်။ အဲ့လို Aspirers လေးတွေ နောက်ကျမကျန်ခဲ့အောင် အသုံးဝင်တဲ့ Calendar App လေးတွေကိုပြောပြပေးမယ်။
+Þ Google Calendar: ဒီ App လေးကတော့ လူတော်တော်များများသုံးကြတဲ့ App လေးဖြစ်သလို အသုံးပြုရတာလည်းလွယ်ကူပါတယ်။
+Þ Outlook Calendar: Microsoft က launch လုပ်ထားတာဖြစ်ပြီးတော့ Office သမားတွေအတွက်ဆိုပိုပြီးတောင် အဆင်ပြေဦးမှာပါ။
+Þ Fantastical: ဒီ App လေးကတော့ function တော်တော်များများကို free သုံးလို့ရတယ် ဆိုပေမယ့် တစ်ချို့ function တွေကိုတော့ လစဥ်ကြေးပေးပြီးမှသုံးလို့ ရမှာလည်းဖြစ်ပါတယ်။
+Þ Calendly: ဒါလေးကလည်း ကိုယ့်လုပ်ရမယ့် task တွေကိုစနစ်တကျ remind လုပ်လို့ရတဲ့ function တွေပါတာမို့ တစ်နေ့တာလုပ်ငန်းဆောင်တာတွေကို လွယ်လွယ်ကူကူ လုပ်ဆောင်နိုင်ပါတယ်။
+
+2. Set reminders 🚨
+ကိုယ်တွေကလူသားတွေဖြစ်တာကြောင့် မေ့လျော့တယ်ဆိုတာကလည်း ကိုယ်နဲ့အမြဲယှဥ်တွဲနေတာပါ။ အဲ့လိုမေ့လျော့မှုတွေလျော့နည်းရအောင် ကိုယ့်ကိုယ်ကို သတိရနေအောင်လုပ်ဆောင်နေဖို့လိုပါတယ်။ ဥပမာ - အပေါ်မှာပြောခဲ့တဲ့ App တွေအကူအညီနဲ့ reminder ထားထားပေးတာ၊ ကိုယ်မြင်သာမယ့် နေရာမှာ Sticky notes တွေကပ်ထားတာ။ အဲ့လိုလုပ်ဆောင်ပေးခြင်းဖြင့် ကိုယ့်လုပ်ဆောင်ရမယ့် အလုပ်တွေကိုလည်း သိနိုင်သလို Deadline တွေကိုလည်း အချိန်မှီ cover ဖြစ်နေမှာလည်းဖြစ်ပါတယ်။
+
+3. Build a personalized schedule📝
+အောင်မြင်တဲ့လူတိုင်က ကြိုတင်စဥ်းစားထားမှုတွေရှိနေပါတယ်။ ဘယ်လိုမျိုးလဲဆိုတော့ ကိုယ့်မနက်ဖြန်လုပ်ရမယ့် အလုပ်တွေကို ဒီနေ့ညအိပ်ရာမဝင်ခင်မှာ စဥ်းစားတတ်ကြပါတယ်။ အသေးစိတ်ကစလို့ ကြီးကြီးမားမား အရေးကြီးတဲ့ ကိစ္စတွေကိုပါစဥ်းစားထားခြင်းဖြင့် ကိုယ့်လုပ်ဆောင်ရမယ့်ကိစ္စဦးစားပေးတွေကိုလည်း သိနိုင်သလို မလိုလားအပ်တဲ့ အချိန်ကုန်မှုတွေကိုလည်း မဖြစ်စေတော့ပါဘူး။ အဲ့ဒါကြောင့် ကိုယ်လုပ်ရမယ့်အလုပ်တွေကို ကြိုတင်စဥ်းစားတတ်ခြင်းကလည်း ကောင်းမွန်တဲ့အလေ့အထတစ်ခုဖြစ်ပါတယ်။
+
+4. Prioritize ⏫
+ဦးစားပေးတတ်မှု စွမ်းရည်ကလည်း အချိန်မရှိတဲ့သူတွေအတွက်ရှိကိုရှိထားသင့်တဲ့ Soft-skill တစ်ခုလည်းဖြစ်ပါတယ်။ ကိစ္စတစ်ခုနှစ်ခုပဲလုပ်စရာရှိရင်တော့မသိသာသေးပေမယ့်၊ ကိစ္စတွေများလာရင်တော့ ဒီ skill က အရမ်းကိုအသုံးဝင်လာပါတယ်။ ဘယ်အရာကိုအရင်လုပ်ပြီးပြီးမှ ဘာကိုဆက်လုပ်သင့်လဲဆိုတာ တွေကမွေးရာပါပါလာတဲ့ စွမ်းရည်မဟုတ်ပါဘူး။ ကိုယ့်လုပ်သက်နဲ့ ပတ်ဝန်းကျင်ပေါ်လိုက်ပြီး တိုးတက်လာတဲ့ အရည်အချင်းတစ်ခုလည်းဖြစ်ပါတယ်။
+
+5. ကိုယ်ပိုင်အချိန်ထားရှိပါ။ 🧘🏻‍♂️
+ကိုယ်ကအလုပ်များတဲ့ သူဖြစ်ပေမယ့်လည်း ကိုယ့်ပိုင်အချိန်တော့ သတ်မှတ်ပေးထားသင့်ပါတယ်။ လူတွေပြောကြတဲ့ ကျန်းမာမှအလုပ်လုပ်နိုင်မှာ...။ ဟုတ်ပါတယ်။ အဲ့ဒါကြောင့် ကိုယ့်ပိုင်အချိန်ထားရှိပြီးတော့ အဲ့ဒီအချိန်အတော့အတွင်းမှာ အနားယူတာ၊ ကျန်းမာရေးလိုက်စားတာ၊ အားကစားပြုလုပ်တာ၊ ကိုယ်စိတ်ပန်းပြေရာကိုလုပ်ဆောင်တာ စတဲ့အလုပ်တွေကိုလည်း လုပ်ပေးသင့်ပါတယ်။ ကိုယ့်ဘဝကို ကိုယ်ပဲ ဟန်ချက်ညီအောင်ထိန်းရမှာမို့ မိမိခန္ဓာကိုယ်ကိုလည်း အနားပေးသင့်ပါတယ်။
+
+ခုပြောပြပေးခဲ့တဲ့ အချက်လေးတွကို သိရှိပြီးတော့ ကိုယ့်ရဲ့ နေ့စဥ်ဘဝမှာ အကျိုးရှိရှိလုပ်ငန်းဆောင်တာတွေကိုလုပ်ဆောင်နိုင်မယ်လို့လည်း Aspire now ကမျှော်လင့်ပါတယ်နော်။ ကိုယ်ရဲ့ တန်ဖိုးရှိတဲ့အချိန်တွေကို ကိုယ်ကပဲ ထိန်းသိမ်းရမှာဖြစ်လို့ လစ်ဟင်းမှုမရှိပဲ အကျိုးကျိုးရှိရှိအသုံးချလိုက်ကြရအောင်ပါ။
+`,
+      title: "Time hack for busy students",
+      type: "Content Writing",
+      description:
+        "This content was written for the advice to manage the time systematically for busy students.",
+      postLink: "https://www.facebook.com/share/p/1EMcys7Dhr/",
     },
   ],
   webDevelopment: [
@@ -261,25 +298,30 @@ How to Apply?
       title: "Ayee Dropshipping",
       type: "Frontend Web Development",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "This website was created for dropshipping business. I used HTML, CSS and JavaScript to create this website. It is not finished yet. I stopped to keep creation on it because I have other projects to do. I will continue to create this website after I finish my other projects.",
     },
     {
       id: 2,
       images: [myPortfolioPic1, myPortfolioPic2, myPortfolioPic3],
       githublink: "https://github.com/gitOfKuKue/my-portfolio.git",
-      title: "Ayee Dropshipping",
+      title: "Ku Kue Portfolio",
       type: "Frontend Web Development",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "This website was created for my portfolio. I used HTML, CSS, JavaScript and React. You can check it out this website. You can also uesed it on any devices and I created it for responsive design.",
     },
     {
       id: 3,
-      images: [infoAssistancePic1, infoAssistancePic2, infoAssistancePic3,  infoAssistancePic4],
+      images: [
+        infoAssistancePic1,
+        infoAssistancePic2,
+        infoAssistancePic3,
+        infoAssistancePic4,
+      ],
       githublink: "https://github.com/infoAssistance/HTML_Project.git",
       title: "Info Assistance",
       type: "Frontend Web Development",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "This website was created for my school project by using HTML, CSS, JavaScript, PHP and I was selected to participate in the competition in Nay Pyi Taw.",
     },
     {
       id: 4,
@@ -288,7 +330,7 @@ How to Apply?
       title: "UCSY Table Tennis Club Website",
       type: "Frontend Web Development",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "I was a founder of Table Tennis Club in University of Computer Studies, Yangon. So, I thought my club need a table tennis club website to announce our club activities. I created it since I was in Semester-2 of UCSY.",
     },
     {
       id: 5,
@@ -297,7 +339,7 @@ How to Apply?
       title: "UCSY Store Website",
       type: "Frontend Web Development",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "This website is on going project. I aim to sell the digital products in UCSY and later this website will be a platform for selling digital products. I will keep trying to update this project by using other languages.",
     },
     {
       id: 6,
@@ -306,7 +348,7 @@ How to Apply?
       title: "Bithumbnn Crypto Trading Web",
       type: "Frontend Web Development",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "This website is a freelance project. I worked as a freelance frontend developer with the team members from Yadanarbon Cyber City University for a crypto trading.",
     },
   ],
 };

@@ -58,7 +58,7 @@ const infos = {
     {
       id  : "d7",
       type: "position",
-      info: "Software Engineer",
+      info: "Student",
       icon: faUser,
     },
   ],

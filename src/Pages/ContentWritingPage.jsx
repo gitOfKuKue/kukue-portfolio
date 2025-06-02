@@ -15,7 +15,7 @@ const ContentWritingPage = () => {
 
   return (
     <>
-      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5">
+      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5 xs:justify-end">
         {/* Side Bar */}
         <SideBar
           productId={productId}
@@ -25,7 +25,7 @@ const ContentWritingPage = () => {
 
         <Container>
           <div
-            className={`grid xl:grid-cols-2 xs:grid-cols-1 xl:p-10 xs:p-3 bg-aboutme rounded-md xl:h-[800px] xs:h-fit`}
+            className={`grid xl:grid-cols-2 xs:grid-cols-1 xl:p-10 xs:p-3 bg-aboutme rounded-md xs:h-fit`}
           >
             {currentCw.images.map((image, index) => (
               <img
@@ -42,7 +42,7 @@ const ContentWritingPage = () => {
               </h1>
               <p className="text-font-light mb-5 xl:hidden xs:block">{currentCw.type}</p>
 
-              <p className="xl:h-[720px] xl:overflow-scroll text-font text-xl xl:border-0 xs:border-font xs:border-1 xs:p-3 xs:mb-10">
+              <p className="text-justify xl:h-[720px] xl:overflow-scroll text-font text-xl xl:border-0 xs:border-font xs:border-1 xs:p-3 xs:mb-10">
                 {currentCw.content.split("\n").map((line, index) => (
                   <span key={index}>
                     {line}
