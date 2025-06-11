@@ -4,17 +4,9 @@ import Container from "../Components/Container";
 import Talking from "../assets/images/men-talking-pana.svg";
 import contacts from "../JavaScripts/contact";
 import ContactSection from "../Components/ContactSection";
-import PopUpBox from "../Components/PopUpBox";
 import MethodsContext from "../Context/MethodsContext";
 const ContactMe = () => {
 
-  const {handlePopUpBox, handleMsg, handleType, isOpen, msg, type} = useContext(MethodsContext);
-  const handleContMsg = (msg) => {
-    handleMsg(msg);
-  }
-  const handleContType = (type) => {
-    handleMsg(type);
-  }
   return (
     <>
       <section className="my-10" id="contact-me">
@@ -52,7 +44,6 @@ const ContactMe = () => {
           </div>
         </Container>
       </section>
-      <PopUpBox msg={msg} isOpen={isOpen} button="OK" type={type}/>
     </>
   );
 };

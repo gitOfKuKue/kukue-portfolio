@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useState } from "react";
 import Methods from "../JavaScripts/methods";
 import MethodsContext from "../Context/MethodsContext";
+import PopUpBox from "./PopUpBox";
 
 const Compose = () => {
   const [name, setName] = useState("");
@@ -21,60 +22,44 @@ const Compose = () => {
     setMessage(message.target.value);
   };
 
-  let msg = "";
-
-  const { handlePopUpBox, handleMsg, handleType } = useContext(MethodsContext);
-
   function receiveEmail() {
     let params = {
       name: name,
       subject: subject,
       message: message,
     };
-    msg = "Email Sent Successfully";
     emailjs
       .send("service_lv1s1vc", "template_zhopvfx", params)
       .then(
-        handleComposeType("done"),
-        msg = "Email sent successfully",
-        handleComposeMsg(msg),
-        handlePopUpBox()
+        (document.getElementById("showing-msg").innerText =
+          "Sent message successfully"),
+        (document.getElementById("showing-msg").style.color = "green"),
+        setName(""),
+        setMessage(""),
+        setSubject(""),
       );
   }
 
   function checkingInput() {
     if (name == "" || subject == "" || message == "") {
-      handleComposeType("error");
-      msg = "Please fill all the fields";
-      handleComposeMsg(msg);
-      handlePopUpBox();
-      document.querySelector("#contact-me ").style.filter = "blur(5px)"
-      document.querySelector("#navigation ").style.filter = "blur(5px)"
-      document.querySelector("#footer ").style.filter = "blur(5px)"
-      document.querySelector("body ").style.position = "fixed"
-      document.querySelector("body ").style.width = "100%"
-
-
+      document.getElementById("showing-msg").innerHTML =
+        "Please fill all the fields";
+      document.getElementById("showing-msg").style.color = "red";
     } else {
       receiveEmail();
     }
   }
 
-  const handleComposeMsg = (msg) => {
-    handleMsg(msg);
-  };
-
-  const handleComposeType = (type) => {
-    handleType(type);
-  };
-
   return (
     <>
-      <div className="bg-aboutme text-font text-md rounded-sm" id="compose-me">
+      <div
+        className={`bg-aboutme text-font text-md rounded-sm`}
+        id="compose-me"
+      >
         <h1 className="mb-3 p-4 rounded-t-sm text-2xl">
           Compose directly to me
         </h1>
-        <form action="#" className="p-4">
+        <div className="p-4">
           <div className="flex justify-start items-center mb-3 border-b border-b-iconic py-2">
             <label htmlFor="toMe" className="w-20">
               To :{" "}
@@ -107,7 +92,13 @@ const Compose = () => {
             <label htmlFor="subject" className="w-20">
               Subject :{" "}
             </label>
-            <input type="text" id="subject" className="w-full" value={subject} onChange={handleSubject}/>
+            <input
+              type="text"
+              id="subject"
+              className="w-full"
+              value={subject}
+              onChange={handleSubject}
+            />
           </div>
 
           <textarea
@@ -117,14 +108,19 @@ const Compose = () => {
             value={message}
             onChange={handleMessage}
           ></textarea>
-          <button
-            className="bg-iconic text-font py-2 px-4 rounded-sm text-xl cursor-pointer"
-            onClick={checkingInput}
-          >
-            <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
-            Send
-          </button>
-        </form>
+
+          {/* Submit Section */}
+          <div className="flex justify-start items-center gap-3">
+            <button
+              className="bg-iconic text-font py-2 px-4 rounded-sm text-xl cursor-pointer"
+              onClick={checkingInput}
+            >
+              <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
+              Send
+            </button>
+            <p id="showing-msg"></p>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -3,52 +3,69 @@ import Container from "../Components/Container";
 import myPic4 from "../assets/images/my-pic4.png";
 import infos from "../JavaScripts/info";
 import Info from "../Components/Info";
-import PopUpBox from "../Components/PopUpBox";
 import MethodsProvider from "../Context/MethodsProvider";
 import MethodsContext from "../Context/MethodsContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 
 const Profile = () => {
-    const {handlePopUpBox, isOpen} = useContext(MethodsContext);
+  const [icon, setIcon] = useState(faLock);
+  const [canEdit, setCanEdit] = useState(false);
 
-  const handlePopUp = () => {
-    handlePopUpBox();
-  }
+  const passwordChecking = (password) => {
+    bcrypt.hash(password, 10, function (err, hash) {
+      // To verify:
+      bcrypt.compare("kukue@vietnam2025", hash, function (err, res) {
+        res
+          ? (setCanEdit(true), setIcon(faLockOpen))
+          : (alert("Password is incorrect"), setIcon(faLock));
+      });
+    });
+    document.getElementById("lock-icon").classList.remove("locked");
+  };
 
+  const handleLock = () => {
+    let lockIcon = document.getElementById("lock-icon");
+    if (lockIcon.classList.contains("fa-lock")) {
+      const password = window.prompt("Enter your password");
+      passwordChecking(password);
+    } else {
+      setCanEdit(false);
+      setIcon(faLock);
+    }
+  };
   return (
     <>
-        <Container>
-          <section className="flex justify-between items-center py-10">
-            <img src={myPic4} alt="" className="w-1/3 xs:hidden lg:block" />
-            <div className=" bg-aboutme p-10 rounded-lg w-2/3 xs:w-full lg:w-1/2">
-              <div className="border-b-2 border-b-iconic pb-5 flex justify-between items-center">
-                <h1 className="text-4xl text-iconic font-bold">
-                  Personal Detail
-                </h1>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-8 text-font"
-                  onClick={handlePopUp}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
-                  />
-                </svg>
-              </div>
-              <div className={`grid grid-cols-2 gap-5 mt-5`}>
-                {infos.details.map((detail) => (
-                  <Info key={detail.id} detail={detail} />
-                ))}
-              </div>
+      <Container>
+        <section className="grid grid-cols-3 py-10">
+          <img src={myPic4} alt="" className="col-span-1 xs:hidden lg:block" />
+          <div className=" flex flex-col bg-aboutme p-10 rounded-lg col-span-2">
+            <div className="border-b-2 border-b-iconic pb-5 flex justify-between items-center">
+              <h1 className="text-4xl text-iconic font-bold">
+                Personal Detail
+              </h1>
+              <FontAwesomeIcon
+                icon={icon}
+                className="text-3xl text-iconic"
+                onClick={handleLock}
+                id="lock-icon"
+              />
             </div>
-          </section>
-        </Container>
-        <PopUpBox msg="Enter your password" isPrompt={true} isOpen={isOpen} button="Confirm"/>
+            <div className={`grid grid-cols-2 gap-5 mt-5`}>
+              {infos.details.map((detail) => (
+                <Info key={detail.id} detail={detail} canEdit={canEdit} />
+              ))}
+            </div>
+            <button
+              className={`${
+                canEdit ? "block" : "hidden"
+              } w-fit px-6 py-2 bg-iconic text-white rounded-md mt-auto`}
+            >
+              Submit
+            </button>
+          </div>
+        </section>
+      </Container>
     </>
   );
 };

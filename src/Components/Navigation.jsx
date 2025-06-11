@@ -46,7 +46,6 @@ const Navigation = ({ current }) => {
         <img src={logo} alt="Logo Pic" className="md:w-30 xs:w-20" />
       </Link>
       
-
       <div className={`text-xl lg:flex justify-between gap-5 text-font py-1 ${menuOpen ? "flex flex-col absolute bg-aboutme top-15 right-0 gap-2 justify-start w-40 h-fit p-3" : "hidden"}`}>
         {menuBtns.map((menuBtn) => (
           <NavMenuBtn key={menuBtn.btnId} menuBtn={menuBtn} />

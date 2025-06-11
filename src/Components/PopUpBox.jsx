@@ -1,45 +1,16 @@
-import { useContext } from "react";
-import MethodsContext from "../Context/MethodsContext";
-import donePic from "../assets/images/Enthusiastic-amico.svg";
-import failPic from "../assets/images/Feeling-sorry-rafiki.svg";
+import React from 'react'
+import error_pic from "../assets/images/Feeling-sorry-rafiki.svg"
+import success_pic from "../assets/images/Enthusiastic-amico.svg"
+import { Outlet } from 'react-router-dom'
 
-const PopUpBox = ({ msg, type, className, button, isPrompt, isOpen }) => {
-  const { handlePopUpBox } = useContext(MethodsContext);
-  const handlePopUp = () => {
-    handlePopUpBox();
-  };
+const PopUpBox = ({className, msg, type, children}) => {
   return (
-    <>
-      <div
-        className={`${
-          isOpen ? "block" : "hidden"
-        }  bg-black text-font p-5 min-w-150 rounded-md absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}
-      >
-        {
-            (type === "done") ? (
-              <img src={donePic} alt="done" className="w-50 mx-auto" />
-            ) : (
-              <img src={failPic} alt="fail" className="w-50 mx-auto" />
-            )
-        }
-        <div>
-          <h1 className={`text-center mb-3 text-xl`}>{msg}</h1>
-          <input
-            type="text"
-            className={`${
-              isPrompt ? "block" : "hidden"
-            } border-1 border-iconic w-100 p-2 my-2`}
-          />
-          <button
-            className="py-2 px-4 bg-iconic text-font rounded-sm mx-auto block   "
-            onClick={handlePopUp}
-          >
-            {button}
-          </button>
-        </div>
-      </div>
-    </>
-  );
-};
+    <div className={`${className} flex flex-col items-center absolute translate-[-50%] left-[50%] top-[50%] bg-aboutme min-w-150 p-5 blur-none`}>
+        <img src={type === "error" ? error_pic : success_pic} alt={type} className='w-50'/>
+        <h1 className={`${type === "error" ? "text-red-500" : "text-green-500"} text-2xl`}>{msg}</h1>
+        {children}
+    </div>
+  )
+}
 
-export default PopUpBox;
+export default PopUpBox
