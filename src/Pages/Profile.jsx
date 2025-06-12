@@ -37,9 +37,9 @@ const Profile = () => {
   return (
     <>
       <Container>
-        <section className="grid grid-cols-3 py-10">
-          <img src={myPic4} alt="" className="col-span-1 xs:hidden lg:block" />
-          <div className=" flex flex-col bg-aboutme p-10 rounded-lg col-span-2">
+        <section className="flex lg:flex-row xs:flex-col md:mb-0 xs:mb-10 justify-between items-center py-10">
+          <img src={myPic4} alt="" className="lg:w-1/3 md:w-1/2 xs:w-full" />
+          <div className=" flex flex-col bg-aboutme p-10 rounded-lg lg:w-2/3 xs:w-full">
             <div className="border-b-2 border-b-iconic pb-5 flex justify-between items-center">
               <h1 className="text-4xl text-iconic font-bold">
                 Personal Detail
@@ -51,7 +51,7 @@ const Profile = () => {
                 id="lock-icon"
               />
             </div>
-            <div className={`grid grid-cols-2 gap-5 mt-5`}>
+            <div className={`grid md:grid-cols-2 xs:grid-cols-1 mt-5`}>
               {infos.details.map((detail) => (
                 <Info key={detail.id} detail={detail} canEdit={canEdit} />
               ))}
@@ -59,7 +59,7 @@ const Profile = () => {
             <button
               className={`${
                 canEdit ? "block" : "hidden"
-              } w-fit px-6 py-2 bg-iconic text-white rounded-md mt-auto`}
+              } w-fit px-6 py-2 bg-iconic text-white rounded-md`}
             >
               Submit
             </button>
