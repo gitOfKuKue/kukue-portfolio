@@ -6,7 +6,7 @@ import { HashLink } from "react-router-hash-link";
 const Hello = () => {
   return (
     // Hello Section
-    <section className="hello-section md:pt-40 md:pb-30 xs:py-10">
+    <section className="hello-section md:pt-40 md:pb-30 xs:py-10" >
       <Container className="flex xs:flex-col md:flex-row justify-between items-center">
         {/* Content Section */}
         <div className="text-font flex flex-col justify-between md:items-start xs:items-center md:h-[400px] sm:h-[300px] sm:mb-10 md:mb-0">

@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import 'animate.css';
+
 
 @theme {
   --color-iconic: #1f7d53;
