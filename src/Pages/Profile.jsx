@@ -37,9 +37,9 @@ const Profile = () => {
   return (
     <>
       <Container>
-        <section className="flex lg:flex-row xs:flex-col md:mb-0 xs:mb-10 justify-between items-center py-10">
-          <img src={myPic4} alt="" className="lg:w-1/3 md:w-1/2 xs:w-full" />
-          <div className=" flex flex-col bg-aboutme p-10 rounded-lg lg:w-2/3 xs:w-full">
+        <section className="flex lg:flex-row xs:flex-col md:mb-0 xs:mb-10 justify-between items-stretch py-10">
+          <img src={myPic4} alt="" className="lg:w-1/3 md:w-1/2 xs:w-full lg:rounded-l-lg lg:rounded-t-none xs:rounded-t-lg bg-iconic" />
+          <div className=" flex flex-col bg-aboutme p-10 lg:rounded-r-lg lg:rounded-bl-none xs:rounded-b-lg lg:w-2/3 xs:w-full">
             <div className="border-b-2 border-b-iconic pb-5 flex justify-between items-center">
               <h1 className="text-4xl text-iconic font-bold">
                 Personal Detail

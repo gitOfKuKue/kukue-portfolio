@@ -10,6 +10,7 @@ import MethodsProvider from "../Context/MethodsProvider";
 import { HashLink } from "react-router-hash-link";
 
 const MainPage = () => {
+
   return (
     <>
       <main>
@@ -39,6 +40,7 @@ const MainPage = () => {
             strokeWidth={1.5}
             stroke="currentColor"
             className="size-15 mx-auto absolute top-[15%] left-[50%] translate-[-50%] text-font border border-font bg-transparent rounded-full p-2 my-10 hover:size-18 duration-75"
+            id="up-arrow"
           >
             <path
               strokeLinecap="round"
