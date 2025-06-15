@@ -72,7 +72,7 @@ const Navigation = ({ current }) => {
       </Link>
 
       <div
-        className={`text-xl lg:flex ${menuOpen ? "flex flex-col justify-start items-start absolute bg-aboutme top-15 right-0 w-50 h-fit p-3" : "hidden"} justify-between items-center gap-3 text-font py-1 `}
+        className={`text-xl lg:flex ${menuOpen ? "flex flex-col justify-start items-start absolute bg-aboutme top-15 right-0 w-50 h-fit p-3" : "hidden"} justify-between items-center gap-3 text-font py-1 rounded-md`}
         id="menuBox"
       >
         {menuBtns.map((menuBtn) => (
