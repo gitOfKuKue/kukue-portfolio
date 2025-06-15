@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "./Container";
 import myPic2 from "../assets/images/my-pic2.png";
+import infos from "../JavaScripts/info";
 
 
 const AboutMe = () => {
@@ -55,7 +56,7 @@ const AboutMe = () => {
                 href="mailto:kukue014@gmail.com"
                 className="font-bold text-iconic"
               >
-                kukue014@gmail.com
+                {infos.details[3].info}
               </a>{" "}
               or{" "}
               <a href="#" className="font-bold text-iconic">
