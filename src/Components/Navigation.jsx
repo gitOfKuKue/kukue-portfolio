@@ -66,7 +66,7 @@ const Navigation = ({ current }) => {
 
 
   return (
-    <nav className="flex justify-between items-center p-4" id="navigation">
+    <nav className="flex justify-between items-center p-4 z-10" id="navigation">
       <Link to={"/"}>
         <img src={logo} alt="Logo Pic" className="md:w-30 xs:w-20" />
       </Link>

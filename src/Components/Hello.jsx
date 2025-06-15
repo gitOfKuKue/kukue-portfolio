@@ -9,7 +9,7 @@ const Hello = () => {
     <section className="hello-section md:pt-40 md:pb-30 xs:py-10" >
       <Container className="flex xs:flex-col md:flex-row justify-between items-center">
         {/* Content Section */}
-        <div className="text-font flex flex-col justify-between md:items-start xs:items-center md:h-[400px] sm:h-[300px] sm:mb-10 md:mb-0 animate__animated animate__fadeInLeft z-[-10]">
+        <div className="text-font flex flex-col justify-between md:items-start xs:items-center md:h-[400px] sm:h-[300px] sm:mb-10 md:mb-0 animate__animated animate__fadeInLeft">
           <p className="text-2xl font-bold lg:text-xl md:text-md sm:text-sm xs:text-xs">HELLO, I'M A</p>
           <h1 className="2xl:text-6xl font-bold 2xl:leading-20 2xl:mb-4 lg:text-5xl md:text-4xl sm:text-5xl xs:text-3xl lg:leading-15 mx:leading-10 lg:mb-2 xs:mb-5">
             Graphic <span className="text-iconic">Designer </span>
