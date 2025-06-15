@@ -95,8 +95,14 @@ html ::-webkit-scrollbar {
     display: none !important;
   }
 }
-
+  
 /* Contact Section */
+#contact-me{
+  background-image: url('./assets/images/background-shapes1.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .contact-card:hover {
   background-color: var(--color-iconic);
 }
