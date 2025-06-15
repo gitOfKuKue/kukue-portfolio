@@ -26,7 +26,7 @@ const CurriculumVitae = () => {
       <section className="my-10">
         <Container>
           <div className="xs:hidden sm:block">
-            <div className="w-full noPrint">
+            <div className="w-full noPrint flex justify-between items-center">
               <button
                 onClick={printCV}
                 className="bg-iconic text-font text-md py-3 px-5 cursor-pointer rounded-sm mb-3"
@@ -34,6 +34,12 @@ const CurriculumVitae = () => {
                 <FontAwesomeIcon icon={faPrint} className="mr-2" />
                 Print
               </button>
+              <a href={cvDocs} download
+                className="bg-iconic text-font text-md py-3 px-5 cursor-pointer rounded-sm mb-3"
+              >
+                Download
+                <FontAwesomeIcon icon={faPrint} className="ml-2" />
+              </a>
             </div>
 
             <div className="border border-font bg-aboutme" id="print-section">
