@@ -4,6 +4,7 @@ import logo from "../assets/icons/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavMenuBtn from "./NavMenuBtn";
 import {
+  faBars,
   faBriefcase,
   faCircleInfo,
   faCircleUser,
@@ -11,6 +12,7 @@ import {
   faFaceSmile,
   faHandPeace,
   faUser,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { icon } from "@fortawesome/fontawesome-svg-core";
 
@@ -44,27 +46,28 @@ const Navigation = ({ current }) => {
 
   const [menuOpen, setMenuOpen] = React.useState(false);
 
+  let menuIcon = menuOpen ? faXmark : faBars;
+
   const openMenuBtn = () => {
     setMenuOpen(!menuOpen);
   };
 
   React.useEffect(() => {
-  const handleClickOutside = (e) => {
-    const menuBox = document.getElementById("menuBox");
-    const menuBtn = document.getElementById("menuToggle");
-    if (
-      menuOpen &&
-      !menuBox.contains(e.target) &&
-      !menuBtn.contains(e.target)
-    ) {
-      setMenuOpen(false);
-    }
-  };
+    const handleClickOutside = (e) => {
+      const menuBox = document.getElementById("menuBox");
+      const menuBtn = document.getElementById("menuToggle");
+      if (
+        menuOpen &&
+        !menuBox.contains(e.target) &&
+        !menuBtn.contains(e.target)
+      ) {
+        setMenuOpen(false);
+      }
+    };
 
-  document.addEventListener("click", handleClickOutside);
-  return () => document.removeEventListener("click", handleClickOutside);
-}, [menuOpen]);
-
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [menuOpen]);
 
   return (
     <nav className="flex justify-between items-center p-4 z-10" id="navigation">
@@ -73,7 +76,11 @@ const Navigation = ({ current }) => {
       </Link>
 
       <div
-        className={`text-xl lg:flex ${menuOpen ? "flex flex-col justify-start items-start absolute bg-aboutme top-15 right-0 w-50 h-fit p-3" : "hidden"} justify-between items-center gap-3 text-font py-1 rounded-md`}
+        className={`text-xl lg:flex ${
+          menuOpen
+            ? "flex flex-col justify-start items-start absolute top-15 right-0 w-[95%] left-[50%] -translate-x-[50%] h-fit p-3 bg-white/10 backdrop-blur-md shadow-lg rounded-xl border-border border-2"
+            : "hidden"
+        } justify-between items-center gap-3 text-font py-1`}
         id="menuBox"
       >
         {menuBtns.map((menuBtn) => (
@@ -101,7 +108,13 @@ const Navigation = ({ current }) => {
           />
         </Link>
       </div>
-      <svg
+      <FontAwesomeIcon
+        icon={menuIcon}
+        onClick={openMenuBtn}
+        id="menuToggle"
+        className="text-2xl w-8 duration-1000"
+      />
+      {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -116,7 +129,7 @@ const Navigation = ({ current }) => {
           strokeLinejoin="round"
           d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
         />
-      </svg>
+      </svg> */}
     </nav>
   );
 };

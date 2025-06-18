@@ -78,7 +78,7 @@ const Profile = () => {
               {/* <img src={myPic4} alt="" className="bottom-0" /> */}
               <img src={profile_pic} alt="Profile picture" />
             </div>
-            <div className="flex flex-col bg-aboutme p-10 lg:rounded-r-lg lg:rounded-bl-none xs:rounded-b-lg lg:w-2/3 xs:w-full" data-aos="slide-left">
+            <div className="flex flex-col bg-aboutme md:p-10 xs:p-5 lg:rounded-r-lg lg:rounded-bl-none xs:rounded-b-lg lg:w-2/3 xs:w-full" data-aos="slide-left">
               <div className="border-b-2 border-b-iconic pb-5 flex justify-between items-center">
                 <h1 className="text-4xl text-iconic font-bold">
                   Personal Detail
