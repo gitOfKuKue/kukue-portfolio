@@ -90,7 +90,7 @@ html ::-webkit-scrollbar {
 .service-card:hover {
   background-color: var(--color-iconic);
 }
-.service-card:hover .service-card-icon, .service-card:hover p {
+.service-card:hover .service-card-icon, .service-card:hover p, .service-card:hover h1 {
   color: var(--color-background);
 }
 
