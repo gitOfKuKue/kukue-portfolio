@@ -134,9 +134,9 @@ const CurriculumVitae = () => {
             <img src={cvPic} alt="CV Picture" />
             <a
               href={cvDocs}
-              className="flex justify-between items-center bg-iconic py-6 px-4 rounded-md m-auto w-[60%] text-font sm:text-xl xs:text-sm gap-5"
+              className="flex justify-between items-center bg-button border-2 border-border py-3 px-4 rounded-md m-auto w-[60%] text-font sm:text-xl xs:text-sm gap-5"
             >
-              <h3>Download Curriculum Vitae</h3>
+              <h3>Download CV</h3>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
