@@ -9,6 +9,7 @@ import {
   faCircleUser,
   faContactBook,
   faFaceSmile,
+  faHandPeace,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { icon } from "@fortawesome/fontawesome-svg-core";
@@ -19,7 +20,7 @@ const Navigation = ({ current }) => {
       btnId: 1,
       menu: "Hello",
       link: "/",
-      icon: faFaceSmile,
+      icon: faHandPeace,
     },
     {
       btnId: 2,
@@ -83,20 +84,20 @@ const Navigation = ({ current }) => {
       <div className={`flex justify-between items-center gap-4`}>
         <Link
           to={"/cv"}
-          className="bg-iconic sm:px-4 xs:px-2 text-font md:text-lg sm:text-md xs:text-sm cursor-pointer sm:py-2 xs:py-1"
+          className="bg-button hover:bg-border hover:text-background border-2 border-border sm:px-4 xs:px-2 text-font md:text-lg sm:text-md xs:text-sm cursor-pointer sm:py-2 xs:py-1 rounded-md"
         >
           Curriculum Vitae
         </Link>
         <a
           href="tel:+84898247910"
-          className="hover:bg-iconic hover:text-font border border-iconic text-iconic sm:px-4 sm:py-2 xs:px-2 xs:py-1 sm:text-md md:text-lg xs:text-sm cursor-pointer"
+          className="hover:bg-button hover:text-font border-2 hover:border-border sm:px-4 sm:py-2 xs:px-2 xs:py-1 sm:text-md md:text-lg xs:text-sm cursor-pointer rounded-md"
         >
           Let's Talk!
         </a>
         <Link to="profile">
           <FontAwesomeIcon
             icon={faCircleUser}
-            className="lg:text-5xl xs:text-3xl md:text-4xl text-iconic"
+            className="lg:text-5xl xs:text-3xl md:text-4xl text-border"
           />
         </Link>
       </div>

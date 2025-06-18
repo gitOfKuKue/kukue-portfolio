@@ -23,13 +23,13 @@ const ContactMe = () => {
               <div className="flex justify-center gap-3">
                 <a
                   href={contacts[0].link}
-                  className="md:text-xl xs:text-md text-font bg-iconic md:py-2 md:px-6 xs:py-1 xs:px-4 rounded-sm"
+                  className="md:text-xl xs:text-md text-font bg-button hover:bg-border hover:text-background border-2 border-border md:py-2 md:px-6 xs:py-1 xs:px-4 rounded-sm"
                 >
                   Facebook (Ku Kue)
                 </a>
                 <a
                   href={contacts[contacts.length - 2].link}
-                  className="bg-transparent border border-iconic md:py-2 md:px-6 xs:py-1 xs:px-4 rounded-sm md:text-xl xs:text-md text-iconic"
+                  className="bg-transparent border-2 border-border hover:bg-button md:py-2 md:px-6 xs:py-1 xs:px-4 rounded-sm md:text-xl xs:text-md text-border"
                 >
                   GitHub
                 </a>

@@ -9,7 +9,7 @@ const SideBar = ({ productId, portfolio, link }) => {
       <div className="2xl:h-full xs:h-fit overflow-scroll 2xl:block xs:flex xs:gap-5 xs:items-center">
         {portfolio.map((project) => (
           <Link
-            to={`/${link}/${project.id}`}
+            to={`/${link}/${project.id}/#navigation`}
             key={project.id}
             className="block hover:brightness-80 my-3"
           >

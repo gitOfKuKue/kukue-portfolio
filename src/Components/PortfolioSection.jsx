@@ -13,23 +13,24 @@ const PortfolioSection = () => {
           <h1 className="text-iconic md:text-6xl xs:text-4xl font-bold">Portfolio</h1>
 
           {/* Menu section */}
-          <div className="text-font bg-dark py-2 px-8 lg:flex justify-between items-center gap-5 rounded-md xs:hidden">
-            <button className="cursor-pointer text-xl text-font hover:text-iconic hover:border-b-iconic hover:border-b-2">
+          <div className="text-background bg-dark py-2 px-8 lg:flex justify-between items-center gap-5 rounded-md xs:hidden">
+            <button className="cursor-pointer text-xl hover:text-iconic hover:border-b-iconic hover:border-b-2">
               All
             </button>{" "}
             |
-            <button className="cursor-pointer text-xl text-font hover:text-iconic hover:border-b-iconic hover:border-b-2">
+            <button className="cursor-pointer text-xl hover:text-iconic hover:border-b-iconic hover:border-b-2">
               Graphic Design
             </button>{" "}
             |
-            <button className="cursor-pointer text-xl text-font hover:text-iconic hover:border-b-iconic hover:border-b-2">
+            <button className="cursor-pointer text-xl hover:text-iconic hover:border-b-iconic hover:border-b-2">
               Content
             </button>{" "}
             |
-            <button className="cursor-pointer text-xl text-font hover:text-iconic hover:border-b-iconic hover:border-b-2">
+            <button className="cursor-pointer text-xl hover:text-iconic hover:border-b-iconic hover:border-b-2">
               Frontend Design
             </button>
           </div>
+
 
           {/* Left, Right arrows */}
           {/* <div className="flex justify-between items-center gap-3">

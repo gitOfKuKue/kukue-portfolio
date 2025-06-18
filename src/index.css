@@ -3,11 +3,13 @@
 
 @theme {
   --color-iconic: #1f7d53;
-  --color-font: #eeeeee;
-  --color-font-light: #dbdbdb95;
-  --color-background: #272727;
-  --color-aboutme: #373a40;
+  --color-button: #00ED64;
+  --color-font: #333446;
+  --color-font-light: #686D76;
+  --color-background: #FDFAF6;
+  --color-aboutme: #F2F2F2;
   --color-dark: #030303;
+  --color-border: #373a40;
 
   --breakpoint-xs: 350px;
 }
@@ -28,15 +30,38 @@ html ::-webkit-scrollbar {
   color: var(--color-iconic);
 }
 
-.hello-section {
+/* .hello-section {
   background-image: url("./assets/images/background-shapes.svg");
   background-repeat: no-repeat;
   background-size: cover;
+} */
+
+.hello-section, .aboutme-section {
+  position: relative;
+  z-index: 1;
 }
 
-.aboutme-section {
-  background-image: url("./assets/images/background-shapes1.svg");
+.hello-section::before, .aboutme-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3; /* Adjust this value */
+  z-index: -1;
+}
+
+.hello-section::before{
+  background-image: url("./assets/images/background-shapes.svg");
+  background-size: contain;
+}
+
+
+.aboutme-section::before {
+  background-image: url("./assets/images/background-shapes1.svg");
   background-size: cover;
 }
 

@@ -11,7 +11,7 @@ import ContactIcons from "./ContactIcons";
 const Footer = () => {
   const date = new Date();
   return (
-    <footer className="bg-iconic md:py-20 md:px-10 xs:py-10 xs:px-5 text-background mt-auto" id="footer">
+    <footer className="bg-border md:py-20 md:px-10 xs:py-10 xs:px-5 text-background mt-auto" id="footer">
       <h1 className="text-xl font-bold">Thu Htet Naing @ Ku Kue.</h1>
       <div className="grid grid-cols-5 border-b-1 border-dashed py-20">
         <ul className="md:col-span-1 sm:col-span-2 xs:col-span-2 h-full flex flex-col justify-evenly items-start">
@@ -38,13 +38,13 @@ const Footer = () => {
       </div>
 
       <div className="flex justify-start items-center gap-3 md:my-5 xs:my-10">
-        <div className="bg-dark inline-block p-3 rounded-md">
+        <HashLink to={"/#navigation"} className="bg-button inline-block p-3 rounded-md">
           <img
             src={logo}
             alt="logo"
             className="2xl:w-50 lg:w-40 sm:w-30 xs:w-20"
           />
-        </div>
+        </HashLink>
         <ul className="md:text-md xs:text-sm">
           <li>Graphic Designer</li>
           <li>Content Writer</li>
@@ -60,7 +60,7 @@ const Footer = () => {
           ))}
           <HashLink
             to="/contact-me#compose-me"
-            className="bg-background md:text-xl xs:text-sm text-iconic md:py-2 md:px-4 xs:py-1 xs:px-2 rounded-md cursor-pointer"
+            className="bg-button hover:bg-border hover:text-background border-2 md:text-xl xs:text-sm text-font md:py-2 md:px-4 xs:py-1 xs:px-2 rounded-md cursor-pointer"
           >
             Compose
           </HashLink>
