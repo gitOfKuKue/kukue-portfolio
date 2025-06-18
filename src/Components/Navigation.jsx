@@ -112,7 +112,7 @@ const Navigation = ({ current }) => {
         icon={menuIcon}
         onClick={openMenuBtn}
         id="menuToggle"
-        className="text-2xl w-8 duration-1000"
+        className="text-2xl w-8 duration-1000 xs:block lg:hidden"
       />
       {/* <svg
         xmlns="http://www.w3.org/2000/svg"
