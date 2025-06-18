@@ -10,6 +10,9 @@ import ContactIcons from "./ContactIcons";
 
 const Footer = () => {
   const date = new Date();
+  let version = "1.5.25";
+  version = "2.6.25";
+
   return (
     <footer className="bg-border md:py-20 md:px-10 xs:py-10 xs:px-5 text-background mt-auto" id="footer">
       <h1 className="text-xl font-bold">Thu Htet Naing @ Ku Kue.</h1>
@@ -53,7 +56,7 @@ const Footer = () => {
       </div>
 
       <div className="flex justify-between items-baseline md:flex-row xs:flex-col py-5">
-        <p className="md:text-md xs:text-sm md:mb-0 xs:mb-5">© {date.getFullYear()} @ Ku Kue</p>
+        <p className="md:text-md xs:text-sm md:mb-0 xs:mb-5">Version {version} © {date.getFullYear()} @ Ku Kue</p>
         <div className="flex justify-between items-center gap-5 flex-wrap">
           {contacts.map((contact) => (
             <ContactIcons key={contact.id} contact={contact} />
