@@ -15,7 +15,10 @@ const ContentWritingPage = () => {
 
   return (
     <>
-      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5 xs:justify-end" id="content-writing-page">
+      <section
+        className="my-10 xs:flex xs:flex-col-reverse xs:gap-5 xs:justify-end"
+        id="content-writing-page"
+      >
         {/* Side Bar */}
         <SideBar
           productId={productId}
@@ -33,6 +36,7 @@ const ContentWritingPage = () => {
                 alt={currentCw.title}
                 className="xl:w-120 xs:w-full mb-5"
                 key={index}
+                data-aos="fade-up"
               />
             ))}
 
@@ -40,9 +44,12 @@ const ContentWritingPage = () => {
               <h1 className="text-font text-3xl font-bold xl:hidden xs:block">
                 {currentCw.title}
               </h1>
-              <p className="text-font-light mb-5 xl:hidden xs:block">{currentCw.type}</p>
+              <p className="text-font-light mb-5 xl:hidden xs:block">
+                {currentCw.type}
+              </p>
 
-              <p className="text-justify xl:h-[720px] xl:overflow-scroll text-font text-xl xl:border-0 xs:border-font xs:border-1 xs:p-3 xs:mb-10">
+              <p className="text-justify xl:h-[720px] xl:overflow-scroll text-font text-xl xl:border-0 xs:border-font xs:border-1 xs:p-3 xs:mb-10"
+              data-aos="fade-up">
                 {currentCw.content.split("\n").map((line, index) => (
                   <span key={index}>
                     {line}
@@ -57,7 +64,9 @@ const ContentWritingPage = () => {
               <h1 className="text-3xl font-bold xs:hidden xl:block">
                 {currentCw.title}
               </h1>
-              <p className="text-font-light mb-5 xs:hidden xl:block">{currentCw.type}</p>
+              <p className="text-font-light mb-5 xs:hidden xl:block">
+                {currentCw.type}
+              </p>
               <p className="mb-5">{currentCw.description}</p>
               <div className="flex justify-between gap-5 mt-auto">
                 <a

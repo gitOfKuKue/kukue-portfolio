@@ -4,7 +4,7 @@ import { HashLink } from 'react-router-hash-link';
 const Services = ({service}) => {
     const date =new Date();
   return (
-    <HashLink to={`#${service.toSection}`} className="service-card bg-aboutme text-font md:p-10 xs:p-5 xl:w-[350px] lg:w-[280px] xl:h-[340px] lg:h-[300px] flex flex-col justify-start items-start rounded-md">
+    <HashLink to={`#${service.toSection}`} className="service-card bg-aboutme text-font hover:text-background md:p-10 xs:p-5 xl:w-[350px] lg:w-[280px] xl:h-[340px] lg:h-[300px] flex flex-col justify-start items-start rounded-md" data-aos="fade-up">
         <FontAwesomeIcon icon={service.icon} className='service-card-icon xl:text-7xl md:text-3xl xs:text-6xl mb-5 text-iconic' />
         <p className='text-sm text-font-light'>{date.getFullYear() - service.experience} yr+ experience of </p>
         <h1 className='xl:text-2xl lg:text-xl sm:text-2xl md:my-0 sm:mb-3 font-bold'>{service.title}</h1>

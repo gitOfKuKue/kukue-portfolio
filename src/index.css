@@ -41,7 +41,7 @@ html ::-webkit-scrollbar {
   z-index: 1;
 }
 
-.hello-section::before, .aboutme-section::before {
+.hello-section::before, .aboutme-section::before, #contact-me::before {
   content: "";
   position: absolute;
   top: 0;
@@ -90,8 +90,8 @@ html ::-webkit-scrollbar {
 .service-card:hover {
   background-color: var(--color-iconic);
 }
-.service-card:hover .service-card-icon {
-  color: var(--color-font);
+.service-card:hover .service-card-icon, .service-card:hover p {
+  color: var(--color-background);
 }
 
 /* Print Section for CV */
@@ -122,10 +122,9 @@ html ::-webkit-scrollbar {
 }
   
 /* Contact Section */
-#contact-me{
+#contact-me::before{
   background-image: url('./assets/images/background-shapes1.svg');
   background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .contact-card:hover {

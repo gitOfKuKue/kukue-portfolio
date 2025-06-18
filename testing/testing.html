@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./testing.css">
+  <meta charset="UTF-8">
+  <title>Scroll Animation Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 0;
+      margin: 0;
+      line-height: 1.6;
+    }
+    section {
+      padding: 100px 20px;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .box {
+      background: #eee;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+    }
+  </style>
 </head>
-
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
-        className="size-6">
-        <path strokeLinecap="round" strokeLinejoin="round"
-            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-    </svg>
 
-    <script src="./testing.js"></script>
+  <section style="background-color: #f8f9fa;">
+    <div class="box" data-aos="fade-up">Fade Up on Scroll</div>
+  </section>
+
+  <section style="background-color: #e9ecef;">
+    <div class="box" data-aos="zoom-in">Zoom In on Scroll</div>
+  </section>
+
+  <section style="background-color: #dee2e6;">
+    <div class="box" data-aos="slide-left">Slide Left on Scroll</div>
+  </section>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>;
+
+
+  <script src="./testing.js"></script>
+
 </body>
-
 </html>

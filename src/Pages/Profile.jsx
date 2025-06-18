@@ -71,7 +71,7 @@ const Profile = () => {
   return (
     <>
       <Container>
-        <section>
+        <section data-aos="fade-up">
           <div className="flex lg:flex-row xs:flex-col md:mb-0 xs:mb-10 justify-between items-stretch py-10">
             <div className="lg:w-1/3 md:w-1/2 xs:w-full lg:rounded-l-lg lg:rounded-t-none xs:rounded-t-lg bg-iconic xs:m-auto lg:m-0">
               <img src={myPic4} alt="" className="bottom-0" />

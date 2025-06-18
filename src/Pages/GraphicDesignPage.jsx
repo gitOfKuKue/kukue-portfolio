@@ -16,34 +16,38 @@ const GraphicDesignPage = () => {
 
   return (
     <>
-      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5" id="graphic-design-page">
+      <section
+        className="my-10 xs:flex xs:flex-col-reverse xs:gap-5"
+        id="graphic-design-page"
+      >
         {/* Side Bar */}
-          <SideBar
-            productId={productId}
-            portfolio={portfolios.graphicDesign}
-            link="graphic-designs"
-          />
+        <SideBar
+          productId={productId}
+          portfolio={portfolios.graphicDesign}
+          link="graphic-designs"
+        />
 
-          <Container>
-            <div
-              className={`grid lg:grid-cols-2 xs:grid-cols-1 md:p-10 xs:p-5 bg-aboutme rounded-md lg:h-[800px] xs:h-fit gap-5`}
-            >
-              {currentGD.images.map((image, index) => (
-                <img
-                  src={image}
-                  alt={currentGD.title}
-                  className="lg:h-150 xs:h-[546px] mb-5 mx-auto"
-                  key={index}
-                />
-              ))}
-              {/* Description */}
-              <div className=" text-font">
-                <h1 className="text-3xl font-bold">{currentGD.title}</h1>
-                <p className="text-font-light mb-5">{currentGD.type}</p>
-                <p className="">{currentGD.description}</p>
-              </div>
+        <Container>
+          <div
+            className={`grid lg:grid-cols-2 xs:grid-cols-1 md:p-10 xs:p-5 bg-aboutme rounded-md lg:h-[800px] xs:h-fit gap-5`}
+          >
+            {currentGD.images.map((image, index) => (
+              <img
+                src={image}
+                alt={currentGD.title}
+                className="lg:h-150 xs:h-[546px] mb-5 mx-auto"
+                key={index}
+                data-aos="fade-up"
+              />
+            ))}
+            {/* Description */}
+            <div className=" text-font">
+              <h1 className="text-3xl font-bold">{currentGD.title}</h1>
+              <p className="text-font-light mb-5">{currentGD.type}</p>
+              <p className="">{currentGD.description}</p>
             </div>
-          </Container>
+          </div>
+        </Container>
       </section>
     </>
   );

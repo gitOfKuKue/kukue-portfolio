@@ -15,7 +15,10 @@ const FrontendDevPage = () => {
 
   return (
     <>
-      <section className="my-10 xs:flex xs:flex-col-reverse xs:gap-5" id="frontend-web-dev-page">
+      <section
+        className="my-10 xs:flex xs:flex-col-reverse xs:gap-5"
+        id="frontend-web-dev-page"
+      >
         {/* Side Bar */}
         <SideBar
           productId={productId}
@@ -24,11 +27,14 @@ const FrontendDevPage = () => {
         />
 
         <Container className="lg:h-[800px] xs:h-fit lg:p-10 xs:p-3 bg-aboutme rounded-md ">
-          <div className={`grid lg:grid-cols-2 xs:grid-cols-1 overflow-scroll lg:h-[700px] xs:h-fit gap-5`}>
+          <div
+            className={`grid lg:grid-cols-2 xs:grid-cols-1 overflow-scroll lg:h-[700px] xs:h-fit gap-5`}
+          >
             <img
               src={currentFd.images[0]}
               alt={currentFd.title}
               className="w-full mb-5 col-span-2"
+              data-aos="fade-up"
             />
 
             {/* Description */}
@@ -53,7 +59,9 @@ const FrontendDevPage = () => {
                   key={index}
                   id={`pic-${index}`}
                 />
-                <label htmlFor={`pic-${index}`} className="text-font">Pic-{index + 1}</label>
+                <label htmlFor={`pic-${index}`} className="text-font">
+                  Pic-{index + 1}
+                </label>
               </div>
             ))}
           </div>
