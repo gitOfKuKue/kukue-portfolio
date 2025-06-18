@@ -48,7 +48,7 @@ const ContentWritingPage = () => {
                 {currentCw.type}
               </p>
 
-              <p className="text-justify xl:h-[720px] xl:overflow-scroll text-font text-xl xl:border-0 xs:border-font xs:border-1 xs:p-3 xs:mb-10"
+              <p className="text-justify xl:h-[720px] xl:overflow-y-scroll text-font text-xl xl:border-0 xs:border-font xs:border-1 xs:p-3 xs:mb-10 text-wrap"
               data-aos="fade-up">
                 {currentCw.content.split("\n").map((line, index) => (
                   <span key={index}>
@@ -72,13 +72,13 @@ const ContentWritingPage = () => {
                 <a
                   href={currentCw.pdf}
                   download
-                  className="md:py-3 md:px-4 xs:py-1 xs:px-2 xs:text-sm bg-iconic text-font md:text-xl rounded-md hover:bg-background hover:text-iconic"
+                  className="md:py-3 md:px-4 xs:py-1 xs:px-2 xs:text-sm bg-button border-2 border-border text-font md:text-xl rounded-md hover:bg-background hover:text-iconic"
                 >
                   Download PDF
                 </a>
                 <a
                   href={currentCw.postLink}
-                  className="md:py-3 md:px-4 xs:py-1 xs:px-2 xs:text-sm border-iconic border-1 text-iconic md:text-xl rounded-md hover:border-font hover:text-font"
+                  className="md:py-3 md:px-4 xs:py-2 xs:px-3 xs:text-sm border-border border-2 text-border md:text-xl rounded-md hover:bg-button hover:text-font"
                 >
                   See on Facebook
                 </a>

@@ -10,7 +10,8 @@ import ContactIcons from "./ContactIcons";
 
 const Footer = () => {
   const date = new Date();
-  let version = "1.5.25";
+  let version = "";
+  // version = "1.5.25";
   version = "2.6.25";
 
   return (

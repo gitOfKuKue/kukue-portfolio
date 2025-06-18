@@ -10,7 +10,7 @@ import Education from "../Components/Education";
 import Certifications from "../Components/Certifications";
 import WorkExperience from "../Components/WorkExperience";
 import Detail from "../Components/Detail";
-import { faPrint } from "@fortawesome/free-solid-svg-icons";
+import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
 import SkillBarChart from "../Components/SkillBarChart";
 import cvPic from "../assets/images/Account-pana.svg";
 
@@ -29,16 +29,16 @@ const CurriculumVitae = () => {
             <div className="w-full noPrint flex justify-between items-center">
               <button
                 onClick={printCV}
-                className="bg-iconic text-font text-md py-3 px-5 cursor-pointer rounded-sm mb-3"
+                className="bg-button border-border border-2 text-font text-md py-3 px-5 cursor-pointer rounded-sm mb-3"
               >
                 <FontAwesomeIcon icon={faPrint} className="mr-2" />
                 Print
               </button>
               <a href={cvDocs} download
-                className="bg-iconic text-font text-md py-3 px-5 cursor-pointer rounded-sm mb-3"
+                className="bg-button border-2 border-border text-font text-md py-3 px-5 cursor-pointer rounded-sm mb-3"
               >
                 Download
-                <FontAwesomeIcon icon={faPrint} className="ml-2" />
+                <FontAwesomeIcon icon={faDownload} className="ml-2" />
               </a>
             </div>
 

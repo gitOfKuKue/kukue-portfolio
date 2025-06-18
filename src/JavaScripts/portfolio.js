@@ -213,7 +213,7 @@ Barbies ဆိုတာနဲ့ မသိသူမရှိဇာတ်ကာ�
 အဲ့လိုတိုးတက်လာအောင်လည်း The Ministry of Foreign Affairs of Japan ကလည်း အခုလိုဆုတွေကို ချီးမြင့်ပေးနေတာာလည်းဖြစ်ပါတယ်။ The Japan International MANGA Award ကို 2007 ခုနှစ်ကစပြီးတော့ ထူးချွန်တဲ့ Artist တွေကိုချီးမြှင့်လာတာ ယခုအချိန်ထိလည်းဖြစ်ပါတယ်။ ကျင်းပရတဲ့ အဓိကရည်ရွယ်ချက်ကတော့ နိုင်ငံတကာယဥ်ကျေးမှုတွေကို Manga တွေကနေတစ်ဆင့် မျှဝေနိုင်ဖို့လည်းဖြစ်ပါတယ်။ 
 
 Application Deadline: June 30, 2025
-To apply : https://forms.office.com/pages/responsepage.aspx?id=-OTFDQ9iEk-CeZE0QXBOFYlhMed5vQxNndUZEwe8_1BUNk1GUTkwTTdQMFBaSERXSE5UTTFMQ1pFRy4u&route=shorturl
+To apply : <URL>
 
 
 🏆 ချီးမြှင့်မယ့်ဆုတွေကတော့ ...
