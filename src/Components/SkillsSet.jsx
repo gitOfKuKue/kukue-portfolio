@@ -9,8 +9,8 @@ const SkillsSet = ({ itemKey, collections }) => {
   return collections.items.map((item) => (
     <div
       key={item.id}
-      className={`bg-aboutme border border-gray-300 p-8 rounded-lg flex flex-col justify-between shadow-lg ${isSoftSkills ? "h-fit" : "h-75"} hover:border-0 hover:bg-white"
-      data-aos="fade-up`}
+      className={`bg-aboutme border border-gray-300 p-8 rounded-lg flex flex-col justify-between shadow-lg ${isSoftSkills ? "h-fit" : "h-75"} hover:border-0 hover:bg-white`}
+      data-aos="fade-up"
     >
       <div>
         <div className="h-15">
