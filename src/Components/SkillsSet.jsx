@@ -20,7 +20,7 @@ const SkillsSet = ({ itemKey, collections }) => {
         <p className="line-clamp-3">{item.description}</p>
       </div>
       {isSoftSkills || (
-        <Link className="text-iconic text-lg font-bold flex items-center justify-start gap-2">
+        <Link to={item.link} className="text-iconic text-lg font-bold flex items-center justify-start gap-2">
           Learn more <FontAwesomeIcon icon={faChevronRight} />
         </Link>
       )}
