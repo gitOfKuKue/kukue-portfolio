@@ -122,7 +122,7 @@ const Profile = () => {
               <button
                 className={`${
                   canEdit ? "block" : "hidden"
-                } w-fit px-6 py-2 bg-button border-2 border-border text-font rounded-md mt-4`}
+                } w-fit px-6 py-2 bg-button border-1 border-border text-font rounded-md mt-4`}
                 onClick={handleEdit}
               >
                 Submit

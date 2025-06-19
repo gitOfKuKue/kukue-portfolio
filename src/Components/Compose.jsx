@@ -112,7 +112,7 @@ const Compose = () => {
           {/* Submit Section */}
           <div className="flex justify-start items-center gap-3">
             <button
-              className="bg-button hover:bg-border hover:text-background border-2 border-border text-font py-2 px-4 rounded-sm text-xl cursor-pointer"
+              className="bg-button hover:bg-border hover:text-background border-1 border-border text-font py-2 px-4 rounded-sm text-xl cursor-pointer"
               onClick={checkingInput}
             >
               <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />

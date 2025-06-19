@@ -45,7 +45,7 @@ const FrontendDevPage = () => {
               <a
                 href={currentFd.githublink}
                 download
-                className="lg:py-3 lg:px-4 xs:py-2 xs:px-3 bg-button border-2 border-border text-font lg:text-xl xs:text-sm rounded-md hover:bg-background hover:text-iconic"
+                className="lg:py-3 lg:px-4 xs:py-2 xs:px-3 bg-button border-1 border-border text-font lg:text-xl xs:text-sm rounded-md hover:bg-background hover:text-iconic"
               >
                 Go to GitHub
               </a>

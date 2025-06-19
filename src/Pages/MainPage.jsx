@@ -8,9 +8,9 @@ import Footer from "../Components/Footer";
 import PortfolioSection from "../Components/PortfolioSection";
 import MethodsProvider from "../Context/MethodsProvider";
 import { HashLink } from "react-router-hash-link";
+import SkillSetSection from "../Components/SkillSetSection";
 
 const MainPage = () => {
-
   return (
     <>
       <main>
@@ -23,6 +23,11 @@ const MainPage = () => {
         {/* About Me */}
         <AboutMe />
 
+        {/* Skills Set */}
+        <SkillSetSection />
+
+        <hr className="my-20 w-[90%] m-auto" />
+
         {/* Services Section */}
         <ServicesSection />
 
@@ -32,7 +37,10 @@ const MainPage = () => {
         {/* Footer Section */}
         {/* <Footer /> */}
 
-        <HashLink to="#navigation" className="h-[100px] w-[100px] mx-auto relative my-5 block animate-pulse">
+        <HashLink
+          to="#navigation"
+          className="h-[100px] w-[100px] mx-auto relative my-5 block animate-pulse"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

@@ -64,7 +64,7 @@ const Footer = () => {
           ))}
           <HashLink
             to="/contact-me#compose-me"
-            className="bg-button hover:bg-border hover:text-background border-2 md:text-xl xs:text-sm text-font md:py-2 md:px-4 xs:py-1 xs:px-2 rounded-md cursor-pointer"
+            className="bg-button hover:bg-border hover:text-background border-1 md:text-xl xs:text-sm text-font md:py-2 md:px-4 xs:py-1 xs:px-2 rounded-md cursor-pointer"
           >
             Compose
           </HashLink>

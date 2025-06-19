@@ -29,13 +29,13 @@ const CurriculumVitae = () => {
             <div className="w-full noPrint flex justify-between items-center">
               <button
                 onClick={printCV}
-                className="bg-button border-border border-2 text-font text-md py-3 px-5 cursor-pointer rounded-sm mb-3"
+                className="bg-button border-border border-1 text-font text-md py-3 px-5 cursor-pointer rounded-sm mb-3"
               >
                 <FontAwesomeIcon icon={faPrint} className="mr-2" />
                 Print
               </button>
               <a href={cvDocs} download
-                className="bg-button border-2 border-border text-font text-md py-3 px-5 cursor-pointer rounded-sm mb-3"
+                className="bg-button border-1 border-border text-font text-md py-3 px-5 cursor-pointer rounded-sm mb-3"
               >
                 Download
                 <FontAwesomeIcon icon={faDownload} className="ml-2" />
@@ -134,7 +134,7 @@ const CurriculumVitae = () => {
             <img src={cvPic} alt="CV Picture" />
             <a
               href={cvDocs}
-              className="flex justify-between items-center bg-button border-2 border-border py-3 px-4 rounded-md m-auto w-[60%] text-font sm:text-xl xs:text-sm gap-5"
+              className="flex justify-between items-center bg-button border-1 border-border py-3 px-4 rounded-md m-auto w-[60%] text-font sm:text-xl xs:text-sm gap-5"
             >
               <h3>Download CV</h3>
               <svg

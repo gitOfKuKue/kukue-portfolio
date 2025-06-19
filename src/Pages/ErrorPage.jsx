@@ -19,7 +19,7 @@ const ErrorPage = () => {
         <div className="">
             <h1 className="text-8xl text-font font-bold">404 Error</h1>
             <p className="text-xl text-font mb-8">OOPS ... Sorry, page not found!</p>
-            <Link to="/" className="py-2 px-4 bg-iconic text-font font-bold">Go back home!</Link>
+            <Link to="/" className="py-4 px-6 bg-button border-1 border-border text-font font-bold">Go back home!</Link>
         </div>
       </div>
     </>

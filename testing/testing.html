@@ -1,48 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Scroll Animation Example</title>
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 0;
-      margin: 0;
-      line-height: 1.6;
-    }
-    section {
-      padding: 100px 20px;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .box {
-      background: #eee;
-      padding: 40px;
-      border-radius: 12px;
-      text-align: center;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
+  <script>
+    const rates = {
+      USD: {
+        SGD: 1.35, EUR: 0.85,
+      },
+      SGD: {
+        USD: 0.74, EUR: 0.55,
+      },
+      EUR: {
+        USD: 1.18, SGD: 1.82,
+      }
+    }
 
-  <section style="background-color: #f8f9fa;">
-    <div class="box" data-aos="fade-up">Fade Up on Scroll</div>
-  </section>
+    function exchange(amount, from, to) {
+      const rate = rates[from][to];
+      return amount * rate;
+    }
 
-  <section style="background-color: #e9ecef;">
-    <div class="box" data-aos="zoom-in">Zoom In on Scroll</div>
-  </section>
-
-  <section style="background-color: #dee2e6;">
-    <div class="box" data-aos="slide-left">Slide Left on Scroll</div>
-  </section>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>;
-
-
-  <script src="./testing.js"></script>
+    console.log(exchange(500, "USD", "SGD"));
+    console.log(exchange(7000, "SGD", "EUR"));
+    console.log(exchange(40, "EUR", "USD"));
+  </script>
 
 </body>
+
 </html>

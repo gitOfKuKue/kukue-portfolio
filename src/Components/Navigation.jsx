@@ -8,6 +8,7 @@ import {
   faBriefcase,
   faCircleInfo,
   faCircleUser,
+  faClover,
   faContactBook,
   faFaceSmile,
   faHandPeace,
@@ -32,12 +33,18 @@ const Navigation = ({ current }) => {
     },
     {
       btnId: 3,
+      menu: "Skills",
+      link: "/#skills",
+      icon: faClover,
+    },
+    {
+      btnId: 4,
       menu: "Portfilio",
       link: "/#portfolio",
       icon: faBriefcase,
     },
     {
-      btnId: 4,
+      btnId: 5,
       menu: "Contact",
       link: "contact-me",
       icon: faContactBook,
@@ -78,7 +85,7 @@ const Navigation = ({ current }) => {
       <div
         className={`text-xl lg:flex ${
           menuOpen
-            ? "flex flex-col justify-start items-start absolute top-15 right-0 w-[95%] left-[50%] -translate-x-[50%] h-fit p-3 bg-white/10 backdrop-blur-md shadow-lg rounded-xl border-border border-2"
+            ? "flex flex-col justify-start items-start absolute top-15 right-0 w-[95%] left-[50%] -translate-x-[50%] h-fit p-3 bg-white/10 backdrop-blur-md shadow-lg rounded-xl border-border border-1"
             : "hidden"
         } justify-between items-center gap-3 text-font py-1`}
         id="menuBox"
@@ -91,13 +98,13 @@ const Navigation = ({ current }) => {
       <div className={`flex justify-between items-center gap-4`}>
         <Link
           to={"/cv"}
-          className="bg-button hover:bg-border hover:text-background border-2 border-border sm:px-4 xs:px-2 text-font md:text-lg sm:text-md xs:text-sm cursor-pointer sm:py-2 xs:py-1 rounded-md"
+          className="bg-button hover:bg-border hover:text-background border-1 border-border sm:px-4 xs:px-2 text-font md:text-lg sm:text-md xs:text-sm cursor-pointer sm:py-2 xs:py-1 rounded-md"
         >
           Curriculum Vitae
         </Link>
         <a
           href="tel:+84898247910"
-          className="hover:bg-button hover:text-font border-2 hover:border-border sm:px-4 sm:py-2 xs:px-2 xs:py-1 sm:text-md md:text-lg xs:text-sm cursor-pointer rounded-md"
+          className="hover:bg-button hover:text-font border-1 hover:border-border sm:px-4 sm:py-2 xs:px-2 xs:py-1 sm:text-md md:text-lg xs:text-sm cursor-pointer rounded-md"
         >
           Let's Talk!
         </a>

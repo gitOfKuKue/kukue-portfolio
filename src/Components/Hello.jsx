@@ -22,7 +22,7 @@ const Hello = () => {
             Designer & Frontend Developer based in the Vietnam. Welcome to
             portfolio world.
           </p>
-          <HashLink to="/#portfolio" className="border-2 border-border bg-button md:text-xl md:px-8 md:py-3 xs:px-6 xs:py-2 xs:text-md xs:mb-10 hover:bg-border hover:text-background duration-100 rounded-md">
+          <HashLink to="/#portfolio" className="border-1 border-border bg-button md:text-xl md:px-8 md:py-3 xs:px-6 xs:py-2 xs:text-md xs:mb-10 hover:bg-border hover:text-background duration-100 rounded-md">
             View Portfolio
           </HashLink>
         </div>

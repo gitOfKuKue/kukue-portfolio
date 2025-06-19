@@ -26,7 +26,7 @@ const AboutMe = () => {
         <img
           src={myPic2}
           alt="my pic 2"
-          className="2xl:w-150 xl:w-120 lg:w-100 sm:w-90"
+          className="2xl:w-150 xl:w-120 lg:w-100 sm:w-70"
         />
         {/* Content Section */}
         <div className="text-font 2xl:w-[600px] xl:w-[500px] lg:w-[400px] sm:mb-10 md:mb-0">
