@@ -6,6 +6,8 @@ import ContentWritingCard from "./ContentWritingCard";
 import FrontendWebDevCard from "./FrontendWebDevCard";
 import MethodsContext from "../Context/MethodsContext";
 import Pagination from "./Pagination";
+import Slider from "./Slider";
+import { Slide } from "react-slideshow-image";
 
 const PortfolioSection = () => {
   const {
@@ -24,11 +26,6 @@ const PortfolioSection = () => {
   const contentItems = portfolios.contentWriting || [];
   const webItems = portfolios.webDevelopment || [];
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [graphicPage, setGraphicPage] = useState(1);
-  const [contentPage, setContentPage] = useState(1);
-  const [webPage, setWebPage] = useState(1);
-
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -41,12 +38,18 @@ const PortfolioSection = () => {
   }, []);
 
   const graphicItemsPerPage =
-    windowWidth >= 1024 ? 4 : windowWidth >= 768 ? 2 : 1;
+    windowWidth >= 1024 ? 2 : windowWidth >= 768 ? 2 : 1;
 
   const contentItemsPerPage =
     windowWidth >= 1024 ? 3 : windowWidth >= 768 ? 2 : 1;
 
   const webItemsPerPage = 1; // assuming only 1 is needed even on large screens
+
+  const chunkArray = (arr, size) =>
+    arr.reduce((acc, _, i) => {
+      if (i % size === 0) acc.push(arr.slice(i, i + size));
+      return acc;
+    }, []);
 
   return (
     <section className="" id="portfolio">
@@ -109,93 +112,221 @@ const PortfolioSection = () => {
             </button>
           </div> */}
         </div>
+
         {/* Graphic Design Card Section */}
         <div
-          className={`bg-aboutme md:p-5 xs:p-3 rounded-md xs:h-[850px] md:h-[800px] flex flex-col justify-start mb-5 ${
-            selectedCategory.all == true ||
-            selectedCategory.graphicDesign == true
+          className={`bg-aboutme md:p-5 h-fit xs:p-3 rounded-md flex flex-col justify-start mb-5 ${
+            selectedCategory.all || selectedCategory.graphicDesign
               ? "block"
               : "hidden"
-          }`} 
+          }`}
           id="graphic-design"
         >
-          <h1 className="text-font text-3xl font-bold mb-5">Graphic Design</h1>
-          <div className="grid xs:grid-cols-1 md:grid-cols-2 md:gap-5 xs:gap-1">
-            {graphicItems
-              .slice(
-                (graphicPage - 1) * graphicItemsPerPage,
-                graphicPage * graphicItemsPerPage
+          <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">Graphic Design</h1>
+
+          <Slide
+            easing="ease"
+            autoplay
+            indicators={(index) => (
+              <div
+                key={index}
+                className="custom-indicator w-10 h-2 mx-1 rounded-full bg-gray-400 cursor-pointer transition duration-300 hover:bg-iconic"
+              />
+            )}
+            prevArrow={
+              <button className="absolute left-0 z-10 px-4 py-2 text-white bg-black/40 hover:bg-black/60 rounded-r-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+            }
+            nextArrow={
+              <button className="absolute right-0 z-10 px-4 py-2 text-white bg-black/40 hover:bg-black/60 rounded-l-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            }
+          >
+            {chunkArray(graphicItems, graphicItemsPerPage).map(
+              (group, index) => (
+                <div
+                  key={index}
+                  className="grid xs:grid-cols-1 md:grid-cols-2 md:gap-5 xs:gap-1 px-3"
+                >
+                  {group.map((value) => (
+                    <GraphicDesignCard key={value.id} portfolio={value} />
+                  ))}
+                </div>
               )
-              .map((value) => (
-                <GraphicDesignCard key={value.id} portfolio={value} />
-              ))}
-          </div>
-          <Pagination
-            className="mt-auto rounded-md"
-            currentPage={graphicPage}
-            setCurrentPage={setGraphicPage}
-            itemsPerPage={graphicItemsPerPage}
-            totalItems={graphicItems.length}
-          />
+            )}
+          </Slide>
         </div>
 
         {/* Content Writing Card Section */}
         <div
-          className={`bg-aboutme p-5 rounded-md xs:h-fit md:h-[850px] flex flex-col justify-start mb-5 ${
-            selectedCategory.all == true ||
-            selectedCategory.contentWriting == true
+          className={`bg-aboutme md:p-5 xs:p-3 rounded-md h-fit flex flex-col justify-start mb-5 ${
+            selectedCategory.all || selectedCategory.contentWriting
               ? "block"
               : "hidden"
           }`}
-          id="content-writing"
+          id="graphic-design"
         >
-          <h1 className="text-font text-3xl font-bold mb-5">Content writing</h1>
-          <div className="grid xs:grid-cols-1 md:grid-cols-3 md:gap-5 xs:gap-1">
-            {contentItems
-              .slice(
-                (contentPage - 1) * contentItemsPerPage,
-                contentPage * contentItemsPerPage
+          <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">Content Writing</h1>
+
+          <Slide
+            easing="ease"
+            autoplay
+            indicators={(index) => (
+              <div
+                key={index}
+                className="custom-indicator w-10 h-2 mx-1 rounded-full bg-gray-400 cursor-pointer transition duration-300 hover:bg-iconic"
+              />
+            )}
+            prevArrow={
+              <button className="absolute left-0 z-10 px-4 py-2 text-white bg-black/40 hover:bg-black/60 rounded-r-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+            }
+            nextArrow={
+              <button className="absolute right-0 z-10 px-4 py-2 text-white bg-black/40 hover:bg-black/60 rounded-l-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            }
+          >
+            {chunkArray(contentItems, contentItemsPerPage).map(
+              (group, index) => (
+                <div
+                  key={index}
+                  className="grid xs:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-5 xs:gap-1 px-3"
+                >
+                  {group.map((value) => (
+                    <ContentWritingCard key={value.id} portfolio={value} />
+                  ))}
+                </div>
               )
-              .map((value) => (
-                <ContentWritingCard key={value.id} portfolio={value} />
-              ))}
-          </div>
-          <Pagination
-            className="mt-auto rounded-md"
-            currentPage={contentPage}
-            setCurrentPage={setContentPage}
-            itemsPerPage={contentItemsPerPage}
-            totalItems={contentItems.length}
-          />
+            )}
+          </Slide>
         </div>
 
         {/* Frontend Web Development Card Section */}
         <div
-          className={`bg-aboutme p-5 rounded-md h-[1025px] flex flex-col justify-start mb-5 ${
-            selectedCategory.all == true ||
-            selectedCategory.frontendWEbDev == true
+          className={`bg-aboutme md:p-5 xs:p-3 rounded-md h-fit flex flex-col justify-start mb-5 ${
+            selectedCategory.all || selectedCategory.frontendWebDev
               ? "block"
               : "hidden"
           }`}
-          id="frontend-web-development"
+          id="graphic-design"
         >
-          <h1 className="text-font text-3xl font-bold mb-5">
-            Front-end web development
-          </h1>
-          <div className="grid grid-cols-1 md:gap-5 xs:gap-1">
-            {webItems
-              .slice((webPage - 1) * webItemsPerPage, webPage * webItemsPerPage)
-              .map((value) => (
-                <FrontendWebDevCard key={value.id} portfolio={value} />
-              ))}
-          </div>
-          <Pagination
-            className="mt-auto rounded-md"
-            currentPage={webPage}
-            setCurrentPage={setWebPage}
-            itemsPerPage={webItemsPerPage}
-            totalItems={webItems.length}
-          />
+          <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">Front-end web development</h1>
+
+          <Slide
+            easing="ease"
+            autoplay
+            indicators={(index) => (
+              <div
+                key={index}
+                className="custom-indicator w-10 h-2 mx-1 rounded-full bg-gray-400 cursor-pointer transition duration-300 hover:bg-iconic"
+              />
+            )}
+            prevArrow={
+              <button className="absolute left-0 z-10 px-4 py-2 text-white bg-black/40 hover:bg-black/60 rounded-r-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+            }
+            nextArrow={
+              <button className="absolute right-0 z-10 px-4 py-2 text-white bg-black/40 hover:bg-black/60 rounded-l-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            }
+          >
+            {chunkArray(webItems, webItemsPerPage).map(
+              (group, index) => (
+                <div
+                  key={index}
+                  className="grid xs:grid-cols-1 md:gap-5 xs:gap-1 px-3"
+                >
+                  {group.map((value) => (
+                    <FrontendWebDevCard key={value.id} portfolio={value} />
+                  ))}
+                </div>
+              )
+            )}
+          </Slide>
         </div>
       </Container>
     </section>

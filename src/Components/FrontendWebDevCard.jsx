@@ -5,8 +5,8 @@ import { HashLink } from "react-router-hash-link";
 const FrontendWebDevCard = ({ portfolio }) => {
   const id = portfolio.id;
   return (
-    <div className="h-[860px] p-5 flex flex-col justify-start items-start bg-background text-font rounded-md">
-      <div className="h-[620px] overflow-hidden">
+    <div className="p-5 flex flex-col justify-start items-start bg-background text-font rounded-md">
+      <div className="mb-5">
         <img
           src={`${portfolio.images[0]}`}
           alt="Portfolio Card"

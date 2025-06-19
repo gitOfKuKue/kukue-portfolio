@@ -162,3 +162,8 @@ html ::-webkit-scrollbar {
     transform: rotate(180deg);
   }
 }
+
+
+.custom-indicator.active{
+  background-color: var(--color-iconic);
+}

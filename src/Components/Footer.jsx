@@ -11,8 +11,9 @@ import ContactIcons from "./ContactIcons";
 const Footer = () => {
   const date = new Date();
   let version = "";
-  // version = "1.5.25";
-  version = "2.6.25";
+  // version = "1.1.55"; // 1/5/2025
+  // version = "2.1.65"; // 17/6/2025
+  version = "3.1.65"; // 17/6/2025
 
   return (
     <footer className="bg-border md:py-20 md:px-10 xs:py-10 xs:px-5 text-background mt-auto" id="footer">
