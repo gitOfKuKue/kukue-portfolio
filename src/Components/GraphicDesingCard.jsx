@@ -5,7 +5,7 @@ import { HashLink } from "react-router-hash-link";
 const GraphicDesignCard = ({ portfolio }) => {
   const id = portfolio.id;
   return (
-    <div className="p-3 bg-aboutme flex md:flex-row xs:flex-col justify-start items-start gap-3 text-font rounded-md">
+    <div className="p-3 bg-background flex md:flex-row xs:flex-col justify-start items-start gap-3 text-font rounded-md">
       <img src={`${portfolio.images[0]}`} alt="Portfolio Card" className="md:w-50 xs:w-full xs:h-fit" />
       <div className="h-full flex flex-col items-start justify-start">
         <h1 className="2xl:text-2xl font-bold lg:text-xl sm:text-2xl">{portfolio.title}</h1>
