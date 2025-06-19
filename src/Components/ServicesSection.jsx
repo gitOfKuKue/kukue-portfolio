@@ -15,6 +15,7 @@ const ServicesSection = () => {
         "After my matriculation exam, I have been interested in graphic design and I studied the ideas, designs and theories.",
       bgColor: "bg-iconic",
       toSection: "graphic-design",
+      type: "graphicDesign",
     },
     {
       id: 2,
@@ -25,6 +26,7 @@ const ServicesSection = () => {
         "My family career is traders. Sometimes, I had to post the advertisements on social media and I have learned a lot from it.",
       bgColor: "bg-service-card",
       toSection: "content-writing",
+      type: "contentWriting",
 
     },
     {
@@ -36,7 +38,7 @@ const ServicesSection = () => {
         "Related to the graphic design, I also interested in web development. I have learned HTML, CSS, Bootstrap, JavaScript, ReactJS and TailwindCSS.",
       bgColor: "bg-service-card",
       toSection: "frontend-web-development",
-
+      type: "frontendWebDev"
     },
   ];
   
@@ -47,7 +49,7 @@ const ServicesSection = () => {
           <p className="text-font text-center tracking-widest">
             What I can do for you,
           </p>
-          <h1 className="text-iconic text-5xl font-bold text-center mb-8">
+          <h1 className="text-iconic text-heading font-bold text-center mb-8">
             Services
           </h1>
           <div className="flex sm:flex-row xs:flex-col justify-between gap-3" id="services">

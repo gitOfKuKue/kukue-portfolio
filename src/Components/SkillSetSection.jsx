@@ -200,7 +200,7 @@ const SkillSetSection = () => {
     <>
       <section id="skills">
         <Container>
-          <h1 className="text-iconic font-bold text-5xl text-center">
+          <h1 className="text-iconic font-bold text-heading text-center">
             My Skills Set
           </h1>
           <p className="text-center tracking-wider">I'm proficient in </p>

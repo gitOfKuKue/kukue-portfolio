@@ -1,4 +1,4 @@
-class Methods {
+  class Methods {
   // Checking Supercase
   checkingSupercase = (day) => {
     let lastDigit = 0;

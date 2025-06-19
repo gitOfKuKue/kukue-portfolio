@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import Container from "../Components/Container";
 import myPic4 from "../assets/images/my-pic4.png";
-import profile_pic from "../assets/images/Social biography-bro.svg"
+import profile_pic from "../assets/images/Social biography-bro.svg";
 import infos from "../JavaScripts/info";
 import Info from "../Components/Info";
 import MethodsProvider from "../Context/MethodsProvider";
@@ -23,7 +23,7 @@ const Profile = () => {
   let totalProjs = 0;
   Object.entries(portfolios).forEach(([, value]) => {
     totalProjs += value.length;
-  })
+  });
 
   const passwordChecking = (password) => {
     bcrypt.hash(password, 10, function (err, hash) {
@@ -74,11 +74,17 @@ const Profile = () => {
       <Container>
         <section>
           <div className="flex lg:flex-row xs:flex-col md:mb-0 xs:mb-10 justify-between items-end py-10">
-            <div className="lg:w-1/3 md:w-1/2 xs:w-full lg:rounded-l-lg lg:rounded-t-none xs:rounded-t-lg xs:m-auto lg:m-0" data-aos="slide-right">
+            <div
+              className="lg:w-1/3 md:w-1/2 xs:w-full lg:rounded-l-lg lg:rounded-t-none xs:rounded-t-lg xs:m-auto lg:m-0"
+              data-aos="slide-right"
+            >
               {/* <img src={myPic4} alt="" className="bottom-0" /> */}
               <img src={profile_pic} alt="Profile picture" />
             </div>
-            <div className="flex flex-col bg-aboutme md:p-10 xs:p-5 lg:rounded-r-lg lg:rounded-bl-none xs:rounded-b-lg lg:w-2/3 xs:w-full" data-aos="slide-left">
+            <div
+              className="flex flex-col bg-aboutme md:p-10 xs:p-5 lg:rounded-r-lg lg:rounded-bl-none xs:rounded-b-lg lg:w-2/3 xs:w-full"
+              data-aos="slide-left"
+            >
               <div className="border-b-2 border-b-iconic pb-5 flex justify-between items-center">
                 <h1 className="text-4xl text-iconic font-bold">
                   Personal Detail
@@ -141,6 +147,7 @@ const Profile = () => {
               <h1 className="text-6xl font-bold">{totalProjs}</h1>
             </div>
           </div> */}
+          
         </section>
       </Container>
     </>

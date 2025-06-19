@@ -9,6 +9,7 @@ import PortfolioSection from "../Components/PortfolioSection";
 import MethodsProvider from "../Context/MethodsProvider";
 import { HashLink } from "react-router-hash-link";
 import SkillSetSection from "../Components/SkillSetSection";
+import TrustedPartner from "../Components/TrustedPartner";
 
 const MainPage = () => {
   return (
@@ -22,6 +23,10 @@ const MainPage = () => {
 
         {/* About Me */}
         <AboutMe />
+
+        {/* Trusted Partners */}
+        <TrustedPartner />
+
 
         {/* Skills Set */}
         <SkillSetSection />

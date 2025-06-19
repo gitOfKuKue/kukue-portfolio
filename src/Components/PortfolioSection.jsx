@@ -1,36 +1,46 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Container from "./Container";
-import GraphicDesignCard from "./Graphic-Design/GraphicDesingCard";
-import ContentWritingCard from "./Content-Writing/ContentWritingCard";
 import portfolios from "../JavaScripts/portfolio";
-import FrontendWebDevCard from "./Frontend-Web/FrontendWebDevCard";
+import GraphicDesignCard from "./GraphicDesingCard";
+import ContentWritingCard from "./ContentWritingCard";
+import FrontendWebDevCard from "./FrontendWebDevCard";
+import MethodsContext from "../Context/MethodsContext";
 
 const PortfolioSection = () => {
+  const {
+    selectedCategory,
+    portfolioFilter,
+    categoryMenus,
+    categoryMenuHandler,
+  } = useContext(MethodsContext);
+
+  const handlePortfolioFilter = (category) => {
+    portfolioFilter(category);
+    categoryMenuHandler(category);
+  };
+
   return (
     <section className="" id="portfolio">
       <Container className="">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-iconic md:text-6xl xs:text-4xl font-bold">Portfolio</h1>
+          <h1 className="text-iconic md:text-6xl xs:text-4xl font-bold">
+            Portfolio
+          </h1>
 
           {/* Menu section */}
-          <div className="text-background bg-dark py-2 px-8 lg:flex justify-between items-center gap-5 rounded-md xs:hidden">
-            <button className="cursor-pointer text-xl hover:text-iconic hover:border-b-iconic hover:border-b-2">
-              All
-            </button>{" "}
-            |
-            <button className="cursor-pointer text-xl hover:text-iconic hover:border-b-iconic hover:border-b-2">
-              Graphic Design
-            </button>{" "}
-            |
-            <button className="cursor-pointer text-xl hover:text-iconic hover:border-b-iconic hover:border-b-2">
-              Content
-            </button>{" "}
-            |
-            <button className="cursor-pointer text-xl hover:text-iconic hover:border-b-iconic hover:border-b-2">
-              Frontend Design
-            </button>
+          <div className="text-iconic bg-gray-300 p-1 lg:flex justify-between items-center h-12 w-180 rounded-md xs:hidden">
+            {categoryMenus.map((categoryMenu, index) => (
+              <button
+                className={`cursor-pointer text-xl py-1 px-4 hover:text-iconic hover:border hover:border-border rounded-md ${
+                  categoryMenu.active &&
+                  "text-font bg-button border border-border"
+                }`}
+                onClick={() => handlePortfolioFilter(categoryMenu.type)}
+              >
+                {categoryMenu.name}
+              </button>
+            ))}
           </div>
-
 
           {/* Left, Right arrows */}
           {/* <div className="flex justify-between items-center gap-3">
@@ -70,44 +80,102 @@ const PortfolioSection = () => {
           </div> */}
         </div>
 
+        <div className="card text-center">
+          <div className="card-header">
+            <ul className="nav nav-tabs card-header-tabs">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="true" href="#">
+                  Active
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Link
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link disabled" aria-disabled="true">
+                  Disabled
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="card-body">
+            <h5 className="card-title">Special title treatment</h5>
+            <p className="card-text">
+              With supporting text below as a natural lead-in to additional
+              content.
+            </p>
+            <a href="#" className="btn btn-primary">
+              Go somewhere
+            </a>
+          </div>
+        </div>
+
         {/* Graphic Design Card Section */}
-        <div className="mb-8" id="graphic-design">
+        <div
+          className={`mb-8 ${
+            selectedCategory.all == true ||
+            selectedCategory.graphicDesign == true
+              ? "block"
+              : "hidden"
+          }`}
+          id="graphic-design"
+        >
           <h1 className="text-2xl text-font font-bold mb-3">Graphic Design</h1>
           <div className="grid grid-cols-2 md:gap-5 xs:gap-1">
             {Object.entries(portfolios).map(
-              ([key, values]) => key === "graphicDesign" && (
+              ([key, values]) =>
+                key === "graphicDesign" &&
                 values.map((value) => (
                   <GraphicDesignCard key={value.id} portfolio={value} />
                 ))
-              )
             )}
           </div>
         </div>
 
         {/* Content Writing Card Section */}
-        <div className="mb-8" id="content-writing">
+        <div
+          className={`mb-8 ${
+            selectedCategory.all == true ||
+            selectedCategory.contentWriting == true
+              ? "block"
+              : "hidden"
+          }`}
+          id="content-writing"
+        >
           <h1 className="text-2xl text-font font-bold mb-3">Content Writing</h1>
           <div className="grid md:grid-cols-3 gap-5 sm:grid-cols-1">
             {Object.entries(portfolios).map(
-              ([key, values]) => key === "contentWriting" && (
+              ([key, values]) =>
+                key === "contentWriting" &&
                 values.map((value) => (
                   <ContentWritingCard key={value.id} portfolio={value} />
                 ))
-              )
             )}
           </div>
         </div>
 
         {/* Frontend Web Development Card Section */}
-        <div className="mb-8" id="frontend-web-development">
-          <h1 className="text-2xl text-font font-bold mb-3">Frontend Web Development</h1>
+        <div
+          className={`mb-8 ${
+            selectedCategory.all == true ||
+            selectedCategory.frontendWebDev == true
+              ? "block"
+              : "hidden"
+          }`}
+          id="frontend-web-development"
+        >
+          <h1 className="text-2xl text-font font-bold mb-3">
+            Frontend Web Development
+          </h1>
           <div className="grid grid-cols-1 gap-5">
             {Object.entries(portfolios).map(
-              ([key, values]) => key === "webDevelopment" && (
+              ([key, values]) =>
+                key === "webDevelopment" &&
                 values.map((value) => (
                   <FrontendWebDevCard key={value.id} portfolio={value} />
                 ))
-              )
             )}
           </div>
         </div>

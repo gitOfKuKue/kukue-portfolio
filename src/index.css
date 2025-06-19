@@ -12,6 +12,8 @@
   --color-border: #373a40;
 
   --breakpoint-xs: 350px;
+
+  --text-heading: 48px;
 }
 
 * {
