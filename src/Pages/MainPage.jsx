@@ -26,7 +26,7 @@ const MainPage = () => {
         {/* Skills Set */}
         <SkillSetSection />
 
-        <hr className="my-20 w-[90%] m-auto" />
+        <hr className="mt-10 mb-20 w-[90%] m-auto" />
 
         {/* Services Section */}
         <ServicesSection />
