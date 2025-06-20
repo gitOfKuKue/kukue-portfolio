@@ -5,7 +5,7 @@ import { HashLink } from "react-router-hash-link";
 const GraphicDesignCard = ({ portfolio }) => {
   const id = portfolio.id;
   return (
-    <div className="p-3 2xl:min-h-[1060px] xl:min-h-[800px] lg:min-h-[780px] md:min-h-[750px] sm:min-h-[1008px] xs:h-fit bg-background flex flex-col justify-start items-start gap-3 text-font rounded-md">
+    <div className="p-3 2xl:min-h-[1060px] xl:min-h-[800px] lg:min-h-[780px] md:min-h-[750px] sm:min-h-[1008px] xs:h-[700px] bg-background flex flex-col justify-start items-start gap-3 text-font rounded-md">
       <div className="2xl:max-h-[800px] lg:max-h-[540px] md:max-h-[470px] sm:max-h-[746px] overflow-hidden">
         <img
           src={`${portfolio.images[0]}`}
