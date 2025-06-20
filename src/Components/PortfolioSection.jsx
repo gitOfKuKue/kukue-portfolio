@@ -22,9 +22,9 @@ const PortfolioSection = () => {
     categoryMenuHandler(category);
   };
 
-  const graphicItems = portfolios.graphicDesign || [];
-  const contentItems = portfolios.contentWriting || [];
-  const webItems = portfolios.webDevelopment || [];
+  const graphicItems = portfolios.graphicDesign.projects || [];
+  const contentItems = portfolios.contentWriting.projects || [];
+  const webItems = portfolios.webDevelopment.projects || [];
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 

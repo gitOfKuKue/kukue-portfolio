@@ -69,6 +69,9 @@ const Profile = () => {
     setIcon(faLock);
   };
 
+  const date = new Date();
+
+
   return (
     <>
       <Container>
@@ -104,7 +107,9 @@ const Profile = () => {
                       detail.type === "Address" && "md:col-span-2"
                     } w-full xs:col-span-1`}
                   >
-                    <h1 className="md:text-2xl xs:text-xl font-bold">{detail.type}</h1>
+                    <h1 className="md:text-2xl xs:text-xl font-bold">
+                      {detail.type}
+                    </h1>
                     {detail.type === "Birthday" ? (
                       <div className="md:text-xl xs:text-md text-font-light h-[56px]">
                         {`${detail.info["birthDay"]}${methods.checkingSupercase(
@@ -147,6 +152,17 @@ const Profile = () => {
               <h1 className="text-6xl font-bold">{totalProjs}</h1>
             </div>
           </div> */}
+          <div className="flex justify-between md:flex-row xs:flex-col w-full bg-aboutme py-5 px-20 mb-10">
+            {Object.entries(portfolios).map((portfolio) => (
+              <div key={portfolio[0]} className={`${portfolio[1].type === "contentWriting" && "md:border-l md:border-r xs:border-0 border-border 2xl:px-30 xl:px-20 lg:px-20 md:px-10 xs:px-0"} py-10`}>
+                <h3 className="text-font-light md:text-xs">{portfolio[1].title}</h3>
+                <h1 className="xl:text-5xl xs:text-4xl font-bold text-font">
+                  {portfolio[1].projects.length} Projects
+                </h1>
+                <p className="text-font-light">{date.getFullYear() -  portfolio[1].experience} year+ experience</p>
+              </div>
+            ))}
+          </div>
         </section>
       </Container>
     </>

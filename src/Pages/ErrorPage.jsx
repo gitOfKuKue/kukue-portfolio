@@ -7,17 +7,16 @@ import { Link } from "react-router-dom";
 const ErrorPage = () => { 
   return (
     <>
-      <Navigation />
-      <div className="flex justify-center items-center">
+      <div className="w-full flex justify-center lg:flex-row xs:flex-col items-center absolute top-[50%] left-[50%] translate-[-50%]">
         <img
           src={errorPic}
           alt="404 Error"
           className="w-150 "
         />
         <div className="">
-            <h1 className="text-8xl text-font font-bold">404 Error</h1>
+            <h1 className="lg:text-8xl xs:text-5xl text-font font-bold">404 Error</h1>
             <p className="text-xl text-font mb-8">OOPS ... Sorry, page not found!</p>
-            <Link to="/" className="py-4 px-6 bg-button border rounded-md border-border text-font font-bold">Go back home!</Link>
+            <Link to="/" className="lg:py-4 lg:px-6 xs:py-2 xs:px-3 bg-button border rounded-md border-border text-font">Go back home!</Link>
         </div>
       </div>
     </>

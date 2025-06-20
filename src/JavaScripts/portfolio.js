@@ -33,56 +33,76 @@ import bithumbnnPic1 from "../assets/portfolios/frontend-web-dev/Bithumbnn-crypt
 import bithumbnnPic2 from "../assets/portfolios/frontend-web-dev/Bithumbnn-crypto-web2.png";
 import airJordan1Mid from "../assets/portfolios/graphic-design/air-jordan-1-mid.jpg";
 import iPhone15 from "../assets/portfolios/graphic-design/iPhone-graphic.jpg";
+import { faCode, faPencil, faPenNib } from "@fortawesome/free-solid-svg-icons";
 
 const portfolios = {
-  graphicDesign: [
-    {
-      id: 1,
-      images: [bookCover1],
-      title: "Tasumiki N4 Japanese Book",
-      type: "Graphic Design",
-      description:
-        "This book cover design was designed on 13rd May, 2025 for course assignment. This book is the design for Japanese N4.",
-    },
-    {
-      id: 2,
-      images: [bookCover2],
-      title: "ကျွန်တော်သိသောဖြည့်စွက်စာများအကြောင်း",
-      type: "Graphic Design",
-      description:
-        "This art was also created on 13rd May, 2025. This is the design for health knowledge sharing book.",
-    },
-    {
-      id: 3,
-      images: [bookFrontCover3, bookBackCover3],
-      title: "ဆရာရဲ - ရူပဗေဒဆိုင်ရာမှတ်စုတိုများ",
-      type: "Graphic Design",
-      description:
-        "This book cover designs were created on 14th May, 2025. This idea is for the physic knowledge sharing book. I created two sides of book (Front side and back side).",
-    },
-    {
-      id: 4,
-      images: [airJordan1Mid],
-      title: "Air Jordan 1 Mid",
-      type: "Graphic Design",
-      description:
-        "This Air Jordan Shoes design was created on 24th May, 2025. It is for the social media post on facebook.",
-    },
-    {
-      id: 5,
-      images: [iPhone15],
-      title: "iPhone 15 & iPhone 15 Pro",
-      type: "Graphic Design",
-      description:
-        "This design was aimmed to post the commercial adverdisement. It was designed on 24th May, 2025.",
-    },
-  ],
-  contentWriting: [
-    {
-      id: 1,
-      images: [contentPic1],
-      pdf: content1,
-      content: `💁🏻 ဒီနေ့မှာတော့ Dream Education ကနေ နေ့စဥ်ဘဝမှာ အသုံးချနိုင်မယ့် Tips လေးတစ်ခုကိုပြောပြပေးမယ်ဆို စိတ်ဝင်စားလား❓
+  graphicDesign: {
+    icon: faPenNib,
+    experience: 2021,
+    title: "Graphic Design",
+    description:
+      "After my matriculation exam, I have been interested in graphic design and I studied the ideas, designs and theories.",
+    bgColor: "bg-iconic",
+    toSection: "graphic-design",
+    type: "graphicDesign",
+    projects: [
+      {
+        id: 1,
+        images: [bookCover1],
+        title: "Tasumiki N4 Japanese Book",
+        type: "Graphic Design",
+        description:
+          "This book cover design was designed on 13rd May, 2025 for course assignment. This book is the design for Japanese N4.",
+      },
+      {
+        id: 2,
+        images: [bookCover2],
+        title: "ကျွန်တော်သိသောဖြည့်စွက်စာများအကြောင်း",
+        type: "Graphic Design",
+        description:
+          "This art was also created on 13rd May, 2025. This is the design for health knowledge sharing book.",
+      },
+      {
+        id: 3,
+        images: [bookFrontCover3, bookBackCover3],
+        title: "ဆရာရဲ - ရူပဗေဒဆိုင်ရာမှတ်စုတိုများ",
+        type: "Graphic Design",
+        description:
+          "This book cover designs were created on 14th May, 2025. This idea is for the physic knowledge sharing book. I created two sides of book (Front side and back side).",
+      },
+      {
+        id: 4,
+        images: [airJordan1Mid],
+        title: "Air Jordan 1 Mid",
+        type: "Graphic Design",
+        description:
+          "This Air Jordan Shoes design was created on 24th May, 2025. It is for the social media post on facebook.",
+      },
+      {
+        id: 5,
+        images: [iPhone15],
+        title: "iPhone 15 & iPhone 15 Pro",
+        type: "Graphic Design",
+        description:
+          "This design was aimmed to post the commercial adverdisement. It was designed on 24th May, 2025.",
+      },
+    ],
+  },
+  contentWriting: {
+    icon: faPencil,
+    experience: 2022,
+    title: "Content Writing",
+    description:
+      "My family career is traders. Sometimes, I had to post the advertisements on social media and I have learned a lot from it.",
+    bgColor: "bg-service-card",
+    toSection: "content-writing",
+    type: "contentWriting",
+    projects: [
+      {
+        id: 1,
+        images: [contentPic1],
+        pdf: content1,
+        content: `💁🏻 ဒီနေ့မှာတော့ Dream Education ကနေ နေ့စဥ်ဘဝမှာ အသုံးချနိုင်မယ့် Tips လေးတစ်ခုကိုပြောပြပေးမယ်ဆို စိတ်ဝင်စားလား❓
 
 ‼️That is “How to be good at first impression” ‼️
  
@@ -108,17 +128,18 @@ First impression မှာ အရာရာကအရေးကြီးပါတ�
  
 အပေါ်မှာပြောပြပေးခဲ့တဲ့အချက်လေးတွေကတော့ လူတိုင်းသတိမထားမိဘဲ Frist Impression မှာအသုံးချဖို့မေ့နေတဲ့ Tips လေးတွေဖြစ်လို့ Dreamers လေးတွေအနေနဲ့လည်း ဒီ content လေးကိုဖတ်ပြီး နေ့စဥ်လူမှုဆက်ဆံရေးတွေမှာ အသုံးချသွာနိုင်မယ်လို့မျှော်လင့်ပါတယ်။ Dreamers လေးတွေအတွက်အကျိုးကို တစ်ထောင့်တစ်နေရာကနေဖြည့်ဆည်းပေးနိုင်တယ်ဆိုရင် Dream Education ကလည်းမျှော်လင့်နေပါတယ်။​ 😉
 `,
-      title: "How to be good at first impression",
-      type: "Content Writing",
-      description:
-        "This content was written for the first impression of a person. All of the ideas are referenced from google and then I created my content as my flow on 16th May, 2025 to post on the Dream Education (Non-porfit Organization).",
-      postLink: "https://www.facebook.com/share/p/1AXfmwixLE/?mibextid=wwXIfr",
-    },
-    {
-      id: 2,
-      images: [contentPic2],
-      pdf: content2,
-      content: `ထိုင်းနိုင်ငံ 🇹🇭 ရဲ့ ဒုတိယအကြီးဆုံးမြို့ဖြစ်တဲ့ ချင်းမိုင်မြို့မှာ Master Degree, Doctoral Degree ကို Scholar နဲ့ ကျောင်းတက်ရမယ်ဆိုစိတ်ဝင်စားလား? 🏫
+        title: "How to be good at first impression",
+        type: "Content Writing",
+        description:
+          "This content was written for the first impression of a person. All of the ideas are referenced from google and then I created my content as my flow on 16th May, 2025 to post on the Dream Education (Non-porfit Organization).",
+        postLink:
+          "https://www.facebook.com/share/p/1AXfmwixLE/?mibextid=wwXIfr",
+      },
+      {
+        id: 2,
+        images: [contentPic2],
+        pdf: content2,
+        content: `ထိုင်းနိုင်ငံ 🇹🇭 ရဲ့ ဒုတိယအကြီးဆုံးမြို့ဖြစ်တဲ့ ချင်းမိုင်မြို့မှာ Master Degree, Doctoral Degree ကို Scholar နဲ့ ကျောင်းတက်ရမယ်ဆိုစိတ်ဝင်စားလား? 🏫
 
 🎓 ဟုတ်ပါတယ်။ ထိုင်းနိုင်ငံ ချင်းမိုင်မြို့မှာရှိတဲ့ Chiang Mai University (CMU) ဟာဆိုရင်ဖြင့် ထိုင်းနိုင်ငံကကျောင်းသားတွေအပြင် နိုင်ငံတစ်ကာကကျောင်းသားတွေကိုပါ Master Degree နဲ့ Doctoral Degree တွေကို Scholarship ပေးနေပါပြီ။ CMU ဟာဆိုရင်ဖြင့် Scholarship တွေကို June 2019 ကစလို့ ယခုချိန်ထိပေးလာခဲ့တာ ၆ နှစ်ကျော်ရှိပြီလည်းဖြစ်ပါတယ်။ 2025 Academic Year အတွက်ကိုလည်း CMU ဘက်နေ Scholar စုစုပေါင်း အယောက် 240 ကိုပေးအပ်သွားမှာဖြစ်ပါတယ်။ 
 
@@ -164,17 +185,18 @@ Website - https://grad-ps.oou.cmu.ac.th/
 CMU Graduate Admission - https://admission.reg.cmu.ac.th/gpas/
 Resource - https://cmu.to/cmups2025-annoucement
 `,
-      title: "Scholarship at Chiang Mai University",
-      type: "Content Writing",
-      description:
-        "This content is for the Chiang Mai University scholarship announcement. I wrote this content on 11st May, 2025. It was uploaded on Aspire Now Orgnaization.",
-      postLink: "https://www.facebook.com/share/p/14qAcvSwpN/?mibextid=wwXIfr",
-    },
-    {
-      id: 3,
-      images: [contentPic3],
-      pdf: content3,
-      content: `နွေရာသီ ☀️ မှာ ပူတယ်ဆိုပေမယ့် Aspire now လေးရှိနေေတာ့ မပျင်းရတော့ဘူးပေါ့။ 😎
+        title: "Scholarship at Chiang Mai University",
+        type: "Content Writing",
+        description:
+          "This content is for the Chiang Mai University scholarship announcement. I wrote this content on 11st May, 2025. It was uploaded on Aspire Now Orgnaization.",
+        postLink:
+          "https://www.facebook.com/share/p/14qAcvSwpN/?mibextid=wwXIfr",
+      },
+      {
+        id: 3,
+        images: [contentPic3],
+        pdf: content3,
+        content: `နွေရာသီ ☀️ မှာ ပူတယ်ဆိုပေမယ့် Aspire now လေးရှိနေေတာ့ မပျင်းရတော့ဘူးပေါ့။ 😎
 
  Aspirers လေးတွေကို Aspire now ကနေ Summer vibe ကိုအပြည့်အဝ ပေးနိုင်တဲ့ ဇာတ်ကားကောင်းလေးတွေကို တင်ပေးလိုက်ပါတယ်။ နွေရာသီကပူပြင်းတယ်ဆိုပေမယ့် အအေးလေးသာက်၊ ပြတင်းပေါက်လေးဖွင့်၊ ယပ်တောင်လေးခပ်ပြီး ဇာတ်ကားကောင်းလေးတွေကို ခံစားရတာကလည်း ရသတစ်မျိုးပါပဲ။ ခုဖော်ပြပေးလိုက်တဲ့ ဇာတ်ကားလေးတွေကတော့ နွေရာသီလေနွေးလေးတွေနဲ့ အတူတူ ရောထွေးလာတဲ့ အချစ်၊ လန်းဆန်းမှု၊ လွတ်လပ်မှုတွေကို ရသမျိုးစုံနဲ့ခံစားနိုင်မှာလည်းဖြစ်တာကြောင့် လက်လွတ်မခံပဲ အားတဲ့အချိန်မှာကြည့်သင့်တဲ့ ဇာတ်ကားတွေလည်းဖြစ်ပါတယ်။ အဲ့တော့ အချိန်မဆွဲပဲ Post တစ်ခုချင်းစီရဲ့ ဇာတ်ကားလေးတွေရဲ့ အကျဥ်းချုပ်ကို ဖတ်ကြည့်လိုက်ရအောင်။ ☀️
 
@@ -196,17 +218,18 @@ Barbies ဆိုတာနဲ့ မသိသူမရှိဇာတ်ကာ�
 
 
 `,
-      title: "Summer Vibe Movies",
-      type: "Content Writing",
-      description:
-        "This content is for the summer vibe movies that should be watched in the summer. It had already uploaded on Aspire Now Orgnaization Social Media facebook page.",
-      postLink: "https://www.facebook.com/share/p/1F3QFvGMj1/?mibextid=wwXIfr",
-    },
-    {
-      id: 4,
-      images: [contentPic4],
-      pdf: content4,
-      content: `Japan International MANGA Award ကိုပေးမယ်ဆိုရင်ယူမှာလား? ဒါပေမယ့် Japan လူမျိုးဖြစ်လို့တော့မရဘူးနော်။ 
+        title: "Summer Vibe Movies",
+        type: "Content Writing",
+        description:
+          "This content is for the summer vibe movies that should be watched in the summer. It had already uploaded on Aspire Now Orgnaization Social Media facebook page.",
+        postLink:
+          "https://www.facebook.com/share/p/1F3QFvGMj1/?mibextid=wwXIfr",
+      },
+      {
+        id: 4,
+        images: [contentPic4],
+        pdf: content4,
+        content: `Japan International MANGA Award ကိုပေးမယ်ဆိုရင်ယူမှာလား? ဒါပေမယ့် Japan လူမျိုးဖြစ်လို့တော့မရဘူးနော်။ 
 
 2025 မှာပြုလုပ်တဲ့ 19 ကြိမ်မြောက် Japan International MANGA Award ဆုပေးပွဲကို ကိုယ့်မှာ Talent ရှိတာနဲ့ ဝင်ပြိုင်လို့ရပါတယ်နော်။ 
 ဆုပေးပွဲအကြောင်းတွေမပြောခင် MANGA စာအုပ်တွေရဲ့ သမိုင်းကိုကြည့်လိုက်ရအောင်။ ရုပ်ပြစာအုပ် (Manga) တွေဆိုတာ Japan နိုင်ငံမှာ လွန်ခဲ့တဲ့ 12 ရာစုကတည်းက ပေါ်ပေါက်လာခဲ့တဲ့စာပေတွေဆိုလည်း မမှားပါဘူး။ Manga စာအုပ်တွေကိုကြည့်ခြင်းဖြင့်လည်း Japan နိုင်ငံရဲ့ ယဥ်ကျေးမှု အနုပညာတွေကို အတိုင်းသားမြင်နိုင်ပါတယ်။ ခေတ်ကာလပြောင်းလဲလာတာနဲ့ အမျှ Manga လောကကလည်း တိုးတက်လာပါတယ်။ ခုကာလမှာဆိုရင်တော့ Manga စာအုပ်တွေကိုလူငယ်တွေတော်တော်များများအပြင် တစ်ချို့လူကြီးတွေပါဖတ်လာတာကို ကိုယ့်ပတ်ဝန်းကျင်မှာလည်း တွေ့ရမှာပါ။ 
@@ -248,17 +271,18 @@ How to Apply?
 5.	မိမိရုပ်ပြစာအုပ်မှာ page number တွေပါလာဖို့သတိထားရပါမယ်။ (ဖြစ်နိုင်ရင် စာမျက်နှာတွေကို ဘယ်ညာနှစ်ခုယှဥ် ထားပေးပါ။)
 6.	Form ဖြည့်ပြီးသွားပြီဆိုရင်တော့ Confirmation email ကို လက်ခံရရှိမှာပဲဖြစ်ပါတယ်။ 
 `,
-      title: "Japan International MANGA Award",
-      type: "Content Writing",
-      description:
-        "This content was for the Manga creators and I wrote it to announce the award for the best webtoon creators. You can read it on the Aspire Now Facebook page.",
-      postLink: "https://www.facebook.com/share/p/12L4UqqBhtA/?mibextid=wwXIfr",
-    },
-    {
-      id: 5,
-      images: [contentPic5],
-      pdf: content5,
-      content: `🤔 Aspirers လေးတွေက အလုပ်များကြတဲ့ ကျောင်းသားလေးတွေလား❓
+        title: "Japan International MANGA Award",
+        type: "Content Writing",
+        description:
+          "This content was for the Manga creators and I wrote it to announce the award for the best webtoon creators. You can read it on the Aspire Now Facebook page.",
+        postLink:
+          "https://www.facebook.com/share/p/12L4UqqBhtA/?mibextid=wwXIfr",
+      },
+      {
+        id: 5,
+        images: [contentPic5],
+        pdf: content5,
+        content: `🤔 Aspirers လေးတွေက အလုပ်များကြတဲ့ ကျောင်းသားလေးတွေလား❓
 
 💁🏻 ဒါဆိုရင်တော့ ဒီ content လေးက အလုပ်များကြတဲ့ Aspirers လေးတွေအတွက်ပဲဖြစ်ပါတယ်။ Aspirers လေးတွေအလုပ်တွေများလို့ “ဘယ်ကစလို့ ဘာလုပ်ရမလဲမသိဘူး” ခဏခဏဖြစ်ဖူးကြတယ်မလား။ အတန်းတက်ရမှာတွေ၊ စာလေ့လာရမှာတွေ နဲ့အလုပ်များနေကြတာက ကြိုးစားလိုစိတ်ရှိတဲ့ ကျောင်းသားတိုင်းကြုံ့တွေ့ရတဲ့ ပြဿနာတစ်ခုပါ။ အဲ့ဒီလို ပြဿနာတွေဖြစ်ရတာကလည်း အချိန်ကိုစီမံခန့်ခွဲမှုမှာ အားနည်းလို့ဖြစ်တတ်ပါတယ်။ အဲ့ဒီတော့အခါ ပြဿနာတွေအနည်းနဲ့အများ ရှင်းရလေအောင် Aspire now ကနေ tips & tricks လေးတွေပြောပြပေးမယ်။ 😉
 
@@ -283,74 +307,85 @@ How to Apply?
 
 ခုပြောပြပေးခဲ့တဲ့ အချက်လေးတွကို သိရှိပြီးတော့ ကိုယ့်ရဲ့ နေ့စဥ်ဘဝမှာ အကျိုးရှိရှိလုပ်ငန်းဆောင်တာတွေကိုလုပ်ဆောင်နိုင်မယ်လို့လည်း Aspire now ကမျှော်လင့်ပါတယ်နော်။ ကိုယ်ရဲ့ တန်ဖိုးရှိတဲ့အချိန်တွေကို ကိုယ်ကပဲ ထိန်းသိမ်းရမှာဖြစ်လို့ လစ်ဟင်းမှုမရှိပဲ အကျိုးကျိုးရှိရှိအသုံးချလိုက်ကြရအောင်ပါ။
 `,
-      title: "Time hack for busy students",
-      type: "Content Writing",
-      description:
-        "This content was written for the advice to manage the time systematically for busy students.",
-      postLink: "https://www.facebook.com/share/p/1EMcys7Dhr/",
-    },
-  ],
-  webDevelopment: [
-    {
-      id: 1,
-      images: [ayeeDropshippingPic],
-      githublink: "https://github.com/gitOfKuKue/AYEE-Dropshipping.git",
-      title: "Ayee Dropshipping",
-      type: "Frontend Web Development",
-      description:
-        "This website was created for dropshipping business. I used HTML, CSS and JavaScript to create this website. It is not finished yet. I stopped to keep creation on it because I have other projects to do. I will continue to create this website after I finish my other projects.",
-    },
-    {
-      id: 2,
-      images: [myPortfolioPic1, myPortfolioPic2, myPortfolioPic3],
-      githublink: "https://github.com/gitOfKuKue/my-portfolio.git",
-      title: "Ku Kue Portfolio",
-      type: "Frontend Web Development",
-      description:
-        "This website was created for my portfolio. I used HTML, CSS, JavaScript and React. You can check it out this website. You can also uesed it on any devices and I created it for responsive design.",
-    },
-    {
-      id: 3,
-      images: [
-        infoAssistancePic1,
-        infoAssistancePic2,
-        infoAssistancePic3,
-        infoAssistancePic4,
-      ],
-      githublink: "https://github.com/infoAssistance/HTML_Project.git",
-      title: "Info Assistance",
-      type: "Frontend Web Development",
-      description:
-        "This website was created for my school project by using HTML, CSS, JavaScript, PHP and I was selected to participate in the competition in Nay Pyi Taw.",
-    },
-    {
-      id: 4,
-      images: [ucsyTableTennisPic],
-      githublink: "https://github.com/gitOfKuKue/UCSY_Table_Tennis_Club.git",
-      title: "UCSY Table Tennis Club Website",
-      type: "Frontend Web Development",
-      description:
-        "I was a founder of Table Tennis Club in University of Computer Studies, Yangon. So, I thought my club need a table tennis club website to announce our club activities. I created it since I was in Semester-2 of UCSY.",
-    },
-    {
-      id: 5,
-      images: [ucsyStorePic],
-      githublink: "https://github.com/gitOfKuKue/UCSY_Store.git",
-      title: "UCSY Store Website",
-      type: "Frontend Web Development",
-      description:
-        "This website is on going project. I aim to sell the digital products in UCSY and later this website will be a platform for selling digital products. I will keep trying to update this project by using other languages.",
-    },
-    {
-      id: 6,
-      images: [bithumbnnPic, bithumbnnPic1, bithumbnnPic2],
-      githublink: "https://github.com/gitOfKuKue/using_crypto.git",
-      title: "Bithumbnn Crypto Trading Web",
-      type: "Frontend Web Development",
-      description:
-        "This website is a freelance project. I worked as a freelance frontend developer with the team members from Yadanarbon Cyber City University for a crypto trading.",
-    },
-  ],
+        title: "Time hack for busy students",
+        type: "Content Writing",
+        description:
+          "This content was written for the advice to manage the time systematically for busy students.",
+        postLink: "https://www.facebook.com/share/p/1EMcys7Dhr/",
+      },
+    ],
+  },
+  webDevelopment: {
+    icon: faCode,
+    experience: 2020,
+    title: "Frontend Web Development",
+    description:
+      "Related to the graphic design, I also interested in web development. I have learned HTML, CSS, Bootstrap, JavaScript, ReactJS and TailwindCSS.",
+    bgColor: "bg-service-card",
+    toSection: "frontend-web-development",
+    type: "frontendWebDev",
+    projects: [
+      {
+        id: 1,
+        images: [ayeeDropshippingPic],
+        githublink: "https://github.com/gitOfKuKue/AYEE-Dropshipping.git",
+        title: "Ayee Dropshipping",
+        type: "Frontend Web Development",
+        description:
+          "This website was created for dropshipping business. I used HTML, CSS and JavaScript to create this website. It is not finished yet. I stopped to keep creation on it because I have other projects to do. I will continue to create this website after I finish my other projects.",
+      },
+      {
+        id: 2,
+        images: [myPortfolioPic1, myPortfolioPic2, myPortfolioPic3],
+        githublink: "https://github.com/gitOfKuKue/my-portfolio.git",
+        title: "Ku Kue Portfolio",
+        type: "Frontend Web Development",
+        description:
+          "This website was created for my portfolio. I used HTML, CSS, JavaScript and React. You can check it out this website. You can also uesed it on any devices and I created it for responsive design.",
+      },
+      {
+        id: 3,
+        images: [
+          infoAssistancePic1,
+          infoAssistancePic2,
+          infoAssistancePic3,
+          infoAssistancePic4,
+        ],
+        githublink: "https://github.com/infoAssistance/HTML_Project.git",
+        title: "Info Assistance",
+        type: "Frontend Web Development",
+        description:
+          "This website was created for my school project by using HTML, CSS, JavaScript, PHP and I was selected to participate in the competition in Nay Pyi Taw.",
+      },
+      {
+        id: 4,
+        images: [ucsyTableTennisPic],
+        githublink: "https://github.com/gitOfKuKue/UCSY_Table_Tennis_Club.git",
+        title: "UCSY Table Tennis Club Website",
+        type: "Frontend Web Development",
+        description:
+          "I was a founder of Table Tennis Club in University of Computer Studies, Yangon. So, I thought my club need a table tennis club website to announce our club activities. I created it since I was in Semester-2 of UCSY.",
+      },
+      {
+        id: 5,
+        images: [ucsyStorePic],
+        githublink: "https://github.com/gitOfKuKue/UCSY_Store.git",
+        title: "UCSY Store Website",
+        type: "Frontend Web Development",
+        description:
+          "This website is on going project. I aim to sell the digital products in UCSY and later this website will be a platform for selling digital products. I will keep trying to update this project by using other languages.",
+      },
+      {
+        id: 6,
+        images: [bithumbnnPic, bithumbnnPic1, bithumbnnPic2],
+        githublink: "https://github.com/gitOfKuKue/using_crypto.git",
+        title: "Bithumbnn Crypto Trading Web",
+        type: "Frontend Web Development",
+        description:
+          "This website is a freelance project. I worked as a freelance frontend developer with the team members from Yadanarbon Cyber City University for a crypto trading.",
+      },
+    ],
+  },
 };
 
 export default portfolios;
