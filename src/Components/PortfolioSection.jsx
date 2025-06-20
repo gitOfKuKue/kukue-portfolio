@@ -210,7 +210,7 @@ const PortfolioSection = () => {
               ? "block"
               : "hidden"
           }`}
-          id="graphic-design"
+          id="content-writing"
         >
           <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">
             Content Writing ({portfolios.contentWriting.length} Projects)
@@ -284,7 +284,7 @@ const PortfolioSection = () => {
               ? "block"
               : "hidden"
           }`}
-          id="graphic-design"
+          id="frontend-web-dev"
         >
           <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">
             Front-end web development ({portfolios.webDevelopment.length}{" "}
