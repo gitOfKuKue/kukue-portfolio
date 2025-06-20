@@ -17,14 +17,14 @@ const UnderMaintenance = () => {
   return (
     <>
       <Container>
-        <div className="flex justify-evenly items-center">
+        <section className="flex justify-evenly items-center lg:flex-row xs:flex-col-reverse">
           {/* Content */}
-          <div className="w-1/2 flex flex-col justify-start items-start gap-3 h-70">
-            <h1 className="font-bold text-4xl">
-              <span className="text-iconic text-7xl">{section}</span>
+          <div className="md:w-1/2 xs:w-full flex flex-col justify-start items-start gap-3 h-70">
+            <h1 className="font-bold lg:text-4xl xs:text-3xl">
+              <span className="text-iconic lg:text-7xl xs:text-5xl">{section}</span>
               <br /> is under maintenance.
             </h1>
-            <p className="text-font-light">{details}</p>
+            <p className="text-font-light text-justify">{details}</p>
 
             {/* Button section */}
             <div
@@ -48,7 +48,7 @@ const UnderMaintenance = () => {
             alt="Under maintenance pic"
             className="w-100"
           />
-        </div>
+        </section>
       </Container>
     </>
   );
