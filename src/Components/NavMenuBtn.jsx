@@ -7,8 +7,8 @@ const NavMenuBtn = ({menuBtn, className}) => {
   return (
     <HashLink
       to={menuBtn["link"]}
-      className={`${className} hover:-translate-y-1 duration-100 text-2xl hover:text-iconic px-4 py-3 flex justify-start items-center gap-2`}
-    > <FontAwesomeIcon icon={menuBtn.icon} className="text-2xl" />
+      className={`${className} hover:-translate-y-1 duration-100 xl:text-2xl lg:text-xl hover:text-iconic xl:px-4 xl:py-3 lg:px-2 flex justify-start items-center xl:gap-2 lg:gap-1 xs:gap-3`}
+    > <FontAwesomeIcon icon={menuBtn.icon} className="xl:text-2xl lg:text-xl" />
       {menuBtn["menu"]}
     </HashLink>
   );

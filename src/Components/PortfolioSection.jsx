@@ -54,23 +54,32 @@ const PortfolioSection = () => {
   return (
     <section className="" id="portfolio">
       <Container className="">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between lg:flex-row xs:flex-col items-center lg:mb-8 xs:mb-2">
           <h1 className="text-iconic md:text-6xl xs:text-4xl font-bold">
             Portfolio
           </h1>
 
           {/* Menu section */}
-          <div className="text-iconic bg-gray-300 p-1 lg:flex justify-between items-center h-12 w-180 rounded-md xs:hidden">
+          <div className="text-iconic bg-gray-300 p-1 flex lg:justify-between xs:justify-evenly items-center xl:w-180 lg:w-140 xs:w-full lg:mt-0 xs:mt-5 rounded-md">
             {categoryMenus.map((categoryMenu, index) => (
               <button
                 key={index}
-                className={`cursor-pointer text-xl py-1 px-4 hover:text-iconic hover:border hover:border-border rounded-md ${
+                className={`cursor-pointer xl:text-xl lg:text-md xs:text-xs sm:py-1 sm:px-4 xs: px-2 hover:text-iconic hover:border hover:border-border rounded-md ${
                   categoryMenu.active &&
                   "text-font bg-button border border-border"
                 }`}
                 onClick={() => handlePortfolioFilter(categoryMenu.type)}
               >
-                {categoryMenu.name}
+                <span className="xs:hidden sm:block">{categoryMenu.name}</span>
+                <span className="xs:block sm:hidden">
+                  {categoryMenu.name === "Graphic Design"
+                    ? "GD"
+                    : categoryMenu.name === "Content Writing"
+                    ? "CW"
+                    : categoryMenu.name === "Frontend Web Dev"
+                    ? "FWD"
+                    : "All"}
+                </span>
               </button>
             ))}
           </div>
@@ -122,7 +131,9 @@ const PortfolioSection = () => {
           }`}
           id="graphic-design"
         >
-          <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">Graphic Design</h1>
+          <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">
+            Graphic Design
+          </h1>
 
           <Slide
             easing="ease"
@@ -194,7 +205,9 @@ const PortfolioSection = () => {
           }`}
           id="graphic-design"
         >
-          <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">Content Writing</h1>
+          <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">
+            Content Writing
+          </h1>
 
           <Slide
             easing="ease"
@@ -266,7 +279,9 @@ const PortfolioSection = () => {
           }`}
           id="graphic-design"
         >
-          <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">Front-end web development</h1>
+          <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">
+            Front-end web development
+          </h1>
 
           <Slide
             easing="ease"
@@ -314,18 +329,16 @@ const PortfolioSection = () => {
               </button>
             }
           >
-            {chunkArray(webItems, webItemsPerPage).map(
-              (group, index) => (
-                <div
-                  key={index}
-                  className="grid xs:grid-cols-1 md:gap-5 xs:gap-1 px-3"
-                >
-                  {group.map((value) => (
-                    <FrontendWebDevCard key={value.id} portfolio={value} />
-                  ))}
-                </div>
-              )
-            )}
+            {chunkArray(webItems, webItemsPerPage).map((group, index) => (
+              <div
+                key={index}
+                className="grid xs:grid-cols-1 md:gap-5 xs:gap-1 px-3"
+              >
+                {group.map((value) => (
+                  <FrontendWebDevCard key={value.id} portfolio={value} />
+                ))}
+              </div>
+            ))}
           </Slide>
         </div>
       </Container>

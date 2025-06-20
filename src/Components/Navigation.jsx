@@ -93,27 +93,27 @@ const Navigation = ({ current }) => {
         {menuBtns.map((menuBtn) => (
           <NavMenuBtn key={menuBtn.btnId} menuBtn={menuBtn} />
         ))}
-      </div>
 
-      <div className={`flex justify-between items-center gap-4`}>
-        <Link
-          to={"/cv"}
-          className="bg-button hover:bg-border hover:text-background border-1 border-border sm:px-4 xs:px-2 text-font md:text-lg sm:text-md xs:text-sm cursor-pointer sm:py-2 xs:py-1 rounded-md"
-        >
-          Curriculum Vitae
-        </Link>
-        <a
-          href="tel:+84898247910"
-          className="hover:bg-button hover:text-font border-1 hover:border-border sm:px-4 sm:py-2 xs:px-2 xs:py-1 sm:text-md md:text-lg xs:text-sm cursor-pointer rounded-md"
-        >
-          Let's Talk!
-        </a>
-        <Link to="profile">
-          <FontAwesomeIcon
-            icon={faCircleUser}
-            className="lg:text-5xl xs:text-3xl md:text-4xl text-border"
-          />
-        </Link>
+        <div className={`flex justify-between lg:items-center xs:items-start gap-4 lg:flex-row xs:flex-col`}>
+          <Link
+            to={"/cv"}
+            className="bg-button hover:bg-border hover:text-background border-1 border-border sm:px-4 xs:px-2 text-font lg:text-sm md:text-lg sm:text-md xs:text-xs cursor-pointer sm:py-2 xs:py-1 rounded-md"
+          >
+            Curriculum Vitae
+          </Link>
+          <a
+            href="tel:+84898247910"
+            className="hover:bg-button hover:text-font border-1 hover:border-border sm:px-4 sm:py-2 xs:px-2 xs:py-1 lg:text-sm md:text-lg sm:text-md xs:text-xs cursor-pointer rounded-md"
+          >
+            Let's Talk!
+          </a>
+          <Link to="profile">
+            <FontAwesomeIcon
+              icon={faCircleUser}
+              className="xl:text-5xl xs:text-3xl md:text-4xl text-border"
+            />
+          </Link>
+        </div>
       </div>
 
       <svg
@@ -122,14 +122,20 @@ const Navigation = ({ current }) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={`size-7 text-font xs:block lg:hidden duration-300 transition-transform ${menuOpen && "text-accent rotate-90 scale-110"}`}
+        className={`size-7 text-font xs:block lg:hidden duration-300 transition-transform ${
+          menuOpen && "text-accent rotate-90 scale-110"
+        }`}
         onClick={openMenuBtn}
         id="menuToggle"
       >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d = {!menuOpen ? "M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" : "M6 18 18 6M6 6l12 12"}
+          d={
+            !menuOpen
+              ? "M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+              : "M6 18 18 6M6 6l12 12"
+          }
         />
       </svg>
     </nav>

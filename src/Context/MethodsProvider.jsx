@@ -57,7 +57,7 @@ const MethodsProvider = ({ children }) => {
       type: "contentWriting",
     },
     {
-      name: "Frontend Web Development",
+      name: "Frontend Web Dev ",
       active: false,
       type: "frontendWebDev",
     },
