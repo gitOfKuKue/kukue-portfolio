@@ -52,9 +52,9 @@ const PortfolioSection = () => {
     }, []);
 
   const shortNames = {
-    "graphicDesign": "GD",
-    "contentWriting": "CW",
-    "frontendWebDev": "FWD",
+    "graphicDesign": "Graphics",
+    "contentWriting": "Contents",
+    "frontendWebDev": "Front-end",
     "all": "All",
   };
 
@@ -67,13 +67,13 @@ const PortfolioSection = () => {
           </h1>
 
           {/* Menu section */}
-          <div className="text-iconic bg-gray-300 p-1 flex lg:justify-between xs:justify-evenly items-center xl:w-180 lg:w-140 xs:w-full lg:mt-0 xs:mt-5 rounded-md">
+          <div className="text-iconic bg-gray-300 p-1 flex lg:justify-between xs:justify-evenly items-center xl:w-180 lg:w-140 xs:w-fit lg:mt-0 xs:mt-5 rounded-md">
             {categoryMenus.map(
               (categoryMenu, index) => (
                 (
                   <button
                     key={index}
-                    className={`cursor-pointer xl:text-xl lg:text-md xs:text-xs sm:py-1 sm:px-4 xs:px-2 xs:py-3 hover:text-iconic hover:border hover:border-border rounded-md ${
+                    className={`cursor-pointer xl:text-xl lg:text-md xs:text-md sm:py-1 sm:px-4 xs:px-4 xs:py-2 hover:text-iconic hover:border hover:border-border rounded-md ${
                       categoryMenu.active &&
                       "text-font bg-button border border-border"
                     }`}
