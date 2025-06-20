@@ -5,7 +5,7 @@ import MethodsContext from "../Context/MethodsContext";
 
 const Services = ({ service }) => {
   const date = new Date();
-  const { selectedCategory, portfolioFilter, categoryMenuHandler } = useContext(MethodsContext);
+  const { portfolioFilter, categoryMenuHandler } = useContext(MethodsContext);
 
   const handlePortfolioFilter = (e) => {
     portfolioFilter(e);

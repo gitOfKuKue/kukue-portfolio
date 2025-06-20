@@ -14,7 +14,8 @@ import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
 import SkillBarChart from "../Components/SkillBarChart";
 import cvPic from "../assets/images/Account-pana.svg";
 
-import cvDocs from "../assets/docs/Thu Htet Naing's [General] CV.pdf";
+// import cvDocs from "../assets/docs/Thu Htet Naing's [General] CV.pdf";
+import cvDocs from "../assets/docs/Thu Htet Naing's CV.pdf";
 
 const CurriculumVitae = () => {
   // Print function

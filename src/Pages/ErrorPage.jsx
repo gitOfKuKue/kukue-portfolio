@@ -4,9 +4,7 @@ import infos from "../JavaScripts/info";
 import errorPic from "../assets/images/404 Error-bro.svg"
 import { Link } from "react-router-dom";
 
-const ErrorPage = () => {
-  console.log(infos.details[0]["name"]);
-  console.log(infos.details[infos.details.length - 1]["position"]);   
+const ErrorPage = () => { 
   return (
     <>
       <Navigation />
@@ -19,7 +17,7 @@ const ErrorPage = () => {
         <div className="">
             <h1 className="text-8xl text-font font-bold">404 Error</h1>
             <p className="text-xl text-font mb-8">OOPS ... Sorry, page not found!</p>
-            <Link to="/" className="py-4 px-6 bg-button border-1 border-border text-font font-bold">Go back home!</Link>
+            <Link to="/" className="py-4 px-6 bg-button border rounded-md border-border text-font font-bold">Go back home!</Link>
         </div>
       </div>
     </>

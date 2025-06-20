@@ -60,7 +60,7 @@ const Footer = () => {
       <div className="flex justify-between items-baseline md:flex-row xs:flex-col py-5">
         <p className="md:text-md xs:text-sm md:mb-0 xs:mb-5">Version {version} © {date.getFullYear()} @ Ku Kue</p>
         <div className="flex justify-between items-center gap-5 flex-wrap">
-          {contacts.map((contact) => (
+          {contacts.slice(0,5).map((contact) => (
             <ContactIcons key={contact.id} contact={contact} />
           ))}
           <HashLink

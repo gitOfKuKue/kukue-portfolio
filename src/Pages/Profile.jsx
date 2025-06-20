@@ -86,17 +86,17 @@ const Profile = () => {
               data-aos="slide-left"
             >
               <div className="border-b-2 border-b-iconic pb-5 flex justify-between items-center">
-                <h1 className="text-4xl text-iconic font-bold">
+                <h1 className="md:text-4xl xs:text-3xl text-iconic font-bold">
                   Personal Detail
                 </h1>
                 <FontAwesomeIcon
                   icon={icon}
-                  className="text-3xl text-iconic"
+                  className="md:text-3xl xs:text-2xl text-iconic"
                   onClick={handleLock}
                   id="lock-icon"
                 />
               </div>
-              <div className={`grid md:grid-cols-2 xs:grid-cols-1 mt-5`}>
+              <div className={`grid md:grid-cols-2 xs:grid-cols-1 gap-2 mt-5`}>
                 {infos.map((detail) => (
                   <div
                     key={detail.id}
@@ -104,9 +104,9 @@ const Profile = () => {
                       detail.type === "Address" && "md:col-span-2"
                     } w-full xs:col-span-1`}
                   >
-                    <h1 className="text-2xl font-bold">{detail.type}</h1>
+                    <h1 className="md:text-2xl xs:text-xl font-bold">{detail.type}</h1>
                     {detail.type === "Birthday" ? (
-                      <div className="text-xl text-font-light">
+                      <div className="md:text-xl xs:text-md text-font-light h-[56px]">
                         {`${detail.info["birthDay"]}${methods.checkingSupercase(
                           detail.info["birthDay"]
                         )} ${months[detail.info["birthMonth"] - 1]}, ${
@@ -115,7 +115,7 @@ const Profile = () => {
                       </div>
                     ) : (
                       <textarea
-                        className="text-xl text-font-light w-full text-wrap resize-none"
+                        className="md:text-xl xs:text-md text-font-light w-full text-wrap resize-none"
                         value={detail.info}
                         disabled={!canEdit}
                         onChange={(e) => handleInput(e, detail.id)}
@@ -147,7 +147,6 @@ const Profile = () => {
               <h1 className="text-6xl font-bold">{totalProjs}</h1>
             </div>
           </div> */}
-          
         </section>
       </Container>
     </>

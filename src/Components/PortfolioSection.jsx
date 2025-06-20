@@ -132,7 +132,7 @@ const PortfolioSection = () => {
           id="graphic-design"
         >
           <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">
-            Graphic Design
+            Graphic Design ({portfolios.graphicDesign.length} Projects)
           </h1>
 
           <Slide
@@ -206,7 +206,7 @@ const PortfolioSection = () => {
           id="graphic-design"
         >
           <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">
-            Content Writing
+            Content Writing ({portfolios.contentWriting.length} Projects)
           </h1>
 
           <Slide
@@ -280,7 +280,7 @@ const PortfolioSection = () => {
           id="graphic-design"
         >
           <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">
-            Front-end web development
+            Front-end web development ({portfolios.webDevelopment.length} Projects)
           </h1>
 
           <Slide

@@ -59,6 +59,10 @@ const Navigation = ({ current }) => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleMenuOpen = () =>{
+    setMenuOpen(false);
+  }
+
   React.useEffect(() => {
     const handleClickOutside = (e) => {
       const menuBox = document.getElementById("menuBox");
@@ -90,14 +94,23 @@ const Navigation = ({ current }) => {
         } justify-between items-center gap-3 text-font`}
         id="menuBox"
       >
-        {menuBtns.map((menuBtn) => (
-          <NavMenuBtn key={menuBtn.btnId} menuBtn={menuBtn} />
-        ))}
+        <div className="flex justify-between lg:flex-row xs:flex-col lg:items-center xs:items-start gap-3">
+          {menuBtns.map((menuBtn) => (
+            <NavMenuBtn
+              key={menuBtn.btnId}
+              menuBtn={menuBtn}
+              setMenuOpen={setMenuOpen}
+            />
+          ))}
+        </div>
 
-        <div className={`flex justify-between lg:items-center xs:items-start gap-4`}>
+        <div
+          className={`flex justify-between lg:items-center xs:items-start gap-4`}
+        >
           <Link
             to={"/cv"}
             className="bg-button hover:bg-border hover:text-background border-1 border-border sm:px-4 xs:px-2 text-font lg:text-sm md:text-lg sm:text-md xs:text-xs cursor-pointer sm:py-2 xs:py-1 rounded-md"
+            onClick={handleMenuOpen}
           >
             Curriculum Vitae
           </Link>
@@ -111,6 +124,7 @@ const Navigation = ({ current }) => {
             <FontAwesomeIcon
               icon={faCircleUser}
               className="xl:text-5xl xs:text-3xl md:text-4xl text-border"
+              onClick={handleMenuOpen}
             />
           </Link>
         </div>

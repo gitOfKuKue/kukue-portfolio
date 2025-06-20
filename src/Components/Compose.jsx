@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useState } from "react";
 import Methods from "../JavaScripts/methods";
 import MethodsContext from "../Context/MethodsContext";
-import PopUpBox from "./PopUpBox";
+import PopUpBox from "./recycle-bin/PopUpBox";
 
 const Compose = () => {
   const [name, setName] = useState("");
