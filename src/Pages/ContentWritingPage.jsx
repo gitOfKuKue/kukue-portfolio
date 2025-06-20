@@ -7,7 +7,7 @@ import portfolios from "../JavaScripts/portfolio";
 
 const ContentWritingPage = () => {
   const { productId } = useParams(); // Taking id
-  const currentCw = portfolios.contentWriting.find(
+  const currentCw = portfolios.contentWriting.projects.find(
     (item) => item.id == productId
   );
 
@@ -22,7 +22,7 @@ const ContentWritingPage = () => {
         {/* Side Bar */}
         <SideBar
           productId={productId}
-          portfolio={portfolios.contentWriting}
+          portfolio={portfolios.contentWriting.projects}
           link="content-writings"
         />
 

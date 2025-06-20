@@ -8,7 +8,7 @@ import SideBar from "../Components/SideBar";
 
 const GraphicDesignPage = () => {
   const { productId } = useParams(); // Taking id
-  const currentGD = portfolios.graphicDesign.find(
+  const currentGD = portfolios.graphicDesign.projects.find(
     (item) => item.id == productId
   );
 
@@ -23,7 +23,7 @@ const GraphicDesignPage = () => {
         {/* Side Bar */}
         <SideBar
           productId={productId}
-          portfolio={portfolios.graphicDesign}
+          portfolio={portfolios.graphicDesign.projects}
           link="graphic-designs"
         />
 

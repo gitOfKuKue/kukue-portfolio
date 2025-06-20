@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 const FrontendDevPage = () => {
   const { productId } = useParams(); // Taking id
-  const currentFd = portfolios.webDevelopment.find(
+  const currentFd = portfolios.webDevelopment.projects.find(
     (item) => item.id == productId
   );
 
@@ -22,7 +22,7 @@ const FrontendDevPage = () => {
         {/* Side Bar */}
         <SideBar
           productId={productId}
-          portfolio={portfolios.webDevelopment}
+          portfolio={portfolios.webDevelopment.projects}
           link="frontend-developments"
         />
 
