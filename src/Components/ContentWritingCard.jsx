@@ -13,14 +13,14 @@ const ContentWritingCard = ({ portfolio }) => {
           className="w-full"
         />
       </div>
-      <div className="flex flex-col items-start justify-between h-[250px] mt-auto">
+      <div className="xs:min-h-[210px] md:min-h-[250px] flex flex-col items-start justify-between  mt-auto">
         <h1 className="2xl:text-2xl font-bold lg:text-xl sm:text-2xl">
           {portfolio.title}
         </h1>
-        <h3 className="text-font-light 2xl:text-xl lg:text-sm sm:text-xl mb-2">
+        <h3 className="text-font-light 2xl:text-md lg:text-sm sm:text-xl mb-2">
           {portfolio.type}
         </h3>
-        <p className="mt-auto line-clamp-3 mb-5 sm:text-xl md:text-md">
+        <p className="mt-auto line-clamp-3 mb-5 sm:text-md text-font-light">
           {portfolio.description}
         </p>
         <HashLink
