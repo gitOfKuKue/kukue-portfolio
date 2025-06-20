@@ -51,6 +51,13 @@ const PortfolioSection = () => {
       return acc;
     }, []);
 
+  const shortNames = {
+    "graphicDesign": "GD",
+    "contentWriting": "CW",
+    "frontendWebDev": "FWD",
+    "all": "All",
+  };
+
   return (
     <section className="" id="portfolio">
       <Container className="">
@@ -61,27 +68,27 @@ const PortfolioSection = () => {
 
           {/* Menu section */}
           <div className="text-iconic bg-gray-300 p-1 flex lg:justify-between xs:justify-evenly items-center xl:w-180 lg:w-140 xs:w-full lg:mt-0 xs:mt-5 rounded-md">
-            {categoryMenus.map((categoryMenu, index) => (
-              <button
-                key={index}
-                className={`cursor-pointer xl:text-xl lg:text-md xs:text-xs sm:py-1 sm:px-4 xs: px-2 hover:text-iconic hover:border hover:border-border rounded-md ${
-                  categoryMenu.active &&
-                  "text-font bg-button border border-border"
-                }`}
-                onClick={() => handlePortfolioFilter(categoryMenu.type)}
-              >
-                <span className="xs:hidden sm:block">{categoryMenu.name}</span>
-                <span className="xs:block sm:hidden">
-                  {categoryMenu.name === "Graphic Design"
-                    ? "GD"
-                    : categoryMenu.name === "Content Writing"
-                    ? "CW"
-                    : categoryMenu.name === "Frontend Web Dev"
-                    ? "FWD"
-                    : "All"}
-                </span>
-              </button>
-            ))}
+            {categoryMenus.map(
+              (categoryMenu, index) => (
+                (
+                  <button
+                    key={index}
+                    className={`cursor-pointer xl:text-xl lg:text-md xs:text-xs sm:py-1 sm:px-4 xs:px-2 xs:py-3 hover:text-iconic hover:border hover:border-border rounded-md ${
+                      categoryMenu.active &&
+                      "text-font bg-button border border-border"
+                    }`}
+                    onClick={() => handlePortfolioFilter(categoryMenu.type)}
+                  >
+                    <span className="xs:hidden sm:block">
+                      {categoryMenu.name}
+                    </span>
+                    <span className="xs:block sm:hidden">
+                      {shortNames[categoryMenu.type] || ""}
+                    </span>
+                  </button>
+                )
+              )
+            )}
           </div>
 
           {/* Left, Right arrows */}
@@ -280,7 +287,8 @@ const PortfolioSection = () => {
           id="graphic-design"
         >
           <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">
-            Front-end web development ({portfolios.webDevelopment.length} Projects)
+            Front-end web development ({portfolios.webDevelopment.length}{" "}
+            Projects)
           </h1>
 
           <Slide
