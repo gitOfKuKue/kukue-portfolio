@@ -85,16 +85,16 @@ const Navigation = ({ current }) => {
       <div
         className={`text-xl lg:flex ${
           menuOpen
-            ? "flex flex-col justify-start items-start absolute top-15 right-0 w-[95%] left-[50%] -translate-x-[50%] h-fit p-3 bg-white/10 backdrop-blur-md shadow-lg rounded-xl border-border border-1"
+            ? "flex flex-col-reverse justify-start items-start absolute top-15 right-0 w-[95%] left-[50%] -translate-x-[50%] h-fit p-5 bg-white/10 backdrop-blur-md shadow-lg rounded-xl border-border border-1"
             : "hidden"
-        } justify-between items-center gap-3 text-font py-1`}
+        } justify-between items-center gap-3 text-font`}
         id="menuBox"
       >
         {menuBtns.map((menuBtn) => (
           <NavMenuBtn key={menuBtn.btnId} menuBtn={menuBtn} />
         ))}
 
-        <div className={`flex justify-between lg:items-center xs:items-start gap-4 lg:flex-row xs:flex-col`}>
+        <div className={`flex justify-between lg:items-center xs:items-start gap-4`}>
           <Link
             to={"/cv"}
             className="bg-button hover:bg-border hover:text-background border-1 border-border sm:px-4 xs:px-2 text-font lg:text-sm md:text-lg sm:text-md xs:text-xs cursor-pointer sm:py-2 xs:py-1 rounded-md"
