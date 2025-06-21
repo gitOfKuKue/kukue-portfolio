@@ -81,7 +81,7 @@ const GraphicDesignPage = () => {
             {sortedProjects.map((portfolio) => (
               <div
                 key={portfolio.id}
-                className="h-[872px] grid lg:grid-cols-2 xs:grid-cols-1 md:p-10 xs:p-5 bg-aboutme rounded-md gap-5"
+                className="h-[872px] grid lg:grid-cols-2 xs:grid-cols-1 md:p-10 xs:p-5 bg-aboutme rounded-md gap-5 overflow-scroll"
               >
                 {/* Images */}
                 {portfolio.images.map((image, index) => (
