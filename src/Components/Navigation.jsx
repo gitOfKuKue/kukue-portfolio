@@ -91,7 +91,7 @@ const Navigation = ({ current }) => {
           menuOpen
             ? "flex flex-col-reverse justify-start items-start absolute top-15 right-0 w-[95%] left-[50%] -translate-x-[50%] h-fit p-5 bg-white/10 backdrop-blur-md shadow-lg rounded-xl border-border border-1"
             : "hidden"
-        } justify-between items-center gap-3 text-font`}
+        } justify-between items-center gap-3 text-font z-10`}
         id="menuBox"
       >
         <div className="flex justify-between lg:flex-row xs:flex-col lg:items-center xs:items-start gap-3">

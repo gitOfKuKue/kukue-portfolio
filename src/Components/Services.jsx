@@ -12,7 +12,6 @@ const Services = ({ service }) => {
     categoryMenuHandler(e);
   }
 
-
   return (
     <HashLink
       to={`#${service.toSection}`}

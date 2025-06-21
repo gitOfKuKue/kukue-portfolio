@@ -10,7 +10,7 @@ const GraphicDesignCard = ({ portfolio }) => {
         <img
           src={`${portfolio.images[0]}`}
           alt="Portfolio Card"
-          className="h-full"
+          className="w-full"
         />
       </div> 
       <div className="2xl:min-h-[200px] xl:min-h-[190px] lg:min-h-[200px] md:min-h-[246px] sm:min-h-[206px] flex flex-col items-start justify-between mt-auto">

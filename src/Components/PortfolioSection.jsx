@@ -284,7 +284,7 @@ const PortfolioSection = () => {
               ? "block"
               : "hidden"
           }`}
-          id="frontend-web-dev"
+          id="frontend-web-development"
         >
           <h1 className="text-font md:text-3xl xs:text-2xl font-bold mb-5">
             Front-end web development ({portfolios.webDevelopment.projects.length}{" "}
