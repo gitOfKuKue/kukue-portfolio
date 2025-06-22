@@ -12,9 +12,9 @@ const Footer = () => {
   const date = new Date();
   let version = "";
   // version = "1.1.55"; // 1/5/2025
-  // version = "2.1.65"; // 17/6/2025
-  // version = "3.1.65"; // 17/6/2025
-  version = "3.2.65"; // 20/6/2025
+  // version = "2.1.65"; // 17/6/2025 // UI interface is entirely changed dark mode to light mode and modified button colors and borders. 
+  // version = "3.1.65"; // 17/6/2025 // Portfolios sections are changed into dynamic and grouped.
+  version = "3.2.65"; // 20/6/2025 // fixing errors and responsive error.
 
   return (
     <footer className="bg-border md:py-20 md:px-10 xs:py-10 xs:px-5 text-background mt-auto" id="footer">

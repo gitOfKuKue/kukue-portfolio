@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Slide } from "react-slideshow-image";
 
-const Slider = () => {
+const Slider = ({children}) => {
   return (
     <>
       <Slide
@@ -46,7 +46,7 @@ const Slider = () => {
           </button>
         }
       >
-        <Outlet />
+        {children}
       </Slide>
     </>
   );

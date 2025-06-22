@@ -5,6 +5,7 @@ import Methods from "../JavaScripts/methods";
 import { useParams } from "react-router-dom";
 import portfolios from "../JavaScripts/portfolio";
 import { Slide } from "react-slideshow-image";
+import Slider from "../Components/Slider";
 
 const ContentWritingPage = () => {
   const { productId } = useParams(); // Taking id
@@ -35,47 +36,7 @@ const ContentWritingPage = () => {
         /> */}
 
         <Container className="">
-          <Slide
-            easing="ease"
-            autoplay="false"
-            indicators
-            prevArrow={
-              <button className="bg-button border border-border py-10 text-font">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="xs:size-6 lg:size-10"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15.75 19.5 8.25 12l7.5-7.5"
-                  />
-                </svg>
-              </button>
-            }
-            nextArrow={
-              <button className="bg-button border border-border py-10 text-font">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="xs:size-6 lg:size-10"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                  />
-                </svg>
-              </button>
-            }
-          >
+          <Slider>
             {sortedProjects.map((portfolio) => (
               <div
                 key={portfolio}
@@ -139,7 +100,7 @@ const ContentWritingPage = () => {
                 </div>
               </div>
             ))}
-          </Slide>
+          </Slider>
         </Container>
       </section>
     </>

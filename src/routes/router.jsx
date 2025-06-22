@@ -11,6 +11,8 @@ import ContentWritingPage from "../Pages/ContentWritingPage";
 import FrontendDevPage from "../Pages/FrontendDevPage";
 import Profile from "../Pages/Profile";
 import UnderMaintenance from "../Pages/UnderMaintenance";
+import Feedback from "../Pages/Feedback";
+import TextLoader from "../Pages/TextLoader";
 
 const isMaintenanceMode = false;
 
@@ -55,6 +57,14 @@ const router = isMaintenanceMode
             path: "frontend-developments/:productId",
             element: <FrontendDevPage />,
           },
+          {
+            path: "feedback",
+            element: <Feedback />
+          },
+          {
+            path: "testing",
+            element: <Testing />
+          }
         ],
       },
     ]);

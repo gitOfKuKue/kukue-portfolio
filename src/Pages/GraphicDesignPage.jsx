@@ -6,6 +6,7 @@ import Methods from "../JavaScripts/methods";
 import SideBar from "../Components/SideBar";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css"; // make sure to include this
+import Slider from "../Components/Slider";
 
 const GraphicDesignPage = () => {
   const { productId } = useParams(); // get ID from URL
@@ -37,47 +38,7 @@ const GraphicDesignPage = () => {
         /> */}
 
         <Container className="">
-          <Slide
-            easing="ease"
-            autoplay="false"
-            indicators
-            prevArrow={
-              <button className="bg-button border border-border py-10 text-font">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="xs:size-6 lg:size-10"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15.75 19.5 8.25 12l7.5-7.5"
-                  />
-                </svg>
-              </button>
-            }
-            nextArrow={
-              <button className="bg-button border border-border py-10 text-font">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="xs:size-6 lg:size-10"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                  />
-                </svg>
-              </button>
-            }
-          >
+          <Slider>
             {sortedProjects.map((portfolio) => (
               <div
                 key={portfolio.id}
@@ -102,7 +63,7 @@ const GraphicDesignPage = () => {
                 </div>
               </div>
             ))}
-          </Slide>
+          </Slider>
         </Container>
       </section>
     </>
