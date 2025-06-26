@@ -4,16 +4,21 @@ import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import MethodsProvider from "../Context/MethodsProvider";
 import Header from "./recycle-bin/Header";
+import VersionProvider from "../Context/VersionProvider";
+import ScrollToTop from "./ScrollToTop";
 
-const MainLayout = () => {
+const MainLayout = ({ version }) => {
   return (
     <>
-      <MethodsProvider>
-        <Navigation />
-        {/* <Header /> */}
-        <Outlet />
-        <Footer />
-      </MethodsProvider>
+      <VersionProvider>
+        <MethodsProvider>
+          <ScrollToTop />
+          <Navigation />
+          {/* <Header /> */}
+          <Outlet />
+          <Footer version={version} />
+        </MethodsProvider>
+      </VersionProvider>
     </>
   );
 };

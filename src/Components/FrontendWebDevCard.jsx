@@ -18,7 +18,7 @@ const FrontendWebDevCard = ({ portfolio }) => {
         <h3 className="text-font-light mb-4">{portfolio.type}</h3>
         <p className="line-clamp-3 mb-5 text-font-light">{portfolio.description}</p>
         <HashLink
-          to={`/frontend-developments/${id}#frontend-web-dev-page`}
+          to={`/frontend-developments/${id}`}
           className="bg-button  hover:bg-border hover:text-background border-1 border-border py-2 px-4 mt-auto rounded-md"
         >
           More details

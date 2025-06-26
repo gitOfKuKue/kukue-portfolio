@@ -13,6 +13,9 @@ import Profile from "../Pages/Profile";
 import UnderMaintenance from "../Pages/UnderMaintenance";
 import Feedback from "../Pages/Feedback";
 import TextLoader from "../Pages/TextLoader";
+import VersionNotes from "../Pages/VersionNotes";
+import VersionContext from "../Context/VersionContext";
+import { useContext } from "react";
 
 const isMaintenanceMode = false;
 
@@ -59,12 +62,16 @@ const router = isMaintenanceMode
           },
           {
             path: "feedback",
-            element: <Feedback />
+            element: <Feedback />,
+          },
+          {
+            path: "version",
+            element: <VersionNotes />,
           },
           {
             path: "testing",
-            element: <Testing />
-          }
+            element: <Testing />,
+          },
         ],
       },
     ]);

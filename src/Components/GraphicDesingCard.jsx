@@ -24,7 +24,7 @@ const GraphicDesignCard = ({ portfolio }) => {
           {portfolio.description}
         </p>
         <HashLink
-          to={`/graphic-designs/${id}#graphic-design-page`}
+          to={`/graphic-designs/${id}`}
           className="bg-button hover:bg-border hover:text-background border-1 border-border md:py-2 md:px-4 xs:py-2 xs:px-4 sm:text-xl xs:text-sm md:text-md mt-auto md:mx-0 rounded-md"
         >
           More details

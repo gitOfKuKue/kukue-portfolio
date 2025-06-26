@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -7,14 +7,12 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import contacts from "../JavaScripts/contact";
 import ContactIcons from "./ContactIcons";
+import VersionContext from "../Context/VersionContext";
 
 const Footer = () => {
   const date = new Date();
-  let version = "";
-  // version = "1.1.55"; // 1/5/2025
-  // version = "2.1.65"; // 17/6/2025 // UI interface is entirely changed dark mode to light mode and modified button colors and borders. 
-  // version = "3.1.65"; // 17/6/2025 // Portfolios sections are changed into dynamic and grouped.
-  version = "3.2.65"; // 20/6/2025 // fixing errors and responsive error.
+  
+  const { versions } = useContext(VersionContext);
 
   return (
     <footer className="bg-border md:py-20 md:px-10 xs:py-10 xs:px-5 text-background mt-auto" id="footer">
@@ -37,7 +35,7 @@ const Footer = () => {
         </ul>
         <div className="md:col-span-2 xs:col-span-5 md:mb-0 xs:mt-10">
           <p className="">GOT A POSITION IN MIND?</p>
-          <a href={contacts[contacts.length - 1].link} className="2xl:text-8xl lg:text-6xl md:text-5xl sm:text-7xl xs:text-5xl font-bold">
+          <a href={contacts[6].link} className="2xl:text-8xl lg:text-6xl md:text-5xl sm:text-7xl xs:text-5xl font-bold">
             Let's talk
           </a>
         </div>
@@ -59,7 +57,7 @@ const Footer = () => {
       </div>
 
       <div className="flex justify-between items-baseline md:flex-row xs:flex-col py-5">
-        <p className="md:text-md xs:text-sm md:mb-0 xs:mb-5">Version {version} © {date.getFullYear()} @ Ku Kue</p>
+        <p className="md:text-md xs:text-sm md:mb-0 xs:mb-5"><HashLink to="version">Version {versions[versions.length-1].version}</HashLink> © {date.getFullYear()} @ Ku Kue</p>
         <div className="flex justify-between items-center gap-5 flex-wrap">
           {contacts.slice(0,5).map((contact) => (
             <ContactIcons key={contact.id} contact={contact} />

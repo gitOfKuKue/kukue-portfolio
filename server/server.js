@@ -1,19 +1,11 @@
-// server.js
-const express = require("express");
-const fs = require("fs");
-const cors = require("cors");
-
+const express = require('express');
 const app = express();
-app.use(cors());
-app.use(express.json());
+const PORT = 3001;
 
-app.post("/endpoint", (req, res) => {
-  const { feedback } = req.body;
-
-  fs.appendFile("feedback.txt", feedback + "\n", (err) => {
-    if (err) return res.status(500).send("Failed to save");
-    res.send("Saved successfully");
-  });
+app.get('/', (req, res) => {
+  res.send('Server is running!');
 });
 
-app.listen(3001, () => console.log("Server running on port 3001"));
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
+});
