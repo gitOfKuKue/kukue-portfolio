@@ -141,7 +141,7 @@ const Navigation = ({ current }) => {
               />
             </Link>
           </div>
-          <div className={`flex-col justify-between gap-5 xs:flex lg:hidden`}>
+          <div className={`w-full flex-col justify-between gap-5 xs:flex lg:hidden`}>
             {menuBtns.menus.map((menuBtn) => (
               <NavMenuBtn
                 key={menuBtn.btnId}

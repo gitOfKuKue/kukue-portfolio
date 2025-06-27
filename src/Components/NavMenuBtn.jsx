@@ -10,7 +10,7 @@ const NavMenuBtn = ({menuBtn, className, setMenuOpen}) => {
   return (
     <HashLink
       to={menuBtn["link"]}
-      className={`${className} hover:-translate-y-1 duration-100 xl:text-2xl lg:text-xl hover:text-iconic xl:px-4 xl:py-3 lg:px-2 flex justify-start items-center xl:gap-2 lg:gap-1 xs:gap-3`}
+      className={`${className} w-full hover:-translate-y-1 duration-100 xl:text-2xl lg:text-xl hover:text-iconic xl:px-4 xl:py-3 lg:px-2 flex justify-start items-center xl:gap-2 lg:gap-1 xs:gap-3`}
       onClick={handleMenuOpen}
     > <FontAwesomeIcon icon={menuBtn.icon} className="xl:text-2xl lg:text-xl" />
       {menuBtn["menu"]}
