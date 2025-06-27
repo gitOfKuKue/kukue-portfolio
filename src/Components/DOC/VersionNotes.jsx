@@ -1,18 +1,18 @@
 import React, { version } from "react";
-import logo from "../assets/icons/logo.svg";
+import logo from "../../assets/icons/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
-import Container from "../Components/Container";
 import { useContext } from "react";
-import VersionContext from "../Context/VersionContext";
 import { li, tr, ul } from "framer-motion/client";
+import Container from "../Container";
+import VersionContext from "../../Context/VersionContext";
 
-const VersionNotes = () => {
+const VersionNotes = ({ className }) => {
   const { versions } = useContext(VersionContext);
   let number = 1;
   const reversedVersions = versions.slice().reverse();
   return (
-    <section className="my-10">
+    <section className={`${className} my-10`}>
       <Container>
         <div className="">
           <div className="mb-10">
@@ -151,7 +151,9 @@ const VersionNotes = () => {
                 <div className="flex justify-between items-center border-b border-border p-5 bg-border text-aboutme">
                   <h1>V {ver.version}</h1>
                   <h1>
-                    <span className="xs:hidden md:inline-block">Released Date - </span>
+                    <span className="xs:hidden md:inline-block">
+                      Released Date -{" "}
+                    </span>
                     {ver.releasedDate.toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "long",
@@ -178,6 +180,10 @@ const VersionNotes = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div className="flex justify-start items-center gap-2">
+          <h1 className="font-bold">Developed by </h1>
+          <img src={logo} alt="Logo" className="w-15 inline-block" />
         </div>
       </Container>
     </section>

@@ -3,10 +3,6 @@ import VersionContext from "./VersionContext";
 
 const VersionProvider = ({ children }) => {
   let version = "";
-  // version = "1.1.55"; // 1/5/2025
-  // version = "2.1.65"; // 17/6/2025 // UI interface is entirely changed dark mode to light mode and modified button colors and borders.
-  // version = "3.1.65"; // 17/6/2025 // Portfolios sections are changed into dynamic and grouped.
-  // version = "3.2.65"; // 20/6/2025 // fixing errors and responsive error.
 
   const versions = [
     {
@@ -69,6 +65,17 @@ const VersionProvider = ({ children }) => {
         "Clean the code and grouped systematically",
       ],
       releasedDate: new Date("2025-06-27"),
+    },
+    {
+      version: "3.4.65",
+      features: [
+        "Created dynamic dropdown button in navigation bar for vesion and other menus associated with website",
+        "Modified navigation bar for dynamic dropdown buttons",
+      ],
+      changes: [
+        "Changed into dropdowns style and more comfortable to check portfolio",
+      ],
+      releasedDate: new Date("2025-06-28"),
     },
   ];
 

@@ -11,11 +11,14 @@ import VersionContext from "../Context/VersionContext";
 
 const Footer = () => {
   const date = new Date();
-  
+
   const { versions } = useContext(VersionContext);
 
   return (
-    <footer className="bg-border md:py-20 md:px-10 xs:py-10 xs:px-5 text-background mt-auto" id="footer">
+    <footer
+      className="bg-border md:py-20 md:px-10 xs:py-10 xs:px-5 text-background mt-auto"
+      id="footer"
+    >
       <h1 className="text-xl font-bold">Thu Htet Naing @ Ku Kue.</h1>
       <div className="grid grid-cols-5 border-b-1 border-dashed py-20">
         <ul className="md:col-span-1 sm:col-span-2 xs:col-span-2 h-full flex flex-col justify-evenly items-start">
@@ -35,14 +38,20 @@ const Footer = () => {
         </ul>
         <div className="md:col-span-2 xs:col-span-5 md:mb-0 xs:mt-10">
           <p className="">GOT A POSITION IN MIND?</p>
-          <a href={contacts[6].link} className="2xl:text-8xl lg:text-6xl md:text-5xl sm:text-7xl xs:text-5xl font-bold">
+          <a
+            href={contacts[6].link}
+            className="2xl:text-8xl lg:text-6xl md:text-5xl sm:text-7xl xs:text-5xl font-bold"
+          >
             Let's talk
           </a>
         </div>
       </div>
 
       <div className="flex justify-start items-center gap-3 md:my-5 xs:my-10">
-        <HashLink to={"/#navigation"} className="bg-button inline-block p-3 rounded-md">
+        <HashLink
+          to={"/#navigation"}
+          className="bg-button inline-block p-3 rounded-md"
+        >
           <img
             src={logo}
             alt="logo"
@@ -57,9 +66,14 @@ const Footer = () => {
       </div>
 
       <div className="flex justify-between items-baseline md:flex-row xs:flex-col py-5">
-        <p className="md:text-md xs:text-sm md:mb-0 xs:mb-5"><HashLink to="version">Version {versions[versions.length-1].version}</HashLink> © {date.getFullYear()} @ Ku Kue</p>
+        <p className="md:text-md xs:text-sm md:mb-0 xs:mb-5">
+          <Link to="versions">
+            Version {versions[versions.length - 1].version}
+          </Link>{" "}
+          © {date.getFullYear()} @ Ku Kue
+        </p>
         <div className="flex justify-between items-center gap-5 flex-wrap">
-          {contacts.slice(0,5).map((contact) => (
+          {contacts.slice(0, 5).map((contact) => (
             <ContactIcons key={contact.id} contact={contact} />
           ))}
           <HashLink
@@ -69,6 +83,10 @@ const Footer = () => {
             Compose
           </HashLink>
         </div>
+      </div>
+      <div className="flex justify-start items-center gap-2 float-end">
+        <h1 className="font-bold">Developed by </h1>
+        <img src={logo} alt="Logo" className="w-15 inline-block bg-iconic p-1 rounded-sm" />
       </div>
     </footer>
   );

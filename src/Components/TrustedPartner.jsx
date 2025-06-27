@@ -39,16 +39,22 @@ const TrustedPartner = () => {
           Trusted by
         </h1>
         <p className="text-center lg:w-200 md:w-150 xs:w-90 mx-auto">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat
-          ullam repellendus eum, aperiam veniam laboriosam tenetur eligendi quod
-          culpa quas laudantium eaque quae ratione libero aliquam architecto
-          eveniet facilis blanditiis!
+          We are proud to be trusted by a diverse range of partners and clients
+          who believe in our commitment to quality, creativity, and innovation.
+          From startups to established brands, these collaborations reflect our
+          dedication to delivering impactful solutions and building long-lasting
+          professional relationships.
         </p>
+
         <div className="flex xs:flex-col md:flex-row justify-center items-center gap-10 mt-10 xs:mb-30 md:mb-50">
           {trustedPartners.map((partner) => (
-            <Link to={partner.link} 
-            key={partner.id} className="flex items-center justify-center opacity-20" data-aos="fade-up">
-              <img src={partner.logo} alt={partner.name} className="h-20"/>
+            <Link
+              to={partner.link}
+              key={partner.id}
+              className="flex items-center justify-center opacity-20"
+              data-aos="fade-up"
+            >
+              <img src={partner.logo} alt={partner.name} className="h-20" />
             </Link>
           ))}
         </div>
