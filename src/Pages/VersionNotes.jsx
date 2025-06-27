@@ -10,12 +10,12 @@ import { li, tr, ul } from "framer-motion/client";
 const VersionNotes = () => {
   const { versions } = useContext(VersionContext);
   let number = 1;
+  const reversedVersions = versions.slice().reverse();
   return (
     <section className="my-10">
       <Container>
-        <div className="grid md:grid-cols-2 xs:grid-cols-1 md:gap-5">
-          <img src={logo} alt="LOGO Pic" className="w-50 md:hidden xs:block" />
-          <div className="col-span-1 md:row-span-2">
+        <div className="">
+          <div className="mb-10">
             <FontAwesomeIcon icon={faCode} className="text-8xl text-border" />
             <h1 className="text-5xl text-font font-bold uppercase">
               Released <br /> Versions
@@ -25,7 +25,7 @@ const VersionNotes = () => {
             </h1>
           </div>
 
-          <div className="col-span-2">
+          <div className="mb-5">
             <h1 className="text-4xl text-font font-bold uppercase mb-5">
               Features
             </h1>
@@ -36,7 +36,7 @@ const VersionNotes = () => {
             </ul>
           </div>
 
-          <div className="col-span-2">
+          <div className="">
             <h1 className="text-4xl text-font font-bold uppercase mb-5">
               What changed?
             </h1>
@@ -92,59 +92,91 @@ const VersionNotes = () => {
           </div>
 
           {/* Released Version Table */}
-          <div className="w-full xs:overflow-x-auto md:overscroll-none col-span-2">
-            <table className="block col-span-3 mb-10 xs:min-w-[1000px] md:w-fit">
-              <thead>
-                <tr className="bg-border text-aboutme">
-                  <th className="px-4 py-3 border border-aboutme w-10">No.</th>
-                  <th className="px-4 py-3 border border-aboutme w-20">
-                    Versions
-                  </th>
-                  <th className="px-4 py-3 border border-aboutme w-120">
-                    Features
-                  </th>
-                  <th className="px-4 py-3 border border-aboutme w-120">
-                    Changes
-                  </th>
-                  <th className="px-4 py-3 border border-aboutme w-50">
-                    Released Date
-                  </th>
+          <table className="block mb-10 xs:min-w-[1000px] md:w-fit xl:block xs:hidden">
+            <thead>
+              <tr className="bg-border text-aboutme">
+                <th className="px-4 py-3 border border-aboutme w-10">No.</th>
+                <th className="px-4 py-3 border border-aboutme w-20">
+                  Versions
+                </th>
+                <th className="px-4 py-3 border border-aboutme w-120">
+                  Features
+                </th>
+                <th className="px-4 py-3 border border-aboutme w-120">
+                  Changes
+                </th>
+                <th className="px-4 py-3 border border-aboutme w-50">
+                  Released Date
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {reversedVersions.map((ver) => (
+                <tr key={ver.version} className="text-right">
+                  <td className="text-center border border-border">
+                    {number++}
+                  </td>
+                  <td className="py-3 px-4 border border-border">
+                    {ver.version}
+                  </td>
+                  <td className="py-3 px-4 border border-border text-left">
+                    <ul className="list-disc list-inside">
+                      {ver.features.map((feature) => (
+                        <li key={feature}>{feature}</li>
+                      ))}
+                    </ul>
+                  </td>
+                  <td className="py-3 px-4 border border-border text-left">
+                    <ul className="list-disc list-inside">
+                      {ver.changes.map((change) => (
+                        <li key={change}>{change}</li>
+                      ))}
+                    </ul>
+                  </td>
+                  <td className="py-3 px-4 border border-border">
+                    {ver.releasedDate.toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {versions.map((ver) => (
-                  <tr key={ver.version} className="text-right">
-                    <td className="text-center border border-border">
-                      {number++}
-                    </td>
-                    <td className="py-3 px-4 border border-border">
-                      {ver.version}
-                    </td>
-                    <td className="py-3 px-4 border border-border text-left">
-                      <ul className="list-disc list-inside">
-                        {ver.features.map((feature) => (
-                          <li key={feature}>{feature}</li>
-                        ))}
-                      </ul>
-                    </td>
-                    <td className="py-3 px-4 border border-border text-left">
-                      <ul className="list-disc list-inside">
-                        {ver.changes.map((change) => (
-                          <li key={change}>{change}</li>
-                        ))}
-                      </ul>
-                    </td>
-                    <td className="py-3 px-4 border border-border">
-                      {ver.releasedDate.toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+              ))}
+            </tbody>
+          </table>
+
+          <div className="xs:block xl:hidden">
+            {reversedVersions.map((ver) => (
+              <div key={ver.version} className="border border-border mb-5">
+                <div className="flex justify-between items-center border-b border-border p-5 bg-border text-aboutme">
+                  <h1>V {ver.version}</h1>
+                  <h1>
+                    <span className="xs:hidden md:inline-block">Released Date - </span>
+                    {ver.releasedDate.toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </h1>
+                </div>
+                <div className="p-5 border-b border-border">
+                  <h1 className="text-xl text-font font-bold mb-2">Features</h1>
+                  <ul className="list-disc list-inside text-lg text-font-light">
+                    {ver.features.map((feature) => (
+                      <li key={feature}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="p-5">
+                  <h1 className="text-xl text-font font-bold mb-2">Changes</h1>
+                  <ul className="list-disc list-inside text-lg text-font-light">
+                    {ver.changes.map((change) => (
+                      <li key={change}>{change}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </Container>
