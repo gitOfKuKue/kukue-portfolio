@@ -23,6 +23,7 @@ import js from "../assets/icons/js.png";
 import tailwind from "../assets/icons/tailwind.png";
 import react from "../assets/icons/react.png";
 import bootstrap from "../assets/icons/bootstrap.png";
+import java from "../assets/icons/java.png";
 
 // Soft Skills Icons
 import communication from "../assets/icons/chat.png";
@@ -118,6 +119,14 @@ const SkillSetSection = () => {
             "A responsive front-end framework offering pre-built components and grid systems for quickly developing modern web layouts.",
           icon: bootstrap,
           link: "https://getbootstrap.com/",
+        },
+        {
+          id: 7,
+          name: "Java",
+          description:
+            "Oracle Java is the #1 programming language and development platform. It reduces costs, shortens development timeframes, drives innovation, and improves application services. With millions of developers running more than 60 billion Java Virtual Machines worldwide, Java continues to be the development platform of choice for enterprises and developers.",
+          icon: java,
+          link: "https://www.oracle.com/java/",
         },
       ],
       text: "Core technical skills for building modern, responsive, and interactive web applications.",
