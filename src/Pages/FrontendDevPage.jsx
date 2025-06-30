@@ -1,87 +1,95 @@
 import React from "react";
-import Methods from "../JavaScripts/methods";
-import portfolios from "../JavaScripts/portfolio";
-import SideBar from "../Components/SideBar";
 import Container from "../Components/Container";
-import { useParams } from "react-router-dom";
-import { Slide } from "react-slideshow-image";
-import Slider from "../Components/Slider";
+import { useParams, Link } from "react-router-dom";
+import portfolios from "../JavaScripts/portfolio";
 
 const FrontendDevPage = () => {
-  const { productId } = useParams(); // Taking id
-  // const currentFw = portfolios.webDevelopment.projects.find(
-  //   (item) => item.id == productId
-  // );
-
-  // Get all projects
+  const { productId } = useParams();
   const projects = portfolios.webDevelopment.projects;
 
-  // Move clicked project to the top
-  const sortedProjects = [
-    ...projects.filter((item) => item.id == productId),
-    ...projects.filter((item) => item.id != productId),
-  ];
+  const currentIndex = projects.findIndex((item) => item.id == productId);
+  const selectedProject = projects[currentIndex];
+
+  if (!selectedProject) {
+    return (
+      <Container className="py-20 text-center text-red-500">
+        <h1 className="text-2xl font-bold">Project not found.</h1>
+      </Container>
+    );
+  }
+
+  const prevProjectId =
+    currentIndex > 0 ? projects[currentIndex - 1].id : null;
+  const nextProjectId =
+    currentIndex < projects.length - 1 ? projects[currentIndex + 1].id : null;
 
   return (
-    <>
-      <section
-        className="my-10 xs:flex xs:flex-col-reverse xs:gap-5"
-        id="frontend-web-dev-page"
-      >
-        {/* Side Bar */}
-        {/* <SideBar
-          productId={productId}
-          portfolio={portfolios.webDevelopment.projects}
-          link="frontend-developments"
-        /> */}
+    <section className="py-10 bg-gray-50" id="frontend-web-dev-page">
+      <Container className="max-w-6xl mx-auto px-4">
+        <div className="mb-16 bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+          {/* Header */}
+          <div className="mb-6 border-b border-dashed pb-4">
+            <h1 className="text-3xl sm:text-4xl font-bold text-iconic">
+              {selectedProject.title}
+            </h1>
+            <p className="text-font-light text-base mt-2">
+              {selectedProject.type}
+            </p>
+          </div>
 
-        <Container className="">
-          <Slider>
-            {sortedProjects.map((portfolio) => (
-              <div
-                key={portfolio}
-                className={`p-8 grid lg:grid-cols-2 xs:grid-cols-1 overflow-scroll lg:h-[950px] xs:h-[500px] gap-5 bg-aboutme rounded-md`}
-              >
+          {/* Content */}
+          <div className="grid gap-6 lg:grid-cols-2">
+            {/* Images */}
+            <div className="space-y-4">
+              {selectedProject.images.map((img, idx) => (
                 <img
-                  src={portfolio.images[0]}
-                  alt={portfolio.title}
-                  className="w-full mb-5 col-span-2"
-                  data-aos="fade-up"
+                  key={idx}
+                  src={img}
+                  alt={`${selectedProject.title} - ${idx + 1}`}
+                  className="rounded-xl w-full object-cover shadow-md"
                 />
+              ))}
+            </div>
 
-                {/* Description */}
-                <div className=" text-font flex flex-col justify-start items-start col-span-2 mb-5">
-                  <h1 className="text-3xl font-bold">{portfolio.title}</h1>
-                  <p className="text-font-light mb-5">{portfolio.type}</p>
-                  <p className="mb-5">{portfolio.description}</p>
-                  <a
-                    href={portfolio.githublink}
-                    download
-                    className="lg:py-3 lg:px-4 xs:py-2 xs:px-3 bg-button border-1 border-border text-font lg:text-xl xs:text-sm rounded-md hover:bg-background hover:text-iconic"
-                  >
-                    Go to GitHub
-                  </a>
-                </div>
-                {portfolio.images.slice(1).map((image, index) => (
-                  <div key={index} className="lg:col-span-1 xs:col-span-2">
-                    <img
-                      src={image}
-                      alt={portfolio.title}
-                      className="w-full mb-5 border border-font"
-                      key={index}
-                      id={`pic-${index}`}
-                    />
-                    <label htmlFor={`pic-${index}`} className="text-font">
-                      Pic-{index + 1}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </Slider>
-        </Container>
-      </section>
-    </>
+            {/* Description */}
+            <div className="text-font text-base leading-relaxed whitespace-pre-line mt-4 lg:mt-0">
+              <p className="mb-4">{selectedProject.description}</p>
+              {selectedProject.githublink && (
+                <a
+                  href={selectedProject.githublink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 px-5 py-2 bg-button border border-border text-font rounded-md transition"
+                >
+                  Go to GitHub
+                </a>
+              )}
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <div className="flex justify-between items-center mt-10">
+            {prevProjectId ? (
+              <Link
+                to={`/frontend-developments/${prevProjectId}`}
+                className="px-5 py-2 hover:bg-button border border-border text-font rounded-md  transition"
+              >
+                ← Previous
+              </Link>
+            ) : <div />}
+
+            {nextProjectId ? (
+              <Link
+                to={`/frontend-developments/${nextProjectId}`}
+                className="px-5 py-2 hover:bg-button border border-border rounded-md  text-font transition"
+              >
+                Next →
+              </Link>
+            ) : <div />}
+          </div>
+        </div>
+      </Container>
+    </section>
   );
 };
 

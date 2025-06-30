@@ -8,7 +8,7 @@ const AboutMe = () => {
   return (
     // About Me Section
     <section className="aboutme-section bg-aboutme mb-10" id="about">
-      <div className="custom-shape-divider-top-1747829722">
+      {/* <div className="custom-shape-divider-top-1747829722">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ const AboutMe = () => {
             className="shape-fill"
           ></path>
         </svg>
-      </div>
+      </div> */}
       <Container className={"flex xs:flex-col-reverse md:flex-row justify-between items-center py-20"}>
         {/* Picture Section */}
         <img

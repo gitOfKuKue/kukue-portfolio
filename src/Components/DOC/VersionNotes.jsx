@@ -70,7 +70,7 @@ const VersionNotes = ({ className }) => {
             <div className="text-xl text-font-light text-justify font-bold">
               <p className="">
                 The version format follows a structured pattern:{" "}
-                <strong className="block my-5 border border-border p-5 w-fit m-auto">
+                <strong className="block my-5 border border-border p-5 w-fit m-auto xs:text-xs md:text-2xl">
                   [main ver code].[sub ver code].[month][year]
                 </strong>
               </p>
@@ -112,7 +112,7 @@ const VersionNotes = ({ className }) => {
             </thead>
             <tbody>
               {reversedVersions.map((ver) => (
-                <tr key={ver.version} className="text-right">
+                <tr key={ver.version} className="text-right align-top">
                   <td className="text-center border border-border">
                     {number++}
                   </td>

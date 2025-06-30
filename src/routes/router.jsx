@@ -15,6 +15,7 @@ import Feedback from "../Pages/Feedback";
 import TextLoader from "../Pages/TextLoader";
 import { useContext } from "react";
 import VersionNotes from "../Components/DOC/VersionNotes";
+import PortfolioContainer from "../Pages/Portfolios_3_6_65/PortfolioContainer";
 
 const isMaintenanceMode = false;
 
@@ -50,6 +51,10 @@ const router = isMaintenanceMode
           {
             path: "versions",
             element: <VersionNotes />
+          },
+          {
+            path: "portfolio-container",
+            element: <PortfolioContainer />
           },
           {
             path: "graphic-designs/:productId",

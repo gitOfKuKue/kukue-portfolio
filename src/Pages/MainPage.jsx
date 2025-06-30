@@ -5,11 +5,11 @@ import ServicesSection from "../Components/ServicesSection";
 import AboutMe from "../Components/AboutMe";
 import Hello from "../Components/Hello";
 import Footer from "../Components/Footer";
-import PortfolioSection from "../Components/PortfolioSection";
 import MethodsProvider from "../Context/MethodsProvider";
 import { HashLink } from "react-router-hash-link";
 import SkillSetSection from "../Components/SkillSetSection";
 import TrustedPartner from "../Components/TrustedPartner";
+import PortfolioSection from "../Components/Portfolios/PortfolioSection";
 
 const MainPage = () => {
   return (

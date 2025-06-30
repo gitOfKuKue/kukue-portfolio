@@ -65,7 +65,7 @@ html ::-webkit-scrollbar {
 
 .aboutme-section::before {
   background-image: url("./assets/images/background-shapes1.svg");
-  background-size: cover;
+  background-size: contain;
 }
 
 .custom-shape-divider-top-1747829722 {

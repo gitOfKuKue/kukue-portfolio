@@ -1,109 +1,116 @@
-import React from "react";
-import SideBar from "../Components/SideBar";
+import React, { useEffect } from "react";
 import Container from "../Components/Container";
-import Methods from "../JavaScripts/methods";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import portfolios from "../JavaScripts/portfolio";
-import { Slide } from "react-slideshow-image";
-import Slider from "../Components/Slider";
 
 const ContentWritingPage = () => {
-  const { productId } = useParams(); // Taking id
-  // const currentCw = portfolios.contentWriting.projects.find(
-  //   (item) => item.id == productId
-  // );
-
-  // Get all projects
+  const { productId } = useParams();
   const projects = portfolios.contentWriting.projects;
 
-  // Move clicked project to the top
-  const sortedProjects = [
-    ...projects.filter((item) => item.id == productId),
-    ...projects.filter((item) => item.id != productId),
-  ];
+  const currentIndex = projects.findIndex((item) => item.id == productId);
+  const selectedProject = projects[currentIndex];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [productId]);
+
+  if (!selectedProject) {
+    return (
+      <Container className="py-20 text-center text-red-500">
+        <h1 className="text-2xl font-bold">Content project not found.</h1>
+      </Container>
+    );
+  }
+
+  const prevProject =
+    currentIndex > 0 ? projects[currentIndex - 1] : null;
+  const nextProject =
+    currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
 
   return (
-    <>
-      <section
-        className="my-10 xs:flex xs:flex-col-reverse xs:gap-5 xs:justify-end"
-        id="content-writing-page"
-      >
-        {/* Side Bar */}
-        {/* <SideBar
-          productId={productId}
-          portfolio={portfolios.contentWriting.projects}
-          link="content-writings"
-        /> */}
+    <section className="py-10 bg-gray-50" id="content-writing-page">
+      <Container className="max-w-6xl mx-auto px-4">
+        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+          {/* Header */}
+          <div className="mb-6 border-b border-dashed pb-4">
+            <h1 className="text-3xl sm:text-4xl font-bold text-iconic">
+              {selectedProject.title}
+            </h1>
+            <p className="text-font-light text-base mt-2">
+              {selectedProject.type}
+            </p>
+          </div>
 
-        <Container className="">
-          <Slider>
-            {sortedProjects.map((portfolio) => (
-              <div
-                key={portfolio}
-                className={`grid xl:grid-cols-2 xs:grid-cols-1 xl:p-10 xs:p-3 bg-aboutme rounded-md xs:h-fit`}
-              >
-                {portfolio.images.map((image, index) => (
-                  <img
-                    src={image}
-                    alt={portfolio.title}
-                    className="xl:w-120 xs:w-full mb-5"
-                    key={index}
-                    data-aos="fade-up"
-                  />
-                ))}
+          {/* Content */}
+          <div className="grid gap-6 lg:grid-cols-2">
+            {/* Images */}
+            <div className="space-y-4">
+              {selectedProject.images.map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img}
+                  alt={`${selectedProject.title} - ${idx + 1}`}
+                  className="rounded-xl w-full object-cover shadow-md"
+                />
+              ))}
+            </div>
 
-                <div className="row-span-2">
-                  <h1 className="text-font text-3xl font-bold xl:hidden xs:block">
-                    {portfolio.title}
-                  </h1>
-                  <p className="text-font-light mb-5 xl:hidden xs:block">
-                    {portfolio.type}
-                  </p>
+            {/* Text Content */}
+            <div className="text-font text-base leading-relaxed whitespace-pre-line mt-4 lg:mt-0">
+              <p className="mb-4">{selectedProject.description}</p>
 
-                  <p
-                    className="text-justify xl:h-[750px] xl:overflow-y-scroll text-font text-xl xl:border-0 xs:border-font xs:border-1 xs:p-3 xs:mb-10 text-wrap"
-                    data-aos="fade-up"
-                  >
-                    {portfolio.content.split("\n").map((line, index) => (
-                      <span key={index}>
-                        {line}
-                        <br />
-                      </span>
-                    ))}
-                  </p>
-                </div>
-
-                {/* Description */}
-                <div className=" text-font flex flex-col justify-start items-start">
-                  <h1 className="text-3xl font-bold xs:hidden xl:block">
-                    {portfolio.title}
-                  </h1>
-                  <p className="text-font-light mb-5 xs:hidden xl:block">
-                    {portfolio.type}
-                  </p>
-                  <p className="mb-5">{portfolio.description}</p>
-                  <div className="flex justify-between gap-5 mt-auto">
-                    <a
-                      href={portfolio.pdf}
-                      download
-                      className="md:py-3 md:px-4 xs:py-1 xs:px-2 xs:text-sm bg-button border-1 border-border text-font md:text-xl rounded-md hover:bg-background hover:text-iconic"
-                    >
-                      Download PDF
-                    </a>
-                    <a
-                      href={portfolio.postLink}
-                      className="md:py-3 md:px-4 xs:py-2 xs:px-3 xs:text-sm border-border border-1 text-border md:text-xl rounded-md hover:bg-button hover:text-font"
-                    >
-                      See on Facebook
-                    </a>
-                  </div>
-                </div>
+              <div className="border border-gray-300 rounded-md p-4 overflow-y-auto max-h-[400px] bg-gray-50 whitespace-pre-line">
+                {selectedProject.content}
               </div>
-            ))}
-          </Slider>
-        </Container>
-      </section>
-    </>
+
+              <div className="flex flex-wrap gap-4 mt-6">
+                {selectedProject.pdf && (
+                  <a
+                    href={selectedProject.pdf}
+                    download
+                    className="px-5 py-2 bg-button text-font border border-border rounded-md hover:bg-border transition"
+                  >
+                    Download PDF
+                  </a>
+                )}
+
+                {selectedProject.postLink && (
+                  <a
+                    href={selectedProject.postLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2 border text-border border-border rounded-md hover:bg-button hover:text-font transition"
+                  >
+                    View on Facebook
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="flex justify-between items-center mt-10">
+            {prevProject ? (
+              <Link
+                to={`/content-writings/${prevProject.id}`}
+                className="px-5 py-2 hover:bg-button border border-border text-font rounded-md  hover:text-font transition"
+              >
+                ← Previous
+              </Link>
+            ) : <div />}
+
+            {nextProject ? (
+              <Link
+                to={`/content-writings/${nextProject.id}`}
+                className="px-5 py-2 hover:bg-button border border-border text-font rounded-md transition"
+              >
+                Next →
+              </Link>
+            ) : <div />}
+          </div>
+        </div>
+      </Container>
+    </section>
   );
 };
 

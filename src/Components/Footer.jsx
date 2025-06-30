@@ -39,7 +39,7 @@ const Footer = () => {
         <div className="md:col-span-2 xs:col-span-5 md:mb-0 xs:mt-10">
           <p className="">GOT A POSITION IN MIND?</p>
           <a
-            href={contacts[6].link}
+            href={contacts[6].link} // Linking to phone number
             className="2xl:text-8xl lg:text-6xl md:text-5xl sm:text-7xl xs:text-5xl font-bold"
           >
             Let's talk
@@ -49,7 +49,7 @@ const Footer = () => {
 
       <div className="flex justify-start items-center gap-3 md:my-5 xs:my-10">
         <HashLink
-          to={"/#navigation"}
+          to={"/#hello"}
           className="bg-button inline-block p-3 rounded-md"
         >
           <img

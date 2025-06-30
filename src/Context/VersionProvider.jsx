@@ -61,9 +61,7 @@ const VersionProvider = ({ children }) => {
         "Modified in scrolling up",
         "Created Version Provider, so we can control the version dymatically",
       ],
-      changes: [
-        "Clean the code and grouped systematically",
-      ],
+      changes: ["Clean the code and grouped systematically"],
       releasedDate: new Date("2025-06-27"),
     },
     {
@@ -76,6 +74,25 @@ const VersionProvider = ({ children }) => {
         "Changed into dropdowns style and more comfortable to check portfolio",
       ],
       releasedDate: new Date("2025-06-28"),
+    },
+    {
+      version: "3.5.65",
+      features: [
+        "Shows only the selected project",
+        "Next/Previous buttons to navigate through projects",
+        "Automatically scrolls to top when project changes",
+        "Fully responsive layout",
+      ],
+      changes: [
+        "Replaced useNavigate with Link from react-router-dom for better semantic navigation.",
+        "Removed the useNavigate hook since it's no longer used.",
+        "Changed the 'Previous' navigation button from a <button> with onClick to a conditional <Link> component.",
+        "Changed the 'Next' navigation button from a <button> with onClick to a conditional <Link> component.",
+        "Disabled buttons were replaced with empty <div /> to maintain layout without active links.",
+        "Improved button styling for consistency with other sections using bg-button and hover transitions.",
+        "Simplified navigation logic by directly linking to the next and previous project URLs.",
+      ],
+      releasedDate: new Date("2025-06-30"),
     },
   ];
 
