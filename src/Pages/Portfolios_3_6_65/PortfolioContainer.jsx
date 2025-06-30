@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Container from "../../Components/Container";
 import MethodsContext from "../../Context/MethodsContext";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const PortfolioContainer = () => {
   const {
@@ -42,7 +43,11 @@ const PortfolioContainer = () => {
             const section = document.getElementById(sectionId);
             if (section) {
               section.scrollIntoView({ behavior: "smooth", block: "start" });
-              window.history.replaceState({}, document.title, location.pathname);
+              window.history.replaceState(
+                {},
+                document.title,
+                location.pathname
+              );
             }
           });
         }, 600);
@@ -58,7 +63,7 @@ const PortfolioContainer = () => {
     <section className="py-10">
       <Container className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Category Filter Buttons */}
-        <div className="sticky top-4 z-10 backdrop-blur bg-white/80 p-3 rounded-xl shadow-md flex flex-wrap justify-center gap-3 mb-8">
+        <div className="sticky top-4 backdrop-blur bg-white/80 p-3 rounded-xl shadow-md flex flex-wrap justify-center gap-3 mb-8">
           {categoryMenus.map((categoryMenu, index) => (
             <button
               key={index}
@@ -139,9 +144,12 @@ const PortfolioContainer = () => {
                         </p>
                       </div>
                       <div className="flex flex-wrap gap-3 mt-4">
-                        <button className="bg-button text-font px-4 py-2 text-sm rounded-md border border-border hover:bg-border transition">
+                        <Link
+                          to={`/${section.type}/${proj.id}`}
+                          className="bg-button text-font px-4 py-2 text-sm rounded-md border border-border hover:bg-border hover:text-aboutme transition"
+                        >
                           View Project
-                        </button>
+                        </Link>
                         {section.type === "frontendWebDev" && (
                           <button className="bg-gray-200 text-font px-4 py-2 text-sm rounded-md border border-gray-300 hover:bg-gray-300 transition">
                             Source Code

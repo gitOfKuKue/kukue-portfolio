@@ -57,15 +57,15 @@ const router = isMaintenanceMode
             element: <PortfolioContainer />
           },
           {
-            path: "graphic-designs/:productId",
+            path: "graphicDesign/:productId",
             element: <GraphicDesignPage />,
           },
           {
-            path: "content-writings/:productId",
+            path: "contentWriting/:productId",
             element: <ContentWritingPage />,
           },
           {
-            path: "frontend-developments/:productId",
+            path: "frontendWebDev/:productId",
             element: <FrontendDevPage />,
           },
           {

@@ -110,8 +110,8 @@ const Navigation = ({ current }) => {
         className={`text-xl flex justify-end items-center gap-3 text-font z-10`}
         id="menuBox"
       >
-        <Dropdowns menus={docMenus} />
-        <Dropdowns menus={menuBtns} className={`xs:hidden lg:block`} />
+        <Dropdowns menus={docMenus} className="z-10" />
+        <Dropdowns menus={menuBtns} className={`xs:hidden lg:block z-10`} />
         <div
           className={`lg:flex justify-between items-center gap-4 ${
             menuOpen

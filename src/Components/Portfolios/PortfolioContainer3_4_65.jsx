@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import portfolios from "../../JavaScripts/portfolio";
 import { Slide } from "react-slideshow-image";
-import GraphicDesignCard from "../GraphicDesingCard";
-import ContentWritingCard from "../ContentWritingCard";
-import FrontendWebDevCard from "../FrontendWebDevCard";
+import GraphicDesignCard from "../recycle-bin/GraphicDesingCard";
+import ContentWritingCard from "../recycle-bin/ContentWritingCard";
+import FrontendWebDevCard from "../recycle-bin/FrontendWebDevCard";
 import Slider from "../Slider";
 
 const PortfolioContainer3_4_65 = ({ selectedCategory }) => {

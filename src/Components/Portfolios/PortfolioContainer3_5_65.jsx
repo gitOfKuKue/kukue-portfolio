@@ -67,7 +67,7 @@ const PortfolioContainer3_5_65 = ({selectedCategory}) => {
                     </p>
                   </div>
                   <Link
-                    to={`/graphic-designs/${proj.id}`}
+                    to={`/graphicDesign/${proj.id}`}
                     className="self-start text-sm bg-button border border-border px-5 py-2 rounded-md hover:bg-border hover:text-aboutme transition"
                   >
                     Check
@@ -128,7 +128,7 @@ const PortfolioContainer3_5_65 = ({selectedCategory}) => {
                     </p>
                   </div>
                   <Link
-                    to={`/content-writings/${proj.id}`}
+                    to={`/contentWriting/${proj.id}`}
                     className="self-start text-sm bg-button border border-border px-5 py-2 rounded-md hover:bg-border hover:text-aboutme transition"
                   >
                     Check
@@ -189,7 +189,7 @@ const PortfolioContainer3_5_65 = ({selectedCategory}) => {
                     </p>
                   </div>
                   <Link
-                    to={`/frontend-developments/${proj.id}`}
+                    to={`/frontendWebDev/${proj.id}`}
                     className="self-start text-sm bg-button border border-border px-5 py-2 rounded-md hover:bg-border hover:text-aboutme transition"
                   >
                     Check

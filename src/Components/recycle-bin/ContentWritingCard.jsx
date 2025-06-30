@@ -24,7 +24,7 @@ const ContentWritingCard = ({ portfolio }) => {
           {portfolio.description}
         </p>
         <HashLink
-          to={`/content-writings/${id}`}
+          to={`/contentWriting/${id}`}
           className="bg-button  hover:bg-border hover:text-background border-1 border-border md:py-2 md:px-4 xs:py-2 xs:px-4 sm:text-xl md:text-md xs:text-sm rounded-md"
         >
           More details

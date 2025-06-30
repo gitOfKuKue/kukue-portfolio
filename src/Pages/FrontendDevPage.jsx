@@ -71,7 +71,7 @@ const FrontendDevPage = () => {
           <div className="flex justify-between items-center mt-10">
             {prevProjectId ? (
               <Link
-                to={`/frontend-developments/${prevProjectId}`}
+                to={`/frontendWebDev/${prevProjectId}`}
                 className="px-5 py-2 hover:bg-button border border-border text-font rounded-md  transition"
               >
                 ← Previous
@@ -80,7 +80,7 @@ const FrontendDevPage = () => {
 
             {nextProjectId ? (
               <Link
-                to={`/frontend-developments/${nextProjectId}`}
+                to={`/frontendWebDev/${nextProjectId}`}
                 className="px-5 py-2 hover:bg-button border border-border rounded-md  text-font transition"
               >
                 Next →

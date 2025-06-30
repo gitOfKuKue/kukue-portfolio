@@ -63,7 +63,7 @@ const GraphicDesignPage = () => {
           <div className="flex justify-between items-center mt-10">
             {prevProjectId ? (
               <Link
-                to={`/graphic-designs/${prevProjectId}`}
+                to={`/graphicDesign/${prevProjectId}`}
                 className="text-sm px-4 py-2 rounded-md border border-border text-font hover:bg-button transition"
               >
                 ← Previous
@@ -72,7 +72,7 @@ const GraphicDesignPage = () => {
 
             {nextProjectId ? (
               <Link
-                to={`/graphic-designs/${nextProjectId}`}
+                to={`/graphicDesign/${nextProjectId}`}
                 className="text-sm px-4 py-2 rounded-md border border-border text-font hover:bg-button transition"
               >
                 Next →

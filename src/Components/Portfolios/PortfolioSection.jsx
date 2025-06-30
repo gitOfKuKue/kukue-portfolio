@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import Container from "../Container";
 import portfolios from "../../JavaScripts/portfolio";
-import GraphicDesignCard from "../GraphicDesingCard";
-import ContentWritingCard from "../ContentWritingCard";
-import FrontendWebDevCard from "../FrontendWebDevCard";
+import GraphicDesignCard from "../recycle-bin/GraphicDesingCard";
+import ContentWritingCard from "../recycle-bin/ContentWritingCard";
+import FrontendWebDevCard from "../recycle-bin/FrontendWebDevCard";
 import MethodsContext from "../../Context/MethodsContext";
 import Pagination from "../Pagination";
 import Slider from "../Slider";

@@ -92,7 +92,7 @@ const ContentWritingPage = () => {
           <div className="flex justify-between items-center mt-10">
             {prevProject ? (
               <Link
-                to={`/content-writings/${prevProject.id}`}
+                to={`/contentWriting/${prevProject.id}`}
                 className="px-5 py-2 hover:bg-button border border-border text-font rounded-md  hover:text-font transition"
               >
                 ← Previous
@@ -101,7 +101,7 @@ const ContentWritingPage = () => {
 
             {nextProject ? (
               <Link
-                to={`/content-writings/${nextProject.id}`}
+                to={`/contentWriting/${nextProject.id}`}
                 className="px-5 py-2 hover:bg-button border border-border text-font rounded-md transition"
               >
                 Next →
