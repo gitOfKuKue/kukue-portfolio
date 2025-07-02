@@ -1,22 +1,27 @@
-// dbConnect.js
-const { MongoClient } = require('mongodb');
+import { MongoClient } from "mongodb";
 
 const uri = "mongodb+srv://kukue014:Hv8WCW6NlH6wvQt5@cluster0.zirvebr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
 const client = new MongoClient(uri);
 
-async function connectDB() {
+async function run() {
   try {
     await client.connect();
-    console.log("Connected to MongoDB Atlas");
-    const database = client.db("myDatabase"); // Replace with your DB name
-    const collection = database.collection("myCollection"); // Replace with your collection
-    const result = await collection.find().toArray(); // Example read
-    console.log(result);
+    console.log("✅ Connected to MongoDB Atlas");
+
+    const database = client.db('kukuePortfolio');
+    const collection = database.collection('feedbacks');
+
+    // Example: find all
+    const datas = await collection.find().toArray();
+    console.log(datas);
+    return datas;
   } catch (err) {
-    console.error("MongoDB connection error:", err);
+    console.error('❌ Connection error:', err);
   } finally {
-    await client.close(); // Optional: close after done
+    await client.close();
   }
 }
 
-connectDB();
+export default run;
+

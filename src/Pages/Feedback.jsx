@@ -2,44 +2,20 @@ import React, { useEffect, useState } from "react";
 import FeedbackCard from "../Components/FeedbackCard";
 import Container from "../Components/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faComments } from "@fortawesome/free-solid-svg-icons";
+import { faComments } from "@fortawesome/free-solid-svg-icons";
 
 const Feedback = () => {
-  const [text, setText] = useState("");
+  const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    fetch("/feedback.txt")
-      .then((res) => res.text())
-      .then((data) => {
-        setText(data);
-      });
+    fetch("http://localhost:3001/feedbacks")
+      .then((res) => res.json())
+      .then((data) => setFeedbacks(data))
+      .catch((err) => console.error("Fetch error:", err));
   }, []);
 
-  const datas = [];
-
-  const people = text.split("[]"); // Separate each feedback block
-
-  for (let i = 0; i < people.length; i++) {
-    const lines = people[i].trim().split("\n"); // Split each block into lines
-    const obj = {};
-
-    for (let line of lines) {
-      const [key, ...valueParts] = line.split("=");
-      const keyTrimmed = key.trim();
-      const value = valueParts.join("=").trim(); // Join in case value has '=' in it
-      if (keyTrimmed && value) {
-        obj[keyTrimmed] = value;
-      }
-    }
-
-    if (Object.keys(obj).length > 0) {
-      datas.push(obj);
-    }
-  }
-
   let number = 1;
-  const paddingX = 5;
-  const ratingStars = [1,2,3,4,5];
+  const ratingStars = [1, 2, 3, 4, 5];
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -56,45 +32,43 @@ const Feedback = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleMsg = async () => {
-    setMsg("Submitted successfully!")
+  const handleMsg = () => {
+    setMsg("Submitted successfully!");
   };
 
   return (
     <>
       <Container>
         {/* Feedback form section */}
-        <div className="flex justify-between items-start gap-5 my-10">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-10 my-10">
           {/* Content section */}
-          <div>
-            <FontAwesomeIcon icon={faComments} className="text-9xl mb-5" />
-            <h1 className="text-7xl font-bold uppercase">
+          <div className="text-center lg:text-left">
+            <FontAwesomeIcon icon={faComments} className="text-7xl md:text-8xl lg:text-9xl mb-5 text-gray-800" />
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase">
               Client <br />
-              Feedback <br /> Form{" "}
+              Feedback <br /> Form
             </h1>
           </div>
 
           {/* Feedback Form */}
           <div className="w-full border border-gray-300 p-5 max-w-5xl mx-auto">
             <div className="border border-gray-300">
-              <h1
-                className={`bg-black text-white text-4xl font-bold uppercase p-${paddingX}`}
-              >
+              <h1 className="bg-black text-white text-2xl md:text-4xl font-bold uppercase p-5">
                 Client feedback form
               </h1>
-              <p className={`p-${paddingX} border-b border-gray-300`}>
+              <p className="p-5 border-b border-gray-300 text-sm md:text-base">
                 Please take a few moments to fill out this form.
               </p>
-              <div className="grid grid-cols-2">
+
+              {/* Form Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* Full Name */}
-                <div
-                  className={`grid grid-cols-3 border-b border-r border-gray-300`}
-                >
+                <div className="grid grid-cols-3 border-b border-r border-gray-300">
                   <label
                     htmlFor="fullName"
-                    className={`col-span-1 p-${paddingX} border-r border-gray-300 bg-gray-100`}
+                    className="col-span-1 p-3 md:p-5 border-r border-gray-300 bg-gray-100 text-sm md:text-base"
                   >
-                    Full name :
+                    Full name:
                   </label>
                   <input
                     type="text"
@@ -102,18 +76,18 @@ const Feedback = () => {
                     id="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
-                    className={`col-span-2 p-${paddingX} w-full text-md`}
+                    className="col-span-2 p-3 md:p-5 w-full text-md"
                     placeholder="[Insert Name]"
                   />
                 </div>
 
                 {/* Organization */}
-                <div className={`grid grid-cols-3 border-b border-gray-300`}>
+                <div className="grid grid-cols-3 border-b border-gray-300">
                   <label
                     htmlFor="organization"
-                    className={`col-span-1 p-${paddingX} border-r border-gray-300 bg-gray-100`}
+                    className="col-span-1 p-3 md:p-5 border-r border-gray-300 bg-gray-100 text-sm md:text-base"
                   >
-                    Organization :
+                    Organization:
                   </label>
                   <input
                     type="text"
@@ -121,18 +95,18 @@ const Feedback = () => {
                     id="organization"
                     value={formData.organization}
                     onChange={handleChange}
-                    className={`col-span-2 p-${paddingX} w-full text-md`}
+                    className="col-span-2 p-3 md:p-5 w-full text-md"
                     placeholder="[Insert Org]"
                   />
                 </div>
 
                 {/* Position */}
-                <div className={`grid grid-cols-3 border-r border-gray-300`}>
+                <div className="grid grid-cols-3 border-r border-gray-300">
                   <label
                     htmlFor="position"
-                    className={`col-span-1 p-${paddingX} border-r border-gray-300 bg-gray-100`}
+                    className="col-span-1 p-3 md:p-5 border-r border-gray-300 bg-gray-100 text-sm md:text-base"
                   >
-                    Position :
+                    Position:
                   </label>
                   <input
                     type="text"
@@ -140,18 +114,18 @@ const Feedback = () => {
                     id="position"
                     value={formData.position}
                     onChange={handleChange}
-                    className={`col-span-2 p-${paddingX} w-full text-md`}
+                    className="col-span-2 p-3 md:p-5 w-full text-md"
                     placeholder="[Insert Position]"
                   />
                 </div>
 
                 {/* Email */}
-                <div className={`grid grid-cols-3`}>
+                <div className="grid grid-cols-3">
                   <label
                     htmlFor="email"
-                    className={`col-span-1 p-${paddingX} border-r border-gray-300 bg-gray-100`}
+                    className="col-span-1 p-3 md:p-5 border-r border-gray-300 bg-gray-100 text-sm md:text-base"
                   >
-                    Email :
+                    Email:
                   </label>
                   <input
                     type="email"
@@ -159,23 +133,19 @@ const Feedback = () => {
                     id="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`col-span-2 p-${paddingX} w-full text-md`}
+                    className="col-span-2 p-3 md:p-5 w-full text-md"
                     placeholder="[Insert Email]"
                   />
                 </div>
               </div>
             </div>
 
-            {/* Rating (visual only, not stored) */}
-            <div className="grid grid-cols-3 my-5 border border-gray-300">
-              <h1
-                className={`p-${paddingX} col-span-2 border-r border-gray-300`}
-              >
-                Do you satisfied on Ku Kue?
+            {/* Rating Section */}
+            <div className="grid grid-cols-1 md:grid-cols-3 my-5 border border-gray-300">
+              <h1 className="p-5 col-span-2 border-b md:border-b-0 md:border-r border-gray-300">
+                Are you satisfied with Ku Kue?
               </h1>
-              <div
-                className={`flex justify-center gap-5 col-span-1 p-${paddingX}`}
-              >
+              <div className="flex justify-center gap-5 p-5">
                 {ratingStars.map((star) => (
                   <svg
                     key={star}
@@ -198,34 +168,35 @@ const Feedback = () => {
 
             {/* Feedback Textarea */}
             <div className="border border-gray-300">
-              <h1 className={`p-${paddingX} bg-gray-100`}>
+              <h1 className="p-5 bg-gray-100 text-sm md:text-base">
                 You can give feedback freely.
               </h1>
               <textarea
                 name="feedback"
                 value={formData.feedback}
                 onChange={handleChange}
-                className={`w-full h-60 resize-none p-${paddingX}`}
+                className="w-full h-40 md:h-60 resize-none p-5 text-sm md:text-base"
+                placeholder="[Your feedback here]"
               ></textarea>
             </div>
 
-            {/* Submit Button + Message */}
-            <div className="flex justify-start items-center mt-5 gap-5">
+            {/* Submit Button */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center mt-5 gap-4">
               <button
-                className="py-4 px-8 bg-black text-white cursor-pointer"
+                className="py-3 px-6 bg-black text-white text-sm md:text-base"
                 onClick={handleMsg}
               >
                 Submit
               </button>
-              <h1>{msg}</h1>
+              <h1 className="text-green-600 text-sm md:text-base">{msg}</h1>
             </div>
           </div>
         </div>
 
-        {/* Showing feedback section */}
-        <div className="grid grid-cols-2 gap-5">
-          {datas.map((data) => (
-            <FeedbackCard key={data.id} data={data} number={number++} />
+        {/* Feedback Cards Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
+          {feedbacks.map((feedback) => (
+            <FeedbackCard key={feedback.id} feedback={feedback} number={number++} />
           ))}
         </div>
       </Container>
