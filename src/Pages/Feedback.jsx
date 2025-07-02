@@ -8,7 +8,7 @@ const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/feedbacks")
+    fetch("https://your-site.netlify.app/.netlify/functions/feedbacks")
       .then((res) => res.json())
       .then((data) => setFeedbacks(data))
       .catch((err) => console.error("Fetch error:", err));
@@ -43,7 +43,10 @@ const Feedback = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-10 my-10">
           {/* Content section */}
           <div className="text-center lg:text-left">
-            <FontAwesomeIcon icon={faComments} className="text-7xl md:text-8xl lg:text-9xl mb-5 text-gray-800" />
+            <FontAwesomeIcon
+              icon={faComments}
+              className="text-7xl md:text-8xl lg:text-9xl mb-5 text-gray-800"
+            />
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase">
               Client <br />
               Feedback <br /> Form
@@ -196,7 +199,11 @@ const Feedback = () => {
         {/* Feedback Cards Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
           {feedbacks.map((feedback) => (
-            <FeedbackCard key={feedback.id} feedback={feedback} number={number++} />
+            <FeedbackCard
+              key={feedback.id}
+              feedback={feedback}
+              number={number++}
+            />
           ))}
         </div>
       </Container>
