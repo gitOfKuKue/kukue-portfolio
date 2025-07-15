@@ -56,12 +56,12 @@ const Navigation = ({ current }) => {
         link: "contact-me",
         icon: faContactBook,
       },
-      {
-        btnId: 6,
-        menu: "Feedbacks",
-        link: "feedback",
-        icon: faComments,
-      }
+      // {
+      //   btnId: 6,
+      //   menu: "Feedbacks",
+      //   link: "feedback",
+      //   icon: faComments,
+      // }
     ],
   };
 

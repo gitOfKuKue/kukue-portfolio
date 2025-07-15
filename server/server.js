@@ -10,21 +10,24 @@ app.use(cors());
 const uri = "mongodb+srv://kukue014:Hv8WCW6NlH6wvQt5@cluster0.zirvebr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(uri);
 
-// Connect to MongoDB once
-async function connectToDB() {
-  try {
-    await client.connect();
-    console.log("✅ Connected to MongoDB Atlas");
-  } catch (err) {
-    console.error("❌ Failed to connect to MongoDB:", err);
-  }
-}
+let db; // cache the DB instance
 
-connectToDB();
+async function connectToDB() {
+  if (!db) {
+    try {
+      await client.connect();
+      db = client.db("kukuePortfolio"); // your DB name
+      console.log("✅ Connected to MongoDB Atlas");
+    } catch (err) {
+      console.error("❌ Failed to connect to MongoDB Atlas:", err);
+    }
+  }
+  return db;
+}
 
 app.get('/feedbacks', async (req, res) => {
   try {
-    const database = client.db('kukuePortfolio');
+    const database = await connectToDB();
     const collection = database.collection('feedbacks');
     const feedbacks = await collection.find().toArray();
     res.json(feedbacks);

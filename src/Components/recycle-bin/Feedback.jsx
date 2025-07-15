@@ -4,9 +4,17 @@ import Container from "../Components/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments } from "@fortawesome/free-solid-svg-icons";
 
-// let fs = require('fs');
-
 const Feedback = () => {
+  const [feedbacks, setFeedbacks] = useState([]);
+
+  useEffect(() => {
+    // fetch("https://your-site.netlify.app/.netlify/functions/feedbacks")
+    fetch("http://localhost:3001/feedbacks")
+      .then((res) => res.json())
+      .then((data) => setFeedbacks(data))
+      .catch((err) => console.error("Fetch error:", err));
+  }, []);
+
   let number = 1;
   const ratingStars = [1, 2, 3, 4, 5];
 
@@ -28,11 +36,6 @@ const Feedback = () => {
   const handleMsg = () => {
     setMsg("Submitted successfully!");
   };
-
-  fs.readFile('./test.txt', 'utf-8', (error, data) => {
-    console.log(data);
-  })
-  console.log("Reading file ... ");
 
   return (
     <>
@@ -196,13 +199,13 @@ const Feedback = () => {
 
         {/* Feedback Cards Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
-          {/* {feedbacks.map((feedback) => (
+          {feedbacks.map((feedback) => (
             <FeedbackCard
               key={feedback.id}
               feedback={feedback}
               number={number++}
             />
-          ))} */}
+          ))}
         </div>
       </Container>
     </>
