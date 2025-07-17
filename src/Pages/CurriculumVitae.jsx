@@ -16,12 +16,19 @@ import cvPic from "../assets/images/Account-pana.svg";
 
 // import cvDocs from "../assets/docs/Thu Htet Naing's [General] CV.pdf";
 import cvDocs from "../assets/docs/Thu Htet Naing's CV.pdf";
+import contacts from "../JavaScripts/contact";
+import { div } from "framer-motion/client";
+import Methods from "../JavaScripts/methods";
 
 const CurriculumVitae = () => {
   // Print function
   const printCV = () => {
     window.print();
   };
+
+  const methods = new Methods();
+
+  const selectedContact = [contacts[0], contacts[3]];
   return (
     <>
       <section className="my-10">
@@ -35,7 +42,9 @@ const CurriculumVitae = () => {
                 <FontAwesomeIcon icon={faPrint} className="mr-2" />
                 Print
               </button>
-              <a href={cvDocs} download
+              <a
+                href={cvDocs}
+                download
                 className="bg-button border-1 border-border text-font text-md py-3 px-5 cursor-pointer rounded-sm mb-3"
               >
                 Download
@@ -43,90 +52,237 @@ const CurriculumVitae = () => {
               </a>
             </div>
 
-            <div className="border border-font bg-aboutme" id="print-section">
-              <div className="p-10 bg-iconic flex justify-between items-stretch">
-                <div className="">
-                  <div className="w-50 h-50 overflow-hidden mb-5">
-                    <img
-                      src={myPic3}
-                      alt="My Profile"
-                      className="my-[-60px]"
-                    />
-                  </div>
-                  <h1 className="text-3xl font-bold text-background">
-                    {infos.details[0]["info"]}
+            <div
+              className="border border-font bg-aboutme grid grid-cols-3 gap-10"
+              id="print-section"
+            >
+              {/* Side Info */}
+              <div className="col-span-1 bg-iconic p-5">
+                {/* Profile Picture */}
+                <div className="w-[200px] h-[200px] overflow-hidden m-auto">
+                  <img
+                    src={infos.details[infos.details.length - 1].info}
+                    alt={infos.details[infos.details.length - 1].type}
+                    className="w-[320px] h-[320px] object-cover object-[40%_top]"
+                  />
+                </div>
+                {/* Name & Role */}
+                <div className="mt-5 mb-10">
+                  <h1 className="text-center text-aboutme text-2xl font-bold">
+                    {infos.details[0].info}
                   </h1>
-                  <p className="text-background ">
-                    {infos.details[infos.details.length - 1]["info"]}
+                  <p className="text-center text-background text-lg font-light">
+                    {infos.details[5].info}
                   </p>
                 </div>
 
-                <div>
-                  <h1 className="text-center font-bold text-2xl text-background mb-5">
-                    CONTACT INFORMATION
+                {/* Contact */}
+                <div className="mb-10">
+                  <h1 className="text-center text-aboutme text-3xl font-bold uppercase">
+                    Contact
                   </h1>
-                  <div className="flex flex-col justify-between gap-2 items-start">
-                    {/* {infos.details.map((item, index) => {
-                  }) */}
-                    {infos.details
-                      .slice(1, infos.details.length - 1)
-                      .map((detail) => (
-                        <Detail key={detail.id} detail={detail} />
-                      ))}
+                  {infos.details.slice(2, 5).map((detail) => (
+                    <span key={detail.id} className="my-3 block">
+                      <h3 className="text-center text-aboutme text-xl font-bold">
+                        {detail.type}
+                      </h3>
+                      <p className="text-center text-background text-lg font-light">
+                        {detail.info}
+                      </p>
+                    </span>
+                  ))}
+                </div>
+
+                {/* Skills */}
+                <div className="text-aboutme mb-10">
+                  <h1 className="text-center text-3xl font-bold uppercase">
+                    Skills
+                  </h1>
+                  <div className="my-3">
+                    <h3 className="text-xl font-bold">Programming</h3>
+                    <p className="text-background font-light">
+                      Java (advanced), JavaScript
+                    </p>
+                  </div>
+                  <div className="my-3">
+                    <h3 className="text-xl font-bold">Tools</h3>
+                    <p className="text-background font-light">
+                      Adobe Illustrator, Adobe Photoshop, MS Office
+                    </p>
+                  </div>
+                  <div className="my-3">
+                    <h3 className="text-xl font-bold">Soft Skills</h3>
+                    <p className="text-background font-light">
+                      Communication, team-work, responsibility
+                    </p>
+                  </div>
+                  <div className="my-3">
+                    <h3 className="text-xl font-bold">Hard Skills</h3>
+                    <p className="text-background font-light">
+                      Front-end Dev, Graphic Design, Content Writing
+                    </p>
                   </div>
                 </div>
-              </div>
 
-              {/* Details */}
-              <div className="p-10 grid grid-cols-2 grid-rows-1 gap-10 text-justify text-font">
-                <div className="row-span-1 border-b-2 border-b-iconic py-3">
-                  <h1 className="text-2xl font-bold mb-2">OBJECTIVE</h1>
-                  <p>{infos["objective"]}</p>
-                </div>
-
-                <div className="row-span-2">
-                  <h1 className="text-2xl font-bold mb-2 row-span-1">
-                    EDUCATION
+                {/* Connect */}
+                <div>
+                  <h1 className="text-center text-aboutme text-3xl font-bold uppercase">
+                    Connect
                   </h1>
-                  {infos["schools"].map((education) => (
-                    <Education key={education.schoolId} education={education} />
-                  ))}
-                </div>
-
-                <div className="row-span-3">
-                  <h1 className="text-2xl font-bold mb-2 row-span-1">
-                    CERTIFICATIONS
-                  </h1>
-                  {infos["certifications"].map((certificate) => (
-                    <Certifications
-                      key={certificate.certificateId}
-                      certificate={certificate}
-                    />
-                  ))}
-                </div>
-
-                <div className="row-span-3">
-                  <h1 className="text-2xl font-bold mb-2">ACTIVITIES</h1>
-                  {infos["activities"].map((activity) => (
-                    <Activities key={activity.activityId} activity={activity} />
-                  ))}
-                </div>
-
-                <div className="row-span-1">
-                  <h1 className="text-2xl font-bold mb-2">WORK EXPERIENCE</h1>
-                  {infos["workExperience"].map((experience) => (
-                    <WorkExperience
-                      key={experience.workExperienceId}
-                      experience={experience}
-                    />
+                  {selectedContact.map((contact) => (
+                    <div
+                      key={contact.id}
+                      className="flex justify-start items-center gap-3 my-5"
+                    >
+                      <FontAwesomeIcon
+                        icon={contact.icon}
+                        className="text-5xl text-aboutme"
+                      />
+                      <h1 className="text-2xl text-aboutme font-bold">
+                        {contact.platform}
+                      </h1>
+                    </div>
                   ))}
                 </div>
               </div>
-              <div className="p-10 w-[85%] my-auto">
-                <h1 className="text-2xl font-bold mb-2 text-font text-center">
-                  Personal Skills
-                </h1>
-                <SkillBarChart />
+
+              {/* Details Info */}
+              <div className="col-span-2 p-5">
+                {/* Objective */}
+                <div className="mb-10">
+                  <h1 className="text-font text-2xl font-light uppercase mb-3">
+                    Objective
+                  </h1>
+                  <p className="text-font-light text-justify">
+                    {infos.objective}
+                  </p>
+                </div>
+
+                {/* Education */}
+                <div className="mb-10">
+                  <h1 className="text-font text-2xl font-light uppercase mb-3">
+                    Education
+                  </h1>
+                  {infos.schools.reverse().map((school) => (
+                    <div key={school.schoolId}>
+                      <div className="my-5">
+                        <p className="text-font-light text-lg font-light">
+                          {months[school.startMonth - 1]} {school.endYear} -{" "}
+                          {methods.checkingToday(
+                            school.endMonth,
+                            school.endYear
+                          )
+                            ? "Present"
+                            : `${months[school.endMonth - 1]} ${
+                                school.endYear
+                              }`}{" "}
+                          | {school.location}
+                        </p>
+                        <h1 className="text-2xl text-font font-bold">
+                          {school.schoolName}
+                        </h1>
+                        <h3 className="text-font-light text-lg">
+                          {school.major}
+                        </h3>
+                      </div>
+                      <hr className={`${school.id === 1 ? "hidden" : "block"}`}/>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Experience */}
+                 <div className="mb-10">
+                  <h1 className="text-font text-2xl font-light uppercase mb-3">
+                    Experience
+                  </h1>
+                  {infos.workExperience.reverse().map((experience) => (
+                    <div key={experience.workExperienceId}>
+                      <div className="my-5">
+                        <p className="text-font-light text-lg font-light">
+                          {months[experience.startMonth - 1]} {experience.endYear} -{" "}
+                          {methods.checkingToday(
+                            experience.endMonth,
+                            experience.endYear
+                          )
+                            ? "Present"
+                            : `${months[experience.endMonth - 1]} ${
+                                experience.endYear
+                              }`}{" "}
+                          | {experience.location}
+                        </p>
+                        <h1 className="text-2xl text-font font-bold">
+                          {experience.workName}
+                        </h1>
+                        <h3 className="text-font-light text-lg">
+                          {experience.position}
+                        </h3>
+                        <p className="text-font-light text-xl">{experience.description}</p>
+                      </div>
+                      <hr className={`${experience.id === 1 ? "hidden" : "block"}`}/>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Project */}
+                 <div className="mb-10">
+                  <h1 className="text-font text-2xl font-light uppercase mb-3">
+                    Project
+                  </h1>
+                  {infos.projects.reverse().map((project) => (
+                    <div key={project.projectID}>
+                      <div className="my-5">
+                        <p className="text-font-light text-lg font-light">
+                          {project.startDay}{methods.checkingSupercase(project.startDay)} {months[project.startMonth - 1]} {project.endYear} -{" "}
+                          {methods.checkingToday(
+                            project.endMonth,
+                            project.endYear
+                          )
+                            ? "Present"
+                            : `${project.endDay}${methods.checkingSupercase(project.endDay)} ${months[project.endMonth - 1]} ${
+                                project.endYear
+                              }`}{" "}
+                          | {project.location}
+                        </p>
+                        <h1 className="text-2xl text-font font-bold">
+                          {project.projectName}
+                        </h1>
+                        <h3 className="text-font-light text-lg">
+                          {project.position}
+                        </h3>
+                        <p className="text-font-light text-xl">{project.description}</p>
+                      </div>
+                      <hr className={`${project.id === 1 ? "hidden" : "block"}`}/>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Activities */}
+                 <div className="mb-10">
+                  <h1 className="text-font text-2xl font-light uppercase mb-3">
+                    Activities
+                  </h1>
+                  {infos.activities.reverse().map((activity) => (
+                    <div key={activity.activityId}>
+                      <div className="my-5">
+                        <p className="text-font-light text-lg font-light">
+                          {activity.startDay}{methods.checkingSupercase(activity.startDay)} {months[activity.startMonth - 1]} {activity.endYear} -{" "}
+                          {methods.checkingToday(
+                            activity.endMonth,
+                            activity.endYear
+                          )
+                            ? "Present"
+                            : `${activity.endDay}${methods.checkingSupercase(activity.endDay)} ${months[activity.endMonth - 1]} ${
+                                activity.endYear
+                              }`}{" "}
+                        </p>
+                        <h1 className="text-2xl text-font font-bold">
+                          {activity.activityName} <span>({activity.position})</span>
+                        </h1>
+                      </div>
+                      <hr className={`${activity.id === 1 ? "hidden" : "block"}`}/>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
