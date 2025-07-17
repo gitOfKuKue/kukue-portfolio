@@ -94,12 +94,6 @@ const VersionProvider = ({ children }) => {
       ],
       releasedDate: new Date("2025-06-30"),
     },
-    {
-      version: "4.1.75 (Beta)",
-      features: ["Giving and viewing feedbacks upon me"],
-      changes: ["Added feedbacks functions"],
-      releasedDate: new Date("2025-07-01"),
-    },
   ];
 
   return (

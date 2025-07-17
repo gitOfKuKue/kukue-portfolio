@@ -134,8 +134,10 @@ html ::-webkit-scrollbar {
   background-color: var(--color-iconic);
 }
 
-.contact-card:hover .contact-section-icon {
-  color: var(--color-font);
+.contact-card:hover .contact-section-icon,
+.contact-card:hover .contact-desc,
+.contact-card:hover .contact-platform {
+  color: var(--color-aboutme);
 }
 
 .currentSlide {

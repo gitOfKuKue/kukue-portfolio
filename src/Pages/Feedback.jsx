@@ -4,7 +4,7 @@ import Container from "../Components/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments } from "@fortawesome/free-solid-svg-icons";
 
-// let fs = require('fs');
+import feedbacks from "../../server/public/feedback.json";
 
 const Feedback = () => {
   let number = 1;
@@ -28,12 +28,7 @@ const Feedback = () => {
   const handleMsg = () => {
     setMsg("Submitted successfully!");
   };
-
-  fs.readFile('./test.txt', 'utf-8', (error, data) => {
-    console.log(data);
-  })
-  console.log("Reading file ... ");
-
+  
   return (
     <>
       <Container>
@@ -195,14 +190,14 @@ const Feedback = () => {
         </div>
 
         {/* Feedback Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
-          {/* {feedbacks.map((feedback) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10">
+          {feedbacks.map((feedback) => (
             <FeedbackCard
               key={feedback.id}
               feedback={feedback}
               number={number++}
             />
-          ))} */}
+          ))}
         </div>
       </Container>
     </>

@@ -34,12 +34,14 @@ const FeedbackCard = ({ feedback, number }) => {
       {/* Body */}
       <div className="px-5 py-4 flex flex-col sm:flex-row gap-5 items-center sm:items-start">
         {/* Avatar */}
-        <div className="w-24 h-24 flex-shrink-0 rounded-full overflow-hidden border border-border">
-          <img
-            src={feedback.image === "#" ? defaultProfile : feedback.image}
-            alt="User profile"
-            className="w-full h-full object-cover"
-          />
+        <div className="flex items-center justify-center sm:justify-start w-full sm:w-auto">
+          <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-gray-300 shadow-sm hover:shadow-md transition-all duration-300">
+            <img
+              src={feedback.image === "#" ? defaultProfile : feedback.image}
+              alt={`${feedback.name}'s profile`}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         {/* Feedback Content */}
