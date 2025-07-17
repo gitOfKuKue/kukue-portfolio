@@ -1,0 +1,17 @@
+
+id=1
+name=Ku Kue
+time=18.3.2024
+image= #
+position=founder
+organization=Dream
+email=kukue@gmail.com
+feedback=Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborumdignissimos, ea sapiente deleniti maiores saepe facili voluptatibus tempore officia quasi inventore aut veritatis, sed asperiores repudiandae voluptatum! Quasi, repellat at?[]
+id=2
+name=Su Su
+time=21.4.2025
+image=#
+position=founder
+organization=Dream
+email=susu@gmail.com
+feedback=Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborumdignissimos, ea sapiente deleniti maiores saepe facili voluptatibus tempore officia quasi inventore aut veritatis, sed asperiores repudiandae voluptatum! Quasi, repellat at?

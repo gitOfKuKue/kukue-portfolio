@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Ku Kue",
+    "time": "18.3.2024",
+    "image": "#",
+    "position": "founder",
+    "organization": "Dream",
+    "email": "kukue@gmail.com",
+    "phone": "+95 823 242 425",
+    "feedback": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborumdignissimos, ea sapiente deleniti maiores saepe facili voluptatibus tempore officia quasi inventore aut veritatis, sed asperiores repudiandae voluptatum! Quasi, repellat at?"
+  },
+  {
+    "id": 2,
+    "name": "Su Su",
+    "time": "21.4.2025",
+    "image": "https://randomuser.me/api/portraits/women/45.jpg",
+    "position": "founder",
+    "organization": "Dream",
+    "email": "susu@gmail.com",
+    "phone": "+95 932 313 324",
+    "feedback": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborumdignissimos, ea sapiente deleniti maiores saepe facili voluptatibus tempore officia quasi inventore aut veritatis, sed asperiores repudiandae voluptatum! Quasi, repellat at?"
+  },
+  {
+    "id": 3,
+    "name": "Aung Aung",
+    "time": "10.6.2023",
+    "image": "https://randomuser.me/api/portraits/men/32.jpg",
+    "position": "developer",
+    "organization": "TechWave",
+    "email": "aungaung@techwave.com",
+    "phone": "+95 911 223 100",
+    "feedback": "The product exceeded expectations. The team was responsive, and the implementation was smooth and professional."
+  },
+  {
+    "id": 4,
+    "name": "Hla Hla",
+    "time": "5.12.2022",
+    "image": "#",
+    "position": "designer",
+    "organization": "VisionX",
+    "email": "hlahla@visionx.com",
+    "phone": "+95 987 654 321",
+    "feedback": "User-friendly interface and excellent support. I highly recommend working with this team for design solutions."
+  },
+  {
+    "id": 5,
+    "name": "Zaw Zaw",
+    "time": "27.2.2024",
+    "image": "https://randomuser.me/api/portraits/men/68.jpg",
+    "position": "product manager",
+    "organization": "InnoLab",
+    "email": "zawzaw@innolab.io",
+    "phone": "+95 900 111 222",
+    "feedback": "Great collaboration and timely delivery. The feedback loop was tight and helped refine our vision quickly."
+  }
+]
