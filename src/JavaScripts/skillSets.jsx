@@ -21,6 +21,7 @@ import tailwind from "../assets/icons/tailwind.png";
 import react from "../assets/icons/react.png";
 import bootstrap from "../assets/icons/bootstrap.png";
 import java from "../assets/icons/java.png";
+import nodejs from "../assets/icons/nodejs.png";  
 
 // Soft Skills Icons
 import communication from "../assets/icons/chat.png";
@@ -113,6 +114,13 @@ const skillSets = () => {
         },
         {
           id: 6,
+          name: "Node JS",
+          description: "Node.js® is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.",
+          icon: nodejs,
+          link: "https://nodejs.org/en"
+        },
+        {
+          id: 7,
           name: "Bootstrap",
           description:
             "A responsive front-end framework offering pre-built components and grid systems for quickly developing modern web layouts.",
@@ -120,7 +128,7 @@ const skillSets = () => {
           link: "https://getbootstrap.com/",
         },
         {
-          id: 7,
+          id: 8,
           name: "Java",
           description:
             "Oracle Java is the #1 programming language and development platform. It reduces costs, shortens development timeframes, drives innovation, and improves application services. With millions of developers running more than 60 billion Java Virtual Machines worldwide, Java continues to be the development platform of choice for enterprises and developers.",

@@ -5,22 +5,37 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SkillsSet = ({ itemKey, collections }) => {
-    const isSoftSkills = itemKey === "SoftSkills";
+  const isSoftSkills = itemKey === "SoftSkills";
   return collections.items.map((item) => (
     <div
       key={item.id}
-      className={`bg-aboutme border border-gray-300 p-8 rounded-lg flex flex-col justify-between shadow-lg ${isSoftSkills ? "h-fit" : "h-75"} hover:border-0 hover:bg-white`}
+      className={`bg-aboutme border border-gray-300 p-8 rounded-lg flex flex-col justify-between shadow-lg ${
+        isSoftSkills ? "h-fit" : "h-75"
+      } hover:border-0 hover:bg-white`}
       data-aos="fade-up"
     >
       <div>
         <div className="h-15">
           <img src={item.icon} alt={item.name} className="w-15" />
         </div>
-        <h3 className="text-iconic font-bold text-2xl my-2">{item.name}</h3>
+        <div className="flex items-center gap-3">
+          <h3 className="text-iconic font-bold text-2xl my-2">{item.name}</h3>
+          <h5
+            className={`bg-[#88D66C] rounded-full px-3 py-1 w-fit text-aboutme ${
+              item.onProcess ? "block" : "hidden"
+            }`}
+          >
+            Learning ...{" "}
+          </h5>
+        </div>
+
         <p className="line-clamp-3">{item.description}</p>
       </div>
       {isSoftSkills || (
-        <Link to={item.link} className="text-iconic text-lg font-bold flex items-center justify-start gap-2">
+        <Link
+          to={item.link}
+          className="text-iconic text-lg font-bold flex items-center justify-start gap-2"
+        >
           Learn more <FontAwesomeIcon icon={faChevronRight} />
         </Link>
       )}
