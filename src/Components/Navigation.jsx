@@ -12,6 +12,7 @@ import {
   faCode,
   faComments,
   faContactBook,
+  faDumbbell,
   faFaceSmile,
   faHandPeace,
   faUser,
@@ -62,6 +63,12 @@ const Navigation = ({ current }) => {
       //   link: "feedback",
       //   icon: faComments,
       // }
+      {
+        btnId: 6,
+        menu: "Experiences",
+        link: "work-experiences",
+        icon: faDumbbell,
+      }
     ],
   };
 

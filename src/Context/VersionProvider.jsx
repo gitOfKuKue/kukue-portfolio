@@ -94,6 +94,24 @@ const VersionProvider = ({ children }) => {
       ],
       releasedDate: new Date("2025-06-30"),
     },
+    {
+      version: "3.6.86",
+      features: [
+        "Updated Timeline component with alternating left/right layout using Tailwind CSS",
+        "Each timeline item now supports individual icons using FontAwesome",
+        "Added professional experience data with detailed descriptions for two jobs",
+        "Icons dynamically rendered based on each timeline item's data",
+        "Maintains clean vertical timeline alignment across responsive breakpoints",
+      ],
+      changes: [
+        "Fixed timeline layout alignment by restructuring left, center icon, and right sections",
+        "Removed unnecessary nested map loop that rendered all icons for each item",
+        "Inserted conditional logic to render only the appropriate card (left/right) per item index",
+        "Populated timelineData array with realistic job experiences including hardware, software, and customer service skills",
+        "Added FontAwesome icons to visually represent job roles (e.g. wrench for tech, mug for barista)",
+      ],
+      releasedDate: new Date("2025-08-06"),
+    },
   ];
 
   return (

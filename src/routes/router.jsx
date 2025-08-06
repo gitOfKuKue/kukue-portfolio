@@ -16,6 +16,7 @@ import TextLoader from "../Pages/TextLoader";
 import { useContext } from "react";
 import VersionNotes from "../Components/DOC/VersionNotes";
 import PortfolioContainer from "../Pages/Portfolios_3_6_65/PortfolioContainer";
+import WorkExperiecnes from "../Pages/WorkExperiecnes";
 
 const isMaintenanceMode = false;
 
@@ -71,6 +72,10 @@ const router = isMaintenanceMode
           {
             path: "feedback",
             element: <Feedback />,
+          },
+          {
+            path: "work-experiences",
+            element: <WorkExperiecnes />
           },
           {
             path: "testing",
