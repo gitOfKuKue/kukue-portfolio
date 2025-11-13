@@ -21,6 +21,8 @@ import html5 from "../assets/icons/html-5.png";
 import css3 from "../assets/icons/css-3.png";
 import js from "../assets/icons/js.png";
 import tailwind from "../assets/icons/tailwind.png";
+import mongodb from "../assets/icons/mongodb.svg";
+import expressjs from "../assets/icons/express.png";
 import react from "../assets/icons/react.png";
 import bootstrap from "../assets/icons/bootstrap.png";
 import java from "../assets/icons/java.png";
@@ -115,6 +117,24 @@ const SkillSetSection = () => {
         },
         {
           id: 5,
+          name: "MongoDB",
+          description:
+            "A NoSQL database that stores data in flexible, JSON-like documents, enabling scalable and efficient data management for modern web applications.",
+          icon: mongodb,
+          link: "https://www.mongodb.com/",
+          onProcess: false,
+        },
+        {
+          id: 6,
+          name: "Express JS",
+          description:
+            "A minimal and flexible Node.js web application framework that provides a robust set of features for building RESTful APIs and web servers efficiently.",
+          icon: expressjs,
+          link: "https://expressjs.com/",
+          onProcess: false,
+        },
+        {
+          id: 7,
           name: "React",
           description:
             "A popular JavaScript library for building reusable UI components and managing complex user interfaces with virtual DOM and state.",
@@ -123,16 +143,16 @@ const SkillSetSection = () => {
           onProcess: false,
         },
         {
-          id: 6,
+          id: 8,
           name: "Node JS",
           description:
             "Node.js® is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.",
           icon: nodejs,
           link: "https://nodejs.org/en",
-          onProcess: true,
+          onProcess: false,
         },
         {
-          id: 7,
+          id: 9,
           name: "Bootstrap",
           description:
             "A responsive front-end framework offering pre-built components and grid systems for quickly developing modern web layouts.",
@@ -141,7 +161,7 @@ const SkillSetSection = () => {
           onProcess: false,
         },
         {
-          id: 8,
+          id: 10,
           name: "Java",
           description:
             "Oracle Java is the #1 programming language and development platform. It reduces costs, shortens development timeframes, drives innovation, and improves application services. With millions of developers running more than 60 billion Java Virtual Machines worldwide, Java continues to be the development platform of choice for enterprises and developers.",

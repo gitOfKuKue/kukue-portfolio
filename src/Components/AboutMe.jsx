@@ -37,7 +37,7 @@ const AboutMe = () => {
               A story of hardwork and ability
             </h3>
             <p className="text-font-light text-justify lg:text-xl md:text-sm">
-              I am a software developer with a passion for creating innovative
+              I am a full-stack developer with a passion for creating innovative
               solutions. I have a strong background in computer science and a
               deep understanding of programming languages and technologies. I am
               always looking for new challenges and opportunities to learn and

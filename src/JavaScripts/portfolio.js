@@ -18,6 +18,8 @@ import content4 from "../assets/portfolios/content-writing/Japan-international-m
 import content5 from "../assets/portfolios/content-writing/Time mangement hacks for busy students.pdf";
 
 // Frontend Development
+import ayeeOnlineShop1 from "../assets/portfolios/frontend-web-dev/AYEE-Online Shop1.png";
+import ayeeOnlineShop2 from "../assets/portfolios/frontend-web-dev/AYEE-Online Shop2.png";
 import ayeeDropshippingPic from "../assets/portfolios/frontend-web-dev/Ayee-dropshipping.png";
 import myPortfolioPic1 from "../assets/portfolios/frontend-web-dev/my-portfolio1.png";
 import myPortfolioPic2 from "../assets/portfolios/frontend-web-dev/my-portfolio2.png";
@@ -325,6 +327,15 @@ How to Apply?
     toSection: "frontend-web-development",
     type: "frontendWebDev",
     projects: [
+      {
+        id: 1,
+        images: [ayeeOnlineShop1, ayeeOnlineShop2],
+        githublink: "https://github.com/gitOfKuKue/AYEE-Online-Shop-v2.0.git",
+        title: "AYEE Online Shop",
+        type: "Frontend Web Development",
+        description:
+          "A full-stack e-commerce platform built with MERN (MongoDB, Express, React, Node.js) technology for a dropshipping business. Features include product catalog, user authentication, shopping cart, payment integration, and order management. The application demonstrates proficiency in modern web development with a responsive design and scalable backend architecture.",
+      },
       {
         id: 1,
         images: [ayeeDropshippingPic],

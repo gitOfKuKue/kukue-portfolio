@@ -4,6 +4,7 @@ import Container from "./Container";
 import gfa from "../assets/icons/great-future-academy.png";
 import dreamEdu from "../assets/icons/dream-education.png";
 import aspireNow from "../assets/icons/aspire-now.png";
+import gutaCafe from "../assets/icons/GUTA-Cafe.png";
 import { Link } from "react-router-dom";
 
 const TrustedPartner = () => {
@@ -26,6 +27,12 @@ const TrustedPartner = () => {
       logo: aspireNow,
       link: "https://www.facebook.com/profile.php?id=61552851140427",
     },
+    {
+      id: 4,
+      name: "GUTA Cafe",
+      logo: gutaCafe,
+      link: "https://www.facebook.com/profile.php?id=61552851140427",
+    },
     // {
     //   id: 4,
     //   name: "Paing Paing Phyo",
@@ -39,11 +46,7 @@ const TrustedPartner = () => {
           Trusted by
         </h1>
         <p className="text-center lg:w-200 md:w-150 xs:w-90 mx-auto">
-          We are proud to be trusted by a diverse range of partners and clients
-          who believe in our commitment to quality, creativity, and innovation.
-          From startups to established brands, these collaborations reflect our
-          dedication to delivering impactful solutions and building long-lasting
-          professional relationships.
+          I have had the privilege of working with exceptional organizations that value innovation, quality, and excellence. These partnerships have allowed me to contribute my skills in design, development, and content creation to meaningful projects. Through collaboration with these trusted partners, I've gained valuable experience and helped deliver impactful solutions.
         </p>
 
         <div className="flex xs:flex-col md:flex-row justify-center items-center gap-10 mt-10 xs:mb-30 md:mb-50">

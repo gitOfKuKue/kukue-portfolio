@@ -15,11 +15,11 @@ const Hello = () => {
             Graphic <span className="text-iconic">Designer </span>
             &
             <br />
-            <span className="text-iconic">Frontend</span> Developer
+            <span className="text-iconic">Full-Stack</span> Developer
           </h1>
           <p className="text-font-light lg:text-xl md:text-md sm:text-xl mb-4 md:mb-2 2xl:w-[600px] lg:w-[500px] md:w-[400px] text-justify">
             Hi, I'm Thu Htet Naing. You can call me Ku Kue, a passionate Graphic
-            Designer & Frontend Developer based in the Vietnam. Welcome to
+            Designer & Full-Stack Developer based in Vietnam. Welcome to my
             portfolio world.
           </p>
           <HashLink to="/#portfolio" className="border-1 border-border bg-button md:text-xl md:px-8 md:py-3 xs:px-6 xs:py-2 xs:text-md xs:mb-10 hover:bg-border hover:text-background duration-100 rounded-md">
