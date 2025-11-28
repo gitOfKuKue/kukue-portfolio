@@ -3,16 +3,19 @@
 
 @theme {
   --color-iconic: #1f7d53;
-  --color-button: #00ED64;
+  /* --color-iconic: #FF6D1F; */
+  --color-button: #00ed64;
   --color-font: #333446;
-  --color-font-light: #686D76;
+  --color-font-light: #686d76;
   --color-font-lighter: #42424270;
-  --color-background: #FDFAF6;
-  --color-aboutme: #F2F2F2;
+  --color-background: #fdfaf6;
+  --color-aboutme: #f2f2f2;
   --color-dark: #030303;
   --color-border: #373a40;
 
   --text-heading: 48px;
+
+  --breakpoint-xs: 300px;
 }
 
 * {
@@ -37,12 +40,15 @@ html ::-webkit-scrollbar {
   background-size: cover;
 } */
 
-.hello-section, .aboutme-section {
+.hello-section,
+.aboutme-section {
   position: relative;
   z-index: 1;
 }
 
-.hello-section::before, .aboutme-section::before, #contact-me::before {
+.hello-section::before,
+.aboutme-section::before,
+#contact-me::before {
   content: "";
   position: absolute;
   top: 0;
@@ -55,11 +61,10 @@ html ::-webkit-scrollbar {
   z-index: -1;
 }
 
-.hello-section::before{
+.hello-section::before {
   background-image: url("./assets/images/background-shapes.svg");
   background-size: contain;
 }
-
 
 .aboutme-section::before {
   background-image: url("./assets/images/background-shapes1.svg");
@@ -91,7 +96,9 @@ html ::-webkit-scrollbar {
 .service-card:hover {
   background-color: var(--color-iconic);
 }
-.service-card:hover .service-card-icon, .service-card:hover p, .service-card:hover h1 {
+.service-card:hover .service-card-icon,
+.service-card:hover p,
+.service-card:hover h1 {
   color: var(--color-background);
 }
 
@@ -121,10 +128,10 @@ html ::-webkit-scrollbar {
     display: none !important;
   }
 }
-  
+
 /* Contact Section */
-#contact-me::before{
-  background-image: url('./assets/images/background-shapes1.svg');
+#contact-me::before {
+  background-image: url("./assets/images/background-shapes1.svg");
   background-size: contain;
 }
 
@@ -156,7 +163,7 @@ html ::-webkit-scrollbar {
 }
 
 @keyframes rotate {
-  from{
+  from {
     transform: rotate(0deg);
   }
   to {
@@ -164,7 +171,6 @@ html ::-webkit-scrollbar {
   }
 }
 
-
-.custom-indicator.active{
+.custom-indicator.active {
   background-color: var(--color-iconic);
 }
